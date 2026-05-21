@@ -9,13 +9,17 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.2`
+Aktuelle Version: `v0.3.3`
 
 ## Download & Start
 
-Unter **Releases** die Datei `joystick-map-vX.Y.Z.html` herunterladen und direkt im Browser oeffnen.
+1. Unter **Releases** die Datei `joystick-map-vX.Y.Z.html` herunterladen.
+2. Datei direkt im Browser oeffnen — kein Server, keine Installation noetig.
+3. Oben rechts den eigenen Stick aus dem Dropdown auswaehlen.
+4. Auf ein Feld auf der Vorlage klicken und die Belegung eintragen.
+5. Alles wird automatisch gespeichert — auch nach einem Neustart des Browsers.
 
-Kein Server, keine Installation, keine weiteren Dateien noetig — alles ist in der einen HTML-Datei enthalten.
+Eine ausfuehrlichere Anleitung ist in der App selbst unter dem Tab **? Hilfe** zu finden.
 
 ## Aktueller Stand
 

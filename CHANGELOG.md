@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.3 - 2026-05-21
+
+### Hinzugefügt
+
+- Hilfe-Tab in der App mit Anleitung zu Erste Schritte, Felder bearbeiten, Buttons und Hinweisen zum Browser-Speicher.
+- README um eine Schritt-für-Schritt-Anleitung für neue Nutzer erweitert.
+
 ## v0.3.2 - 2026-05-21
 
 ### Behoben
