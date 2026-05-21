@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.6`
+Aktuelle Version: `v0.4.7`
 
 ## Download & Start
 
@@ -55,6 +55,7 @@ Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du g
 - Stick-Auswahl im Header mit klarer Aktiv-/Hover-Markierung, Auswahl wird gespeichert
 - Geräte-Auswahl im Header: Virpil-Sticks oder Tastatur & Maus
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
+- Titelbereich der Stick-Vorlagen ist besser zentriert und lesbarer
 - Tastatur- und Maus-Tab als Tabellenansicht
 - Standardbelegung fuer Tastatur und Maus ist hinterlegt und ohne Import sichtbar
 - Textfelder direkt auf der Vorlage bearbeitbar

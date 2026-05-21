@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.7 - 2026-05-21
+
+### Geändert
+
+- Titel `Constellation Alpha L/R` in den Vorlagen vertikal besser im Kasten zentriert.
+- Unterzeile mit `Star Citizen` und Versionsnummer groesser und besser lesbar gemacht.
+
 ## v0.4.6 - 2026-05-21
 
 ### Geändert
