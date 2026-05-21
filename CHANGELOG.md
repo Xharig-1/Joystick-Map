@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.2.1 - 2026-05-21
+
+### Hinzugefügt
+
+- Aktuelle Version wird in der Statusleiste der Anwendung angezeigt.
+
 ## v0.2.0 - 2026-05-21
 
 ### Hinzugefügt
@@ -43,4 +49,3 @@ Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 - Reset leert alle Textfelder.
 - Rückgängig-Button ergänzt.
 - Überflüssige Tabs entfernt.
-

@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.2.0`
+Aktuelle Version: `v0.2.1`
 
 ## Phasen
 
@@ -24,10 +24,10 @@ Aktuelle Version: `v0.2.0`
 
 | Version | Geplanter Inhalt |
 |---|---|
-| v0.2.1 | Optischer Feinschliff und Box-Ausrichtung |
+| v0.2.1 | Version in der Statusleiste |
+| v0.2.2 | Optischer Feinschliff und Box-Ausrichtung |
 | v0.3.0 | Profil-Umschalter |
 | v0.4.0 | Modus-Tags |
 | v0.5.0 | Tastatur-Tab |
 | v0.6.0 | Quick Reference Tab |
 | v0.7.0 | Drucken / PDF |
-

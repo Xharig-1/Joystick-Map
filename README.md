@@ -4,7 +4,7 @@ Ein einfacher Editor fuer die Virpil Constellation Alpha Button-Map.
 
 ## Version
 
-Aktuelle Version: `v0.2.0`
+Aktuelle Version: `v0.2.1`
 
 ## Start
 
@@ -19,6 +19,7 @@ Die Datei `index.html` direkt im Browser oeffnen.
 - Rueckgaengig-Knopf fuer letzte Aenderungen
 - Reset-Knopf leert alle Textfelder
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
+- Version wird in der Statusleiste angezeigt
 
 ## Projektstatus
 
