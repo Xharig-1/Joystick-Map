@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.4.5`
+Aktuelle Version: `v0.4.6`
 
 ## Zielbild
 
@@ -42,6 +42,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.4.3 | Update-Check mit Download-Link |
 | v0.4.4 | SC-Import-Button in der Hilfe ergänzt |
 | v0.4.5 | Standardbelegung fuer Tastatur und Maus hinterlegt |
+| v0.4.6 | Stick-Auswahl optisch korrigiert |
 | v0.5.0 | Profil-Umschalter |
 | v0.6.0 | Modus-Tags |
 | v0.7.0 | Quick Reference Tab |

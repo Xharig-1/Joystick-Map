@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.6 - 2026-05-21
+
+### Geändert
+
+- Stick-Auswahl im Header von einem Browser-Standardfeld auf ein eigenes Dropdown umgestellt.
+- Aktuell ausgewähltes Gerät und Hover-Zeile sind jetzt optisch getrennt, damit die Markierung nicht auf der falschen Zeile wirkt.
+
 ## v0.4.5 - 2026-05-21
 
 ### Hinzugefügt

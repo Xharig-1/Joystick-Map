@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.5`
+Aktuelle Version: `v0.4.6`
 
 ## Download & Start
 
@@ -52,7 +52,7 @@ Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du g
 
 ## Aktueller Stand
 
-- Stick-Auswahl im Header, Auswahl wird gespeichert
+- Stick-Auswahl im Header mit klarer Aktiv-/Hover-Markierung, Auswahl wird gespeichert
 - Geräte-Auswahl im Header: Virpil-Sticks oder Tastatur & Maus
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
 - Tastatur- und Maus-Tab als Tabellenansicht
