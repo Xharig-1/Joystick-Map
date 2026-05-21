@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.5 - 2026-05-21
+
+### Hinzugefügt
+
+- Star Citizen Import: Schaltfläche „⬇ SC Import" im Header lädt eine `actionmaps.xml` aus dem Spiel.
+- Linker und rechter Joystick werden anhand des Gerätenamens (LEFT / RIGHT) automatisch erkannt.
+- Über 90 SC-Aktionen werden ins Deutsche übersetzt (Bergbau, Bergung, Waffen, Navigation, Scan usw.).
+- Gesperrte Felder werden beim Import übersprungen.
+- Hilfe-Tab erklärt den Import-Vorgang mit Pfadangabe.
+
 ## v0.3.4 - 2026-05-21
 
 ### Hinzugefügt
