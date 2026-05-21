@@ -9,13 +9,14 @@
     --bg: #0a0d12;
     --bg2: #0e1318;
     --bg3: #141a22;
-    --border: #1e3040;
-    --cyan: #00e5ff;
-    --cyan2: #00bcd4;
-    --cyan-dim: rgba(0,229,255,0.15);
-    --cyan-glow: 0 0 8px rgba(0,229,255,0.6), 0 0 20px rgba(0,229,255,0.25);
-    --text: #c8d8e8;
-    --text-dim: #5a7a9a;
+    --border: #1a2e1a;
+    --accent-light: #6dcc68;
+    --accent: #47aa42;
+    --accent2: #3d9438;
+    --accent-dim: rgba(71,170,66,0.15);
+    --accent-glow: 0 0 8px rgba(109,204,104,0.6), 0 0 20px rgba(109,204,104,0.25);
+    --text: #c8dcc8;
+    --text-dim: #527a52;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Courier New', monospace; min-height: 100vh; }
@@ -26,8 +27,8 @@
     flex-wrap: wrap; gap: 8px;
   }
   #header h1 {
-    font-size: 14px; letter-spacing: 3px; color: var(--cyan);
-    text-transform: uppercase; text-shadow: var(--cyan-glow);
+    font-size: 14px; letter-spacing: 3px; color: var(--accent-light);
+    text-transform: uppercase; text-shadow: var(--accent-glow);
   }
   .hdr-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -41,17 +42,17 @@
     font-family: 'Courier New', monospace; font-size: 13px; letter-spacing: 2px;
     text-transform: uppercase; transition: all .2s; position: relative; bottom: -1px;
   }
-  .tab-btn:hover { color: var(--cyan); border-color: var(--cyan2); }
+  .tab-btn:hover { color: var(--accent-light); border-color: var(--accent); }
   .tab-btn.active {
-    color: var(--cyan); border-color: var(--cyan); border-bottom-color: var(--bg);
-    background: var(--bg); text-shadow: var(--cyan-glow);
+    color: var(--accent-light); border-color: var(--accent); border-bottom-color: var(--bg);
+    background: var(--bg); text-shadow: var(--accent-glow);
   }
 
   #canvas-outer { overflow: auto; padding: 16px; background: var(--bg); }
   .stick-panel { display: none; }
   .stick-panel.active { display: block; }
   .stick-wrap { position: relative; display: inline-block; line-height: 0; }
-  .stick-wrap img { display: block; width: 1755px; height: 1241px; }
+  .stick-wrap img { display: block; }
 
   textarea.field {
     position: absolute;
@@ -67,11 +68,11 @@
     outline: none;
     transition: border-color .15s, box-shadow .15s;
   }
-  textarea.field:hover { background: rgba(0,229,255,0.05); border-color: rgba(0,229,255,0.5); z-index: 10; }
+  textarea.field:hover { background: rgba(71,170,66,0.05); border-color: rgba(71,170,66,0.5); z-index: 10; }
   textarea.field:focus {
     background: rgba(255,255,255,0.85);
-    border-color: var(--cyan);
-    box-shadow: var(--cyan-glow); z-index: 20;
+    border-color: var(--accent);
+    box-shadow: var(--accent-glow); z-index: 20;
   }
   textarea.field.f-titel {
     font-size: 10px; font-weight: bold; text-align: center;
@@ -93,13 +94,13 @@
   textarea.field.f-button-id:focus { background: #ffffff; }
 
   .btn {
-    padding: 6px 14px; background: transparent; border: 1px solid var(--cyan2);
-    color: var(--cyan2); cursor: pointer; font-family: 'Courier New', monospace;
+    padding: 6px 14px; background: transparent; border: 1px solid var(--accent2);
+    color: var(--accent); cursor: pointer; font-family: 'Courier New', monospace;
     font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: all .2s;
   }
   .btn:hover {
-    background: var(--cyan-dim); color: var(--cyan);
-    border-color: var(--cyan); box-shadow: var(--cyan-glow);
+    background: var(--accent-dim); color: var(--accent-light);
+    border-color: var(--accent); box-shadow: var(--accent-glow);
   }
   .btn:disabled {
     opacity: .35; cursor: default; box-shadow: none;
@@ -107,12 +108,16 @@
   }
   .btn.btn-danger { border-color: #c0392b; color: #c0392b; }
   .btn.btn-danger:hover { background: rgba(192,57,43,0.15); color: #e74c3c; border-color: #e74c3c; }
+  select.btn { appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2347aa42'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+  select.btn option { background: #0e1318; color: #c8dcc8; }
 
   .changelog-panel {
     max-width: 980px; padding: 18px; color: var(--text);
   }
   .changelog-panel h2 {
-    color: var(--cyan); font-size: 15px; letter-spacing: 2px;
+    color: var(--accent-light); font-size: 15px; letter-spacing: 2px;
     text-transform: uppercase; margin-bottom: 14px;
   }
   .changelog-table {
@@ -125,7 +130,7 @@
     text-align: left; vertical-align: top;
   }
   .changelog-table th {
-    color: var(--cyan); background: var(--bg3); text-transform: uppercase;
+    color: var(--accent-light); background: var(--bg3); text-transform: uppercase;
     letter-spacing: 1px; font-size: 11px;
   }
   .changelog-table td:last-child {
@@ -136,34 +141,35 @@
     padding: 5px 18px; font-size: 10px; color: var(--text-dim);
     background: var(--bg2); border-top: 1px solid var(--border); letter-spacing: 1px;
   }
-  #statusbar span { color: var(--cyan); }
+  #statusbar span { color: var(--accent-light); }
 </style>
 </head>
 <body>
 
 <div id="header">
-  <h1>⬡ Joystick-Map — Virpil Constellation Alpha</h1>
+  <h1>⬡ Joystick-Map</h1>
   <div class="hdr-actions">
+    <select id="stickSelect" class="btn" onchange="applyStick(this.value)"></select>
     <button class="btn" id="undoBtn" onclick="undoLastChange()" disabled>↶ Rückgängig</button>
     <button class="btn btn-danger" onclick="resetAll()">↺ Reset</button>
   </div>
 </div>
 
 <div id="tabs">
-  <button class="tab-btn active" onclick="switchTab('L', this)">Alpha L (Links)</button>
-  <button class="tab-btn" onclick="switchTab('R', this)">Alpha R (Rechts)</button>
+  <button id="tab-btn-L" class="tab-btn active" onclick="switchTab('L', this)">Alpha L (Links)</button>
+  <button id="tab-btn-R" class="tab-btn" onclick="switchTab('R', this)">Alpha R (Rechts)</button>
   <button class="tab-btn" onclick="switchTab('LOG', this)">Changelog</button>
 </div>
 
 <div id="canvas-outer">
   <div class="stick-panel active" id="panel-L">
     <div class="stick-wrap" id="wrap-L">
-      <img src="assets/alpha-l-template.png" alt="Virpil Constellation Alpha L">
+      <img id="img-L" src="assets/alpha-l-template.png" alt="Virpil Constellation Alpha L">
     </div>
   </div>
   <div class="stick-panel" id="panel-R">
     <div class="stick-wrap" id="wrap-R">
-      <img src="assets/alpha-r-template.png" alt="Virpil Constellation Alpha R">
+      <img id="img-R" src="assets/alpha-r-template.png" alt="Virpil Constellation Alpha R">
     </div>
   </div>
   <div class="stick-panel" id="panel-LOG">
@@ -187,13 +193,29 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.2.3</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.3.0</span></div>
 
 <script>
-const APP_VERSION = 'v0.2.3';
-const SCALE = 2.083333;
+const APP_VERSION = 'v0.3.0';
 const FIELDS_L = [{"name": "Titel", "value": "Constellation Alpha L", "left": 109.7, "top": 22.62, "width": 169.4, "height": 33.6}, {"name": "Untertitel", "value": "Star Citizen               v4.6.live", "left": 109.7, "top": 56.48, "width": 169.4, "height": 19.2}, {"name": "13", "value": "VTOL / Automatische Landung Frachtanfrage", "left": 294.7, "top": 56.03, "width": 141.15, "height": 24.95}, {"name": "14", "value": "Andockerlaubnis", "left": 294.7, "top": 81.23, "width": 141.15, "height": 24.95}, {"name": "15", "value": "Konfiguration Wechseln ( Flügell)\nFlügel ausklappen", "left": 295.45, "top": 106.18, "width": 141.15, "height": 24.95}, {"name": "16", "value": "Landingear / Landeanfrage", "left": 294.7, "top": 131.13, "width": 141.15, "height": 24.75}, {"name": "17", "value": "Doors Open / Close (Toggle)", "left": 294.7, "top": 155.63, "width": 141.15, "height": 24.95}, {"name": "18", "value": "Energie Alle (Toggle)", "left": 151.9, "top": 197.38, "width": 141.1, "height": 24.95}, {"name": "19", "value": "Antriebe Energie (Toggle)", "left": 151.9, "top": 222.33, "width": 141.1, "height": 24.95}, {"name": "20", "value": "Waffen, Antriebe, Schilde Max", "left": 151.9, "top": 246.53, "width": 141.1, "height": 25.0}, {"name": "6", "value": "Fernlenkgeschütz 1, 2, 3", "left": 176.35, "top": 288.33, "width": 141.15, "height": 24.95}, {"name": "1", "value": "Geschütz Modus", "left": 185.95, "top": 328.88, "width": 141.15, "height": 24.95}, {"name": "2", "value": "Raketen Modus", "left": 185.95, "top": 353.83, "width": 141.15, "height": 24.95}, {"name": "3", "value": "Afterburner", "left": 220.75, "top": 389.13, "width": 141.15, "height": 24.95}, {"name": "4", "value": "Spacebrake / Waffengruppe 3", "left": 220.75, "top": 414.28, "width": 141.15, "height": 24.7}, {"name": "31 S0", "value": "Bergbau Laser Energie Regler", "left": 220.55, "top": 458.48, "width": 141.1, "height": 24.95}, {"name": "X", "value": "Links / Rechts", "left": 262.3, "top": 499.48, "width": 141.1, "height": 25.0}, {"name": "Y", "value": "Hoch / Runter", "left": 262.3, "top": 524.73, "width": 141.1, "height": 24.7}, {"name": "Z", "value": "", "left": 262.3, "top": 549.43, "width": 141.1, "height": 24.95}, {"name": "12", "value": "Decupled (Toggle)", "left": 510.7, "top": 45.68, "width": 141.15, "height": 24.95}, {"name": "5", "value": "3rd Person Cam", "left": 544.3, "top": 88.38, "width": 141.4, "height": 24.95}, {"name": "rX", "value": "Look Left/Right", "left": 544.3, "top": 113.33, "width": 141.4, "height": 25.0}, {"name": "rY", "value": "Look Up/Down", "left": 544.3, "top": 138.33, "width": 141.4, "height": 24.95}, {"name": "7", "value": "Target unter Fadenkreuz", "left": 597.1, "top": 175.73, "width": 141.4, "height": 25.0}, {"name": "8", "value": "Feind im Sichtbereich", "left": 597.1, "top": 200.73, "width": 141.4, "height": 24.95}, {"name": "9", "value": "Freund durchschalten", "left": 597.1, "top": 225.68, "width": 141.4, "height": 24.95}, {"name": "10", "value": "Ziel Freigeben", "left": 597.1, "top": 250.63, "width": 141.4, "height": 24.95}, {"name": "11", "value": "Angreifer durchschalten", "left": 597.1, "top": 275.58, "width": 141.4, "height": 24.95}, {"name": "25", "value": "IR Flare Feuern", "left": 635.3, "top": 315.18, "width": 141.1, "height": 24.95}, {"name": "26", "value": "IR Flare erhöhen", "left": 635.3, "top": 340.13, "width": 141.1, "height": 25.0}, {"name": "27", "value": "Ping", "left": 635.3, "top": 365.13, "width": 141.1, "height": 24.95}, {"name": "28", "value": "IR Flare Veringern", "left": 635.3, "top": 390.08, "width": 141.1, "height": 24.95}, {"name": "29", "value": "Erweitertes HUD (Toggle)", "left": 635.3, "top": 415.78, "width": 141.1, "height": 24.95}, {"name": "21", "value": "Traktor / Bergbau Modus Aktivieren\nMining Modus", "left": 598.8, "top": 455.13, "width": 141.1, "height": 24.95}, {"name": "22", "value": "LAMP", "left": 598.8, "top": 480.08, "width": 141.1, "height": 24.95}, {"name": "23", "value": "Speed Limit runter / Salvage kleiner", "left": 598.8, "top": 505.03, "width": 141.1, "height": 24.25}, {"name": "24", "value": "Speed Limit hoch / Salvage größer", "left": 598.8, "top": 529.28, "width": 141.1, "height": 24.95}, {"name": "30", "value": "Scheinwerfer (Toggle)", "left": 475.78, "top": 565.29, "width": 141.1, "height": 24.95}, {"name": "Anmerkung 1", "value": "FEHLT NOCH:\nEnergie Verteilung\nSchilde Energie (Toggle)\nPraezisions Modus (Halten / Tippen)\nSchub Forward / Backward", "left": 15.55, "top": 335.13, "width": 140.65, "height": 74.6}, {"name": "Anmerkung 2", "value": "3,0       5,7\n2,1       3,6\n900m", "left": 16.05, "top": 417.68, "width": 140.9, "height": 74.4}, {"name": "Anmerkung 3", "value": "", "left": 16.3, "top": 499.98, "width": 140.85, "height": 74.4}];
 const FIELDS_R = [{"name": "Titel", "value": "Constellation Alpha R", "left": 109.7, "top": 22.13, "width": 169.4, "height": 33.6}, {"name": "Untertitel", "value": "Star Citizen               v4.6.live", "left": 109.7, "top": 55.73, "width": 169.4, "height": 19.2}, {"name": "12", "value": "Lead / Lag PIPs umschalten", "left": 356.9, "top": 37.98, "width": 141.1, "height": 24.95}, {"name": "5", "value": "", "left": 233.3, "top": 88.38, "width": 141.35, "height": 24.95}, {"name": "rX", "value": "", "left": 233.3, "top": 113.33, "width": 141.35, "height": 25.0}, {"name": "rY", "value": "", "left": 233.3, "top": 138.33, "width": 141.35, "height": 24.95}, {"name": "7", "value": "QID festlegen", "left": 131.8, "top": 175.73, "width": 141.1, "height": 25.0}, {"name": "8", "value": "Q-Snare (Snare) QIDS", "left": 131.05, "top": 200.73, "width": 141.1, "height": 24.95}, {"name": "9", "value": "", "left": 131.05, "top": 226.18, "width": 141.1, "height": 24.95}, {"name": "10", "value": "Q-Störer (Dampener) QEDS", "left": 131.05, "top": 250.63, "width": 141.1, "height": 24.95}, {"name": "11", "value": "EMPs festlegen", "left": 131.05, "top": 275.58, "width": 141.1, "height": 24.95}, {"name": "25", "value": "Waffen Gruppe / Mining Modus\nNächster Raketentyp", "left": 93.1, "top": 315.18, "width": 141.15, "height": 24.95}, {"name": "26", "value": "Raketen erhöhen", "left": 93.1, "top": 340.13, "width": 141.15, "height": 25.0}, {"name": "27", "value": "UI ADS Toggle (Hold / Tab)", "left": 93.1, "top": 365.13, "width": 141.15, "height": 24.95}, {"name": "28", "value": "Raketen Veringern", "left": 93.85, "top": 390.08, "width": 141.15, "height": 24.95}, {"name": "29", "value": "Raketen zurücksetzen", "left": 93.1, "top": 415.03, "width": 141.15, "height": 24.95}, {"name": "21", "value": "Scan Mode", "left": 129.6, "top": 454.38, "width": 141.1, "height": 25.7}, {"name": "22", "value": "", "left": 129.6, "top": 480.08, "width": 141.1, "height": 24.95}, {"name": "23", "value": "Scan Breiter\nTraktor veringern", "left": 129.6, "top": 505.03, "width": 141.1, "height": 24.25}, {"name": "24", "value": "Scan Schmaler\nTraktor erhöhen", "left": 131.1, "top": 529.28, "width": 141.1, "height": 24.95}, {"name": "30", "value": "Schleudersitz\nSelbstzerstörung", "left": 252.62, "top": 564.8, "width": 141.1, "height": 24.95}, {"name": "13", "value": "Bergen durchschalten", "left": 528.95, "top": 72.58, "width": 141.1, "height": 24.95}, {"name": "14", "value": "Auflösen", "left": 529.7, "top": 96.78, "width": 141.1, "height": 24.95}, {"name": "15", "value": "Rechtes Bergungs Wekzeug", "left": 530.45, "top": 121.48, "width": 141.1, "height": 25.0}, {"name": "16", "value": "Zerbrechen\nSammeln wechseln", "left": 529.7, "top": 147.48, "width": 141.1, "height": 24.95}, {"name": "17", "value": "Linkes Bergungs Wekzeug", "left": 529.7, "top": 172.43, "width": 141.1, "height": 24.95}, {"name": "18", "value": "Radar Flare", "left": 575.25, "top": 205.23, "width": 141.15, "height": 24.75}, {"name": "19", "value": "IR Flare Panikstart\nSalvage Desolve", "left": 575.5, "top": 229.98, "width": 141.15, "height": 24.95}, {"name": "20", "value": "Salvage (Break)", "left": 575.5, "top": 254.93, "width": 141.15, "height": 24.95}, {"name": "6", "value": "Türen Ent/Verigeln", "left": 551.05, "top": 292.38, "width": 141.1, "height": 24.95}, {"name": "1", "value": "NAV Modus\nSCM Modus", "left": 542.45, "top": 329.63, "width": 141.1, "height": 24.95}, {"name": "2", "value": "", "left": 541.7, "top": 354.58, "width": 141.1, "height": 24.95}, {"name": "3", "value": "Schiessen, Quantensprung\nBergbau Laser, Scannen (Halten)", "left": 506.15, "top": 389.13, "width": 141.1, "height": 24.95}, {"name": "4", "value": "", "left": 506.9, "top": 414.08, "width": 141.1, "height": 24.7}, {"name": "31 S0", "value": "", "left": 506.15, "top": 459.48, "width": 141.1, "height": 24.7}, {"name": "x", "value": "YAW Lef/Right", "left": 465.1, "top": 499.73, "width": 141.15, "height": 25.0}, {"name": "Y", "value": "Pitch Up/Down", "left": 465.1, "top": 524.73, "width": 141.15, "height": 24.7}, {"name": "Z", "value": "Rollen", "left": 465.1, "top": 549.43, "width": 141.15, "height": 24.95}, {"name": "Anmerkung 1", "value": "", "left": 688.3, "top": 26.73, "width": 140.9, "height": 74.4}, {"name": "Anmerkung 2", "value": "", "left": 689.25, "top": 108.33, "width": 140.65, "height": 74.4}, {"name": "Anmerkung 3", "value": "", "left": 682.3, "top": 422.73, "width": 140.65, "height": 74.4}, {"name": "Anmerkung 4", "value": "", "left": 683.75, "top": 503.58, "width": 140.9, "height": 74.4}];
+const STICKS = {
+  'virpil-alpha': {
+    name: 'Virpil Constellation Alpha',
+    scale: 2.083333,
+    tabLabels: { L: 'Alpha L (Links)', R: 'Alpha R (Rechts)' },
+    templates: {
+      L: { src: 'assets/alpha-l-template.png', width: 1755, height: 1241, alt: 'Virpil Constellation Alpha L' },
+      R: { src: 'assets/alpha-r-template.png', width: 1755, height: 1241, alt: 'Virpil Constellation Alpha R' }
+    },
+    fields: { L: FIELDS_L, R: FIELDS_R }
+  }
+};
+const STICK_KEY = 'joystick_map_stick';
+let activeStickId = localStorage.getItem(STICK_KEY) || 'virpil-alpha';
+if (!STICKS[activeStickId]) activeStickId = 'virpil-alpha';
+function getActiveStick() { return STICKS[activeStickId]; }
+
 const STORAGE_VERSION = 2;
 const STORAGE_KEY = 'virpil_buttonmap_v2';
 const LEGACY_STORAGE_KEY = 'virpil_buttonmap_v1';
@@ -201,7 +223,7 @@ const DEFAULT_PROFILE_ID = 'default';
 const undoStack = [];
 let isRestoring = false;
 
-function ptToPx(v, side) { return Math.round(v * SCALE); }
+function ptToPx(v) { return Math.round(v * getActiveStick().scale); }
 
 function getSpecialClass(name) {
   const n = name.toLowerCase();
@@ -240,7 +262,7 @@ function getFieldLabel(name) {
 }
 
 function getSideLabel(side) {
-  return side === 'L' ? 'Alpha L' : side === 'R' ? 'Alpha R' : side;
+  return getActiveStick().tabLabels[side] || side;
 }
 
 function escapeHTML(value) {
@@ -524,6 +546,39 @@ function updateChangedCount() {
   document.getElementById('changed-count').textContent = n;
 }
 
+function populateStickSelect() {
+  const sel = document.getElementById('stickSelect');
+  if (!sel) return;
+  sel.innerHTML = Object.entries(STICKS)
+    .map(([id, s]) => `<option value="${id}"${id === activeStickId ? ' selected' : ''}>${escapeHTML(s.name)}</option>`)
+    .join('');
+}
+
+function applyStick(stickId) {
+  if (!STICKS[stickId]) return;
+  activeStickId = stickId;
+  localStorage.setItem(STICK_KEY, stickId);
+  const stick = getActiveStick();
+  const sel = document.getElementById('stickSelect');
+  if (sel) sel.value = stickId;
+  ['L', 'R'].forEach(side => {
+    const img = document.getElementById('img-' + side);
+    const tpl = stick.templates[side];
+    if (img) { img.src = tpl.src; img.alt = tpl.alt; img.style.width = tpl.width + 'px'; img.style.height = tpl.height + 'px'; }
+    const wrap = document.getElementById('wrap-' + side);
+    if (wrap) Array.from(wrap.querySelectorAll('textarea.field')).forEach(t => t.remove());
+    buildOverlay('wrap-' + side, stick.fields[side], side);
+    const btn = document.getElementById('tab-btn-' + side);
+    if (btn) btn.textContent = stick.tabLabels[side];
+  });
+  requestAnimationFrame(() => {
+    document.querySelectorAll('textarea.field').forEach(fitFont);
+    updateChangedCount();
+    updateUndoButton();
+    renderChangelog();
+  });
+}
+
 function setStatus(msg) {
   document.getElementById('statmsg').textContent = msg;
   clearTimeout(window._statTimer);
@@ -577,14 +632,8 @@ function resetAll() {
   setStatus('Textfelder geleert');
 }
 
-buildOverlay('wrap-L', FIELDS_L, 'L');
-buildOverlay('wrap-R', FIELDS_R, 'R');
-requestAnimationFrame(() => {
-  document.querySelectorAll('textarea.field').forEach(fitFont);
-  updateChangedCount();
-  updateUndoButton();
-  renderChangelog();
-});
+populateStickSelect();
+applyStick(activeStickId);
 </script>
 </body>
 </html>

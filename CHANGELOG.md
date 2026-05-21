@@ -4,6 +4,21 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.0 - 2026-05-21
+
+### Hinzugefügt
+
+- Stick-Auswahl im Header: Dropdown zur Auswahl des Joystick-Modells.
+- Vorlagen-System: Stick-Daten (Template-Bilder, Felder, Skalierung, Tab-Beschriftungen) sind im `STICKS`-Objekt organisiert — neue Modelle können einfach ergänzt werden.
+- Ausgewählter Stick wird im `localStorage` gespeichert und beim nächsten Start wiederhergestellt.
+- Tab-Beschriftungen aktualisieren sich dynamisch je nach gewähltem Stick.
+
+### Geändert
+
+- Xharig-Branding vollständig umgesetzt: Akzentfarben Grün (`#6dcc68`, `#47aa42`, `#3d9438`), Textfarbe grün getönt (`#c8dcc8`).
+- CSS-Variablen von `--cyan` auf `--accent` umbenannt (semantisch sauber, zukunftssicher).
+- App-Version auf `v0.3.0` erhöht.
+
 ## v0.2.3 - 2026-05-21
 
 ### Geändert

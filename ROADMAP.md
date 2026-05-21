@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.2.3`
+Aktuelle Version: `v0.3.0`
 
 ## Zielbild
 
@@ -13,7 +13,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 |---|---|---|
 | Phase 1 | Abgeschlossen | Datenbasis für Profile, Changelog und Tags |
 | Phase 2 | Abgeschlossen | Changelog pro Feld |
-| Phase 3 | Geplant | Stick-Auswahl und Vorlagen-System für mehrere Joystick-Modelle |
+| Phase 3 | Abgeschlossen | Stick-Auswahl und Vorlagen-System für mehrere Joystick-Modelle |
 | Phase 4 | Geplant | Profil-Umschalter für mehrere Belegungssets |
 | Phase 5 | Geplant | Modus-Tags wie Combat, Mining und Salvage |
 | Phase 6 | Geplant | Tastatur-Tab für Keyboard-Bindings |
@@ -33,7 +33,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.2.1 | Version in der Statusleiste |
 | v0.2.2 | Öffentliche Testvorbereitung |
 | v0.2.3 | Projektname Joystick-Map und Roadmap für mehrere Sticks |
-| v0.3.0 | Stick-Auswahl und Vorlagen-System |
+| v0.3.0 | Stick-Auswahl und Vorlagen-System ✓ |
 | v0.4.0 | Profil-Umschalter |
 | v0.5.0 | Modus-Tags |
 | v0.6.0 | Tastatur-Tab |
