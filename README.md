@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.5`
+Aktuelle Version: `v0.3.6`
 
 ## Download & Start
 
@@ -26,12 +26,12 @@ Eine ausfuehrlichere Anleitung ist in der App selbst unter dem Tab **? Hilfe** z
 - Stick-Auswahl im Header, Auswahl wird gespeichert
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
 - Textfelder direkt auf der Vorlage bearbeitbar
-- Button-Nummern ebenfalls editierbar
+- Button-Nummern zeigen die Star-Citizen-internen Eingaben und sind nicht editierbar
 - automatische Speicherung im Browser
 - Rueckgaengig-Knopf fuer letzte Aenderungen
 - Reset-Knopf leert alle Textfelder (gesperrte Felder werden uebersprungen)
 - Felder sperren: beim Hover erscheint ein Schloss-Symbol
-- Star Citizen Import: actionmaps.xml direkt einlesen
+- Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Button- und Achsenbelegung
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
 

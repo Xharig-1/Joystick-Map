@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.6 - 2026-05-21
+
+### Geändert
+
+- Star-Citizen-Import korrigiert: Felder werden anhand der SC-internen Eingaben befüllt, nicht anhand der sichtbaren Virpil-Vorlagennummern.
+- Button-ID-Felder sind jetzt reine Anzeige und nicht mehr editierbar.
+- Achsenimport ergänzt: `rX`, `rY`, `X`, `Y` und `Z` werden aus `rotx`, `roty`, `x`, `y` und `z` erkannt.
+- Standardbeschriftungen für Alpha L/R aus Xharigs aktueller `actionmaps.xml` übernommen.
+- Star-Citizen-Unterzeile auf `v4.8.0-live` aktualisiert.
+
 ## v0.3.5 - 2026-05-21
 
 ### Hinzugefügt
