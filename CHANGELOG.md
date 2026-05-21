@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.4 - 2026-05-21
+
+### Hinzugefügt
+
+- Felder sperren: beim Hover über ein Feld erscheint ein 🔓-Symbol — Klick sperrt das Feld vor dem Reset.
+- Gesperrte Felder zeigen dauerhaft 🔒 und einen grünen Rahmen.
+- Reset überspringt gesperrte Felder und nennt deren Anzahl im Bestätigungsdialog.
+- Sperrstatus wird pro Profil im localStorage gespeichert.
+- Hilfe-Tab um Abschnitt „Felder sperren" erweitert.
+
 ## v0.3.3 - 2026-05-21
 
 ### Hinzugefügt
