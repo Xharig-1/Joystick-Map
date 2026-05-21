@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.4.11`
+Aktuelle Version: `v0.4.12`
 
 ## Zielbild
 
@@ -48,6 +48,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.4.9 | Standard-Tastatur als visuellen Entwurf ergänzt |
 | v0.4.10 | Standard-Tastatur breiter und echter aufgebaut |
 | v0.4.11 | Standard-Tastatur-Tab wieder entfernt |
+| v0.4.12 | VKB Gladiator NXT EVO als zweite Vorlage |
 | v0.5.0 | Profil-Umschalter |
 | v0.6.0 | Modus-Tags |
 | v0.7.0 | Quick Reference Tab |

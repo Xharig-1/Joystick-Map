@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.12 - 2026-05-22
+
+### Hinzugefügt
+
+- VKB Gladiator NXT EVO als zweite Joystick-Vorlage ergänzt (L und R).
+- Felder für alle 29 Buttons, Encoder 1/2, 8-Way-Mode und Achsen (Throttle, X/Y, Z/Twist).
+
 ## v0.4.11 - 2026-05-22
 
 ### Entfernt
