@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.1`
+Aktuelle Version: `v0.3.2`
 
 ## Download & Start
 

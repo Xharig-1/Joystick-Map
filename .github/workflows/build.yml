@@ -22,15 +22,16 @@ jobs:
           with open('index.html', 'r', encoding='utf-8') as f:
               html = f.read()
 
-          def embed_image(match):
-              src = match.group(1)
-              if os.path.exists(src):
-                  with open(src, 'rb') as img:
+          # Alle referenzierten Asset-Pfade finden und ersetzen —
+          # sowohl in HTML-Attributen als auch in JS-Strings (STICKS-Objekt)
+          for path in set(re.findall(r'assets/[^\s"\']+\.png', html)):
+              if os.path.exists(path):
+                  with open(path, 'rb') as img:
                       b64 = base64.b64encode(img.read()).decode('ascii')
-                  return f'src="data:image/png;base64,{b64}"'
-              return match.group(0)
-
-          html = re.sub(r'src="(assets/[^"]+\.png)"', embed_image, html)
+                  html = html.replace(path, f'data:image/png;base64,{b64}')
+                  print(f'Eingebettet: {path}')
+              else:
+                  print(f'WARNUNG: {path} nicht gefunden')
 
           tag = os.environ['TAG']
           out = f'joystick-map-{tag}.html'
