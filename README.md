@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.1`
+Aktuelle Version: `v0.4.3`
 
 ## Download & Start
 
@@ -35,12 +35,11 @@ Wer HOTFIX spielt, sucht im HOTFIX-Ordner. Wer LIVE spielt, sucht im LIVE-Ordner
 Typische Pfade:
 
 ```text
-Roberts Space Industries\StarCitizen\LIVE\user\client\0\Profiles\default
-Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings
-Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
+E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings
+E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
 ```
 
-Im Profilordner liegt die aktuelle `actionmaps.xml`. In `controls\mappings` liegen exportierte Layout-Dateien.
+In `controls\mappings` liegen die exportierten Layout-Dateien fuer Joystick/HOTAS. Der alte Profilordner-Hinweis gilt nicht fuer diesen Joystick-Import.
 
 ## Aktueller Stand
 
@@ -55,6 +54,7 @@ Im Profilordner liegt die aktuelle `actionmaps.xml`. In `controls\mappings` lieg
 - Reset-Knopf leert alle Textfelder (gesperrte Felder werden uebersprungen)
 - Felder sperren: beim Hover erscheint ein Schloss-Symbol
 - Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Stick-, Tastatur- und Mausbelegung
+- Update-Check: zeigt eine neue GitHub-Release-Version mit Download-Link an
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
 

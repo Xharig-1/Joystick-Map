@@ -4,6 +4,19 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.3 - 2026-05-21
+
+### Hinzugefügt
+
+- Update-Check beim Start: Joystick-Map prüft das neueste GitHub-Release und zeigt bei neuer Version einen Download-Link zur `.html`-Datei an.
+- Wenn der Update-Check nicht erreichbar ist, bleibt die App normal nutzbar und zeigt nur `offline` in der Statusleiste.
+
+## v0.4.2 - 2026-05-21
+
+### Geändert
+
+- Hilfe/README korrigiert: Joystick/HOTAS-Importdateien liegen bei LIVE und HOTFIX unter `user\client\0\controls\mappings`, nicht unter `Profiles\default`.
+
 ## v0.4.1 - 2026-05-21
 
 ### Geändert
