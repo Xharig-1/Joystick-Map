@@ -2,14 +2,14 @@
 
 Ein einfacher Browser-Editor fuer Joystick- und HOTAS-Mappings.
 
-Aktuell unterstuetzt die Testversion die Virpil Constellation Alpha Sticks.
-Spaeter soll Joystick-Map mehrere Stick-Vorlagen anbieten, damit auch andere Setups genutzt werden koennen.
+Joystick-Map unterstuetzt mehrere Stick-Modelle ueber ein Vorlagen-System.
+Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.2.3`
+Aktuelle Version: `v0.3.0`
 
 ## Start
 
@@ -19,7 +19,8 @@ Es wird kein Server und keine Installation benoetigt.
 
 ## Aktueller Stand
 
-- Alpha L und Alpha R als Tabs
+- Stick-Auswahl im Header, Auswahl wird gespeichert
+- Alpha L und Alpha R als Tabs (beschriftung passt sich dem Stick an)
 - Textfelder direkt auf der Vorlage bearbeitbar
 - Button-Nummern ebenfalls editierbar
 - automatische Speicherung im Browser
@@ -27,16 +28,13 @@ Es wird kein Server und keine Installation benoetigt.
 - Reset-Knopf leert alle Textfelder
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
-- optisch gepruefte Box-Ausrichtung fuer die aktuellen Vorlagen
-- Projektname fuer die oeffentliche Nutzung: Joystick-Map
-- kommende Phase fuer Stick-Auswahl und Vorlagen-System geplant
 
 ## Projektstatus
 
 - Phase 1: abgeschlossen
 - Phase 2: abgeschlossen
-- Public-Test-Vorbereitung: abgeschlossen
-- Phase 3: geplant
+- Phase 3: abgeschlossen (Stick-Auswahl und Vorlagen-System)
+- Phase 4: geplant (Profil-Umschalter)
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
 
