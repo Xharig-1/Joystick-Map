@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.4.0`
+Aktuelle Version: `v0.4.1`
 
 ## Zielbild
 
@@ -37,6 +37,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.3.6 | SC-Import korrigiert: interne Buttonnummern, Achsen und Standardbeschriftungen |
 | v0.3.7 | Nutzerhinweis zu LIVE/HOTFIX-Mappingordnern ergänzt |
 | v0.4.0 | Tastatur- und Maus-Ansicht |
+| v0.4.1 | Hinweis zum Profilordner mit `actionmaps.xml` ergänzt |
 | v0.5.0 | Profil-Umschalter |
 | v0.6.0 | Modus-Tags |
 | v0.7.0 | Quick Reference Tab |

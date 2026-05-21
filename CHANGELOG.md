@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.1 - 2026-05-21
+
+### Geändert
+
+- Hilfe/README ergänzt: Hinweis auf den Profilordner `StarCitizen\LIVE\user\client\0\Profiles\default`, in dem die aktuelle `actionmaps.xml` liegt.
+
 ## v0.4.0 - 2026-05-21
 
 ### Hinzugefügt

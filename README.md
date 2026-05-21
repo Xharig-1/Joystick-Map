@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.0`
+Aktuelle Version: `v0.4.1`
 
 ## Download & Start
 
@@ -35,9 +35,12 @@ Wer HOTFIX spielt, sucht im HOTFIX-Ordner. Wer LIVE spielt, sucht im LIVE-Ordner
 Typische Pfade:
 
 ```text
+Roberts Space Industries\StarCitizen\LIVE\user\client\0\Profiles\default
 Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings
 Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
 ```
+
+Im Profilordner liegt die aktuelle `actionmaps.xml`. In `controls\mappings` liegen exportierte Layout-Dateien.
 
 ## Aktueller Stand
 
