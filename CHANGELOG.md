@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.11 - 2026-05-22
+
+### Entfernt
+
+- Tab `Standard Tastatur` vollständig entfernt (Layout-Entwurf, CSS, JS-Konstanten und Hilfsfunktionen).
+
 ## v0.4.10 - 2026-05-22
 
 ### Geändert
