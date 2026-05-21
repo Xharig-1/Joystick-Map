@@ -9,13 +9,13 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.0`
+Aktuelle Version: `v0.3.1`
 
-## Start
+## Download & Start
 
-Die Datei `index.html` direkt im Browser oeffnen.
+Unter **Releases** die Datei `joystick-map-vX.Y.Z.html` herunterladen und direkt im Browser oeffnen.
 
-Es wird kein Server und keine Installation benoetigt.
+Kein Server, keine Installation, keine weiteren Dateien noetig — alles ist in der einen HTML-Datei enthalten.
 
 ## Aktueller Stand
 
