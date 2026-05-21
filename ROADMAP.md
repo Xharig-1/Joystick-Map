@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.3.6`
+Aktuelle Version: `v0.3.7`
 
 ## Zielbild
 
@@ -35,6 +35,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.2.3 | Projektname Joystick-Map und Roadmap für mehrere Sticks |
 | v0.3.0 | Stick-Auswahl und Vorlagen-System ✓ |
 | v0.3.6 | SC-Import korrigiert: interne Buttonnummern, Achsen und Standardbeschriftungen |
+| v0.3.7 | Nutzerhinweis zu LIVE/HOTFIX-Mappingordnern ergänzt |
 | v0.4.0 | Profil-Umschalter |
 | v0.5.0 | Modus-Tags |
 | v0.6.0 | Tastatur-Tab |

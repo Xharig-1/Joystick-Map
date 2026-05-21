@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.6`
+Aktuelle Version: `v0.3.7`
 
 ## Download & Start
 
@@ -20,6 +20,24 @@ Aktuelle Version: `v0.3.6`
 5. Alles wird automatisch gespeichert — auch nach einem Neustart des Browsers.
 
 Eine ausfuehrlichere Anleitung ist in der App selbst unter dem Tab **? Hilfe** zu finden.
+
+## Star Citizen Mappings finden
+
+Eigene Mappings im Spiel mit diesem Konsolenbefehl exportieren:
+
+```text
+pp_rebindkeys export Mein_Mapping_Name
+```
+
+Wichtig: Auf den aktuell gespielten Kanal achten.
+Wer HOTFIX spielt, sucht im HOTFIX-Ordner. Wer LIVE spielt, sucht im LIVE-Ordner.
+
+Typische Pfade:
+
+```text
+Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings
+Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
+```
 
 ## Aktueller Stand
 

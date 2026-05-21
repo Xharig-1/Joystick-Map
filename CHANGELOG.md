@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.3.7 - 2026-05-21
+
+### Geändert
+
+- Hilfe-Tab ergänzt: Star-Citizen-Mappingdateien können je nach aktivem Spielkanal unter `LIVE` oder `HOTFIX` liegen.
+- README um Export-Befehl und Standardpfade für `controls\mappings` erweitert.
+
 ## v0.3.6 - 2026-05-21
 
 ### Geändert
