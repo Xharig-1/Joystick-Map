@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joystick-Map – Virpil Constellation Alpha</title>
+<title>Joystick-Map</title>
 <style>
   :root {
     --bg: #0a0d12;
@@ -151,6 +151,37 @@
     padding: 12px 16px; margin-bottom: 4px;
   }
 
+  .mapping-panel {
+    max-width: 1100px; padding: 18px; color: var(--text);
+  }
+  .mapping-panel h2 {
+    color: var(--accent-light); font-size: 15px; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .mapping-note { color: var(--text-dim); font-size: 12px; margin-bottom: 12px; }
+  .mapping-table {
+    width: 100%; border-collapse: collapse; background: var(--bg2);
+    border: 1px solid var(--border); font-size: 12px;
+  }
+  .mapping-table th,
+  .mapping-table td {
+    padding: 8px 10px; border-bottom: 1px solid var(--border);
+    text-align: left; vertical-align: top;
+  }
+  .mapping-table th {
+    color: var(--accent-light); background: var(--bg3); text-transform: uppercase;
+    letter-spacing: 1px; font-size: 11px;
+  }
+  .mapping-table textarea.field {
+    position: static; width: 100%; min-height: 34px; color: var(--text);
+    background: transparent; border-color: transparent; font-size: 12px;
+    line-height: 1.4; padding: 2px 0;
+  }
+  .mapping-table textarea.field:hover { background: rgba(71,170,66,0.05); }
+  .mapping-table textarea.field:focus {
+    background: var(--bg); color: var(--text); border-color: var(--accent);
+  }
+
   .changelog-panel {
     max-width: 980px; padding: 18px; color: var(--text);
   }
@@ -198,6 +229,8 @@
 <div id="tabs">
   <button id="tab-btn-L" class="tab-btn active" onclick="switchTab('L', this)">Alpha L (Links)</button>
   <button id="tab-btn-R" class="tab-btn" onclick="switchTab('R', this)">Alpha R (Rechts)</button>
+  <button id="tab-btn-K" class="tab-btn" onclick="switchTab('K', this)">Tastatur</button>
+  <button id="tab-btn-M" class="tab-btn" onclick="switchTab('M', this)">Maus</button>
   <button class="tab-btn" onclick="switchTab('LOG', this)">Changelog</button>
   <button class="tab-btn" onclick="switchTab('HELP', this)">? Hilfe</button>
 </div>
@@ -211,6 +244,42 @@
   <div class="stick-panel" id="panel-R">
     <div class="stick-wrap" id="wrap-R">
       <img id="img-R" src="assets/alpha-r-template.png" alt="Virpil Constellation Alpha R">
+    </div>
+  </div>
+  <div class="stick-panel" id="panel-K">
+    <div class="mapping-panel">
+      <h2>Tastatur</h2>
+      <p class="mapping-note">Nach dem SC Import erscheinen hier alle erkannten Tastaturbelegungen aus der gewählten XML-Datei.</p>
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th>Bereich</th>
+            <th>Aktion</th>
+            <th>Eingabe</th>
+          </tr>
+        </thead>
+        <tbody id="keyboardRows">
+          <tr><td colspan="3">Noch keine Tastaturbelegung importiert.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="stick-panel" id="panel-M">
+    <div class="mapping-panel">
+      <h2>Maus</h2>
+      <p class="mapping-note">Nach dem SC Import erscheinen hier alle erkannten Mausbelegungen aus der gewählten XML-Datei.</p>
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th>Bereich</th>
+            <th>Aktion</th>
+            <th>Eingabe</th>
+          </tr>
+        </thead>
+        <tbody id="mouseRows">
+          <tr><td colspan="3">Noch keine Mausbelegung importiert.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="stick-panel" id="panel-HELP">
@@ -277,7 +346,8 @@
       <div class="help-block">
         <h3>Tabs</h3>
         <ul>
-          <li><span class="help-key">Alpha L / Alpha R</span> — linker und rechter Stick der aktuellen Vorlage.</li>
+          <li><span class="help-key">Alpha L / Alpha R</span> — linker und rechter Stick der Virpil-Vorlage.</li>
+          <li><span class="help-key">Tastatur / Maus</span> — Tabellenansicht für importierte Tastatur- und Mausbelegungen.</li>
           <li><span class="help-key">Changelog</span> — zeigt wann welches Feld zuletzt geändert wurde.</li>
           <li><span class="help-key">? Hilfe</span> — diese Seite.</li>
         </ul>
@@ -314,15 +384,16 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.3.7</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.4.0</span></div>
 
 <script>
-const APP_VERSION = 'v0.3.7';
+const APP_VERSION = 'v0.4.0';
 const FIELDS_L = [{"name":"Titel","value":"Constellation Alpha L","left":109.7,"top":22.62,"width":169.4,"height":33.6},{"name":"Untertitel","value":"Star Citizen               v4.8.0-live","left":109.7,"top":56.48,"width":169.4,"height":19.2},{"name":"13","value":"Frachtanfrage\nAutomatische Landung\nVTOL (Toggle)\nAndocken","left":294.7,"top":56.03,"width":141.15,"height":24.95},{"name":"14","value":"Docking Modus","left":294.7,"top":81.23,"width":141.15,"height":24.95},{"name":"15","value":"Konfiguration wechseln\nFlügel ausklappen","left":295.45,"top":106.18,"width":141.15,"height":24.95},{"name":"16","value":"Landeerlaubnis / ATC\nLandegestell (Toggle)","left":294.7,"top":131.13,"width":141.15,"height":24.75},{"name":"17","value":"Türen (Toggle)","left":294.7,"top":155.63,"width":141.15,"height":24.95},{"name":"18","value":"Energie Gesamt (Toggle)","left":151.9,"top":197.38,"width":141.1,"height":24.95},{"name":"19","value":"Antriebe Energie (Toggle)","left":151.9,"top":222.33,"width":141.1,"height":24.95},{"name":"20","value":"Energie → Antriebe\nEnergie → Schilde\nEnergie → Waffen","left":151.9,"top":246.53,"width":141.1,"height":25},{"name":"6","value":"Ferngeschütz 1\nFerngeschütz 2\nFerngeschütz 3","left":176.35,"top":288.33,"width":141.15,"height":24.95},{"name":"1","value":"Waffenmodus","left":185.95,"top":328.88,"width":141.15,"height":24.95},{"name":"2","value":"Raketenmodus","left":185.95,"top":353.83,"width":141.15,"height":24.95},{"name":"3","value":"Nachbrenner\nBoost","left":220.75,"top":389.13,"width":141.15,"height":24.95},{"name":"4","value":"Spacebrake\nBremse","left":220.75,"top":414.28,"width":141.15,"height":24.7},{"name":"31 S0","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":220.55,"top":458.48,"width":141.1,"height":24.95},{"name":"X","value":"Strafe links/rechts\nYaw links/rechts","left":262.3,"top":499.48,"width":141.1,"height":25},{"name":"Y","value":"Strafe hoch/runter\nPitch hoch/runter","left":262.3,"top":524.73,"width":141.1,"height":24.7},{"name":"Z","value":"Rollen","left":262.3,"top":549.43,"width":141.1,"height":24.95},{"name":"12","value":"Decoupled (Toggle)","left":510.7,"top":45.68,"width":141.15,"height":24.95},{"name":"5","value":"3rd Person Kamera","left":544.3,"top":88.38,"width":141.4,"height":24.95},{"name":"rX","value":"Umsehen: Nach links/rechts","left":544.3,"top":113.33,"width":141.4,"height":25},{"name":"rY","value":"Umsehen: Nach oben/unten","left":544.3,"top":138.33,"width":141.4,"height":24.95},{"name":"7","value":"Ziel im Sichtbereich\nZiel Sichtbereich (Reset)","left":597.1,"top":175.73,"width":141.4,"height":25},{"name":"8","value":"Feind durchschalten\nFeind (Reset)","left":597.1,"top":200.73,"width":141.4,"height":24.95},{"name":"9","value":"Freund durchschalten\nFreund (Reset)","left":597.1,"top":225.68,"width":141.4,"height":24.95},{"name":"10","value":"Ziel freigeben","left":597.1,"top":250.63,"width":141.4,"height":24.95},{"name":"11","value":"Angreifer zurück\nAngreifer vor","left":597.1,"top":275.58,"width":141.4,"height":24.95},{"name":"25","value":"IR Flare abfeuern","left":635.3,"top":315.18,"width":141.1,"height":24.95},{"name":"26","value":"IR Flare +","left":635.3,"top":340.13,"width":141.1,"height":25},{"name":"27","value":"Ping","left":635.3,"top":365.13,"width":141.1,"height":24.95},{"name":"28","value":"IR Flare -","left":635.3,"top":390.08,"width":141.1,"height":24.95},{"name":"29","value":"Erweitertes HUD (Toggle)","left":635.3,"top":415.78,"width":141.1,"height":24.95},{"name":"21","value":"Bergbau Modus\nBetankung Modus\nBergung Modus","left":598.8,"top":455.13,"width":141.1,"height":24.95},{"name":"22","value":"Nachtsicht LAMP","left":598.8,"top":480.08,"width":141.1,"height":24.95},{"name":"23","value":"Speed Limit -\nTraktorstrahl -","left":598.8,"top":505.03,"width":141.1,"height":24.25},{"name":"24","value":"Speed Limit +\nTraktorstrahl +","left":598.8,"top":529.28,"width":141.1,"height":24.95},{"name":"30","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":475.78,"top":565.29,"width":141.1,"height":24.95},{"name":"Anmerkung 1","value":"FEHLT NOCH:\nEnergie Verteilung\nSchilde Energie (Toggle)\nPraezisions Modus (Halten / Tippen)\nSchub Forward / Backward","left":15.55,"top":335.13,"width":140.65,"height":74.6},{"name":"Anmerkung 2","value":"3,0       5,7\n2,1       3,6\n900m","left":16.05,"top":417.68,"width":140.9,"height":74.4},{"name":"Anmerkung 3","value":"","left":16.3,"top":499.98,"width":140.85,"height":74.4}];
 const FIELDS_R = [{"name":"Titel","value":"Constellation Alpha R","left":109.7,"top":22.13,"width":169.4,"height":33.6},{"name":"Untertitel","value":"Star Citizen               v4.8.0-live","left":109.7,"top":55.73,"width":169.4,"height":19.2},{"name":"12","value":"Lead/Lag PIPs","left":356.9,"top":37.98,"width":141.1,"height":24.95},{"name":"5","value":"Bombenabwurf (halten)","left":233.3,"top":88.38,"width":141.35,"height":24.95},{"name":"rX","value":"","left":233.3,"top":113.33,"width":141.35,"height":25},{"name":"rY","value":"","left":233.3,"top":138.33,"width":141.35,"height":24.95},{"name":"7","value":"QID festlegen","left":131.8,"top":175.73,"width":141.1,"height":25},{"name":"8","value":"Q-Snare QIDS","left":131.05,"top":200.73,"width":141.1,"height":24.95},{"name":"9","value":"Bergung: Structural","left":131.05,"top":226.18,"width":141.1,"height":24.95},{"name":"10","value":"Q-Störer QEDS","left":131.05,"top":250.63,"width":141.1,"height":24.95},{"name":"11","value":"EMP","left":131.05,"top":275.58,"width":141.1,"height":24.95},{"name":"25","value":"Bergbau Laser Typ\nNächster Raketentyp\nRaketentyp wechseln","left":93.1,"top":315.18,"width":141.15,"height":24.95},{"name":"26","value":"Raketen erhöhen","left":93.1,"top":340.13,"width":141.15,"height":25},{"name":"27","value":"ADS max. Zoom (halten)\nADS (Toggle)","left":93.1,"top":365.13,"width":141.15,"height":24.95},{"name":"28","value":"Raketen verringern","left":93.85,"top":390.08,"width":141.15,"height":24.95},{"name":"29","value":"Raketen zurücksetzen","left":93.1,"top":415.03,"width":141.15,"height":24.95},{"name":"21","value":"Scan Modus","left":129.6,"top":454.38,"width":141.1,"height":25.7},{"name":"22","value":"Scan Fokus -\nBergung Schmaler\nKonvergenz -\nBombenreichweite -","left":129.6,"top":480.08,"width":141.1,"height":24.95},{"name":"23","value":"Scan Fokus -\nBergung Schmaler\nKonvergenz -\nBombenreichweite -","left":129.6,"top":505.03,"width":141.1,"height":24.25},{"name":"24","value":"Scan Fokus +\nBergung Breiter\nKonvergenz +\nBombenreichweite +","left":131.1,"top":529.28,"width":141.1,"height":24.95},{"name":"30","value":"","left":252.62,"top":564.8,"width":141.1,"height":24.95},{"name":"13","value":"Bergung: Structural","left":528.95,"top":72.58,"width":141.1,"height":24.95},{"name":"14","value":"Bergung: Auflösen","left":529.7,"top":96.78,"width":141.1,"height":24.95},{"name":"15","value":"Bergbau: Abwerfen\nBergung: Rechts","left":530.45,"top":121.48,"width":141.1,"height":25},{"name":"16","value":"Bergung: Zerbrechen","left":529.7,"top":147.48,"width":141.1,"height":24.95},{"name":"17","value":"Bergung: Links","left":529.7,"top":172.43,"width":141.1,"height":24.95},{"name":"18","value":"Radar Flare","left":575.25,"top":205.23,"width":141.15,"height":24.75},{"name":"19","value":"IR Flare Panik","left":575.5,"top":229.98,"width":141.15,"height":24.95},{"name":"20","value":"Bergung: Zerbrechen","left":575.5,"top":254.93,"width":141.15,"height":24.95},{"name":"6","value":"","left":551.05,"top":292.38,"width":141.1,"height":24.95},{"name":"1","value":"SCM Modus","left":542.45,"top":329.63,"width":141.1,"height":24.95},{"name":"2","value":"NAV Modus","left":541.7,"top":354.58,"width":141.1,"height":24.95},{"name":"3","value":"Quantensprung\nQuantenantrieb\nScannen (halten)\nBergbau Laser (halten)\nBergung: Fokus\nSchuss / Primärwaffe\nRakete abfeuern","left":506.15,"top":389.13,"width":141.1,"height":24.95},{"name":"4","value":"Quantensprung\nQuantenantrieb\nScannen (halten)\nBergbau Laser (halten)\nBergung: Fokus\nSchuss / Primärwaffe\nRakete abfeuern","left":506.9,"top":414.08,"width":141.1,"height":24.7},{"name":"31 S0","value":"Schleudersitz\nSelbstzerstörung","left":506.15,"top":459.48,"width":141.1,"height":24.7},{"name":"x","value":"","left":465.1,"top":499.73,"width":141.15,"height":25},{"name":"Y","value":"","left":465.1,"top":524.73,"width":141.15,"height":24.7},{"name":"Z","value":"","left":465.1,"top":549.43,"width":141.15,"height":24.95},{"name":"Anmerkung 1","value":"","left":688.3,"top":26.73,"width":140.9,"height":74.4},{"name":"Anmerkung 2","value":"","left":689.25,"top":108.33,"width":140.65,"height":74.4},{"name":"Anmerkung 3","value":"","left":682.3,"top":422.73,"width":140.65,"height":74.4},{"name":"Anmerkung 4","value":"","left":683.75,"top":503.58,"width":140.9,"height":74.4}];
 const STICKS = {
   'virpil-alpha': {
     name: 'Virpil Constellation Alpha',
+    tabs: ['L', 'R'],
     scale: 2.083333,
     tabLabels: { L: 'Alpha L (Links)', R: 'Alpha R (Rechts)' },
     templates: {
@@ -330,6 +401,12 @@ const STICKS = {
       R: { src: 'assets/alpha-r-template.png', width: 1755, height: 1241, alt: 'Virpil Constellation Alpha R' }
     },
     fields: { L: FIELDS_L, R: FIELDS_R }
+  },
+  'keyboard-mouse': {
+    name: 'Tastatur & Maus',
+    tabs: ['K', 'M'],
+    tabLabels: { K: 'Tastatur', M: 'Maus' },
+    fields: { K: [], M: [] }
   }
 };
 const STICK_KEY = 'joystick_map_stick';
@@ -415,6 +492,30 @@ const SC_AXIS_IDS = {
     rX: 'rotx',
     rY: 'roty'
   }
+};
+
+const DEVICE_LABELS = {
+  L: 'Alpha L',
+  R: 'Alpha R',
+  K: 'Tastatur',
+  M: 'Maus'
+};
+
+const ACTIONMAP_LABELS = {
+  seat_general: 'Sitze / Bedienmodi',
+  vehicle_general: 'Vehicle allgemein',
+  vehicle_view: 'Sicht',
+  spaceship_movement: 'Flug',
+  spaceship_targeting: 'Zielerfassung',
+  spaceship_weapons: 'Waffen',
+  spaceship_missiles: 'Raketen',
+  spaceship_defensive: 'Verteidigung',
+  spaceship_power: 'Energie',
+  mining: 'Bergbau',
+  salvage: 'Bergung',
+  tractor_beam: 'Traktorstrahl',
+  vehicle_driver: 'Fahrzeug',
+  spectator: 'Zuschauer'
 };
 
 function getScInputId(side, name) {
@@ -539,7 +640,7 @@ function handleImportFile(file) {
   reader.onload = e => {
     const bindings = parseActionmaps(e.target.result);
     if (!bindings) return;
-    const total = Object.values(bindings).reduce((s, side) => s + Object.keys(side).length, 0);
+    const total = ['L', 'R', 'K', 'M'].reduce((s, side) => s + Object.keys(bindings[side] || {}).length, 0);
     if (!confirm(`Star Citizen Import:\n\n${total} Tastenbelegungen gefunden.\n\nFelder jetzt befüllen? Gesperrte Felder werden übersprungen.`)) return;
     applyImport(bindings);
     document.getElementById('scImportInput').value = '';
@@ -562,24 +663,53 @@ function parseActionmaps(xmlText) {
     else if (/RIGHT/i.test(product)) instanceToSide[`js${instance}`] = 'R';
   });
   const raw = { L: {}, R: {} };
+  const tableRaw = { K: {}, M: {} };
   doc.querySelectorAll('action').forEach(action => {
     const actionName = action.getAttribute('name');
+    const actionMap = action.closest('actionmap');
+    const actionMapName = actionMap ? actionMap.getAttribute('name') : '';
+    const readable = SC_ACTIONS[actionName] || actionName;
+    const category = ACTIONMAP_LABELS[actionMapName] || actionMapName || 'Allgemein';
     action.querySelectorAll('rebind').forEach(rebind => {
       const input = (rebind.getAttribute('input') || '').trim();
-      const match = input.match(/^(js\d+)_(?:button(\d+)|(x|y|z|rotx|roty|slider\d+))$/);
-      if (!match) return;
-      const side = instanceToSide[match[1]];
-      if (!side) return;
-      const inputId = match[2] || match[3];
-      const readable = SC_ACTIONS[actionName] || actionName;
-      if (!raw[side][inputId]) raw[side][inputId] = [];
-      if (!raw[side][inputId].includes(readable)) raw[side][inputId].push(readable);
+      const joyMatch = input.match(/^(js\d+)_(?:button(\d+)|(x|y|z|rotx|roty|slider\d+))$/);
+      if (joyMatch) {
+        const side = instanceToSide[joyMatch[1]];
+        if (!side) return;
+        const inputId = joyMatch[2] || joyMatch[3];
+        if (!raw[side][inputId]) raw[side][inputId] = [];
+        if (!raw[side][inputId].includes(readable)) raw[side][inputId].push(readable);
+        return;
+      }
+      const keyMatch = input.match(/^kb\d+_(.+)$/);
+      if (keyMatch && keyMatch[1].trim()) {
+        const side = keyMatch[1].startsWith('mouse') ? 'M' : 'K';
+        if (!tableRaw[side][actionName]) tableRaw[side][actionName] = { label: readable, category, inputs: [] };
+        const formatted = formatScInput(input);
+        if (!tableRaw[side][actionName].inputs.includes(formatted)) tableRaw[side][actionName].inputs.push(formatted);
+        return;
+      }
+      const mouseMatch = input.match(/^mouse\d+_(.+)$/);
+      if (mouseMatch && mouseMatch[1].trim()) {
+        if (!tableRaw.M[actionName]) tableRaw.M[actionName] = { label: readable, category, inputs: [] };
+        const formatted = formatScInput(input);
+        if (!tableRaw.M[actionName].inputs.includes(formatted)) tableRaw.M[actionName].inputs.push(formatted);
+      }
     });
   });
-  const result = { L: {}, R: {} };
+  const result = { L: {}, R: {}, K: {}, M: {}, meta: { K: {}, M: {} } };
   ['L', 'R'].forEach(side => {
     Object.keys(raw[side]).forEach(inputId => {
       result[side][inputId] = raw[side][inputId].join('\n');
+    });
+  });
+  ['K', 'M'].forEach(side => {
+    Object.keys(tableRaw[side]).forEach(actionName => {
+      result[side][actionName] = tableRaw[side][actionName].inputs.join('\n');
+      result.meta[side][actionName] = {
+        label: tableRaw[side][actionName].label,
+        category: tableRaw[side][actionName].category
+      };
     });
   });
   return result;
@@ -587,8 +717,10 @@ function parseActionmaps(xmlText) {
 
 function applyImport(bindings) {
   let filled = 0, skipped = 0;
+  saveImportedTableBindings(bindings);
   document.querySelectorAll('textarea.field').forEach(ta => {
     const { side, name } = ta.dataset;
+    if (side === 'K' || side === 'M') return;
     if (!name || isLocked(side, name)) { skipped++; return; }
     const inputId = getScInputId(side, name);
     const val = bindings[side] && bindings[side][inputId];
@@ -602,7 +734,9 @@ function applyImport(bindings) {
   });
   updateChangedCount();
   renderChangelog();
-  setStatus(`Import: ${filled} Felder befüllt${skipped ? ', ' + skipped + ' übersprungen' : ''}`);
+  renderMappingTables();
+  const tableCount = Object.keys(bindings.K || {}).length + Object.keys(bindings.M || {}).length;
+  setStatus(`Import: ${filled + tableCount} Felder befüllt${skipped ? ', ' + skipped + ' übersprungen' : ''}`);
 }
 
 const STORAGE_VERSION = 2;
@@ -651,7 +785,7 @@ function getFieldLabel(name) {
 }
 
 function getSideLabel(side) {
-  return getActiveStick().tabLabels[side] || side;
+  return getActiveStick().tabLabels[side] || DEVICE_LABELS[side] || side;
 }
 
 function escapeHTML(value) {
@@ -668,6 +802,26 @@ function formatDateTime(iso) {
     dateStyle: 'short',
     timeStyle: 'medium'
   }).format(date);
+}
+
+function formatScInput(input) {
+  const raw = String(input || '').replace(/^(kb|mouse)\d+_/, '');
+  const parts = raw.split('+').filter(Boolean);
+  const labels = {
+    lalt: 'LAlt', ralt: 'RAlt', lshift: 'LShift', rshift: 'RShift',
+    lctrl: 'LCtrl', rctrl: 'RCtrl', space: 'Leertaste', comma: ',',
+    period: '.', slash: '/', semicolon: ';', apostrophe: "'",
+    np_add: 'Num +', np_subtract: 'Num -', np_multiply: 'Num *',
+    np_divide: 'Num /', mouse1: 'Maus 1', mouse2: 'Maus 2',
+    mouse3: 'Maus 3', mouse4: 'Maus 4', mouse5: 'Maus 5',
+    wheel_up: 'Mausrad hoch', wheel_down: 'Mausrad runter',
+    x: 'Maus X', y: 'Maus Y'
+  };
+  return parts.map(part => {
+    if (/^np_\d$/.test(part)) return 'Num ' + part.slice(3);
+    if (/^mouse\d+$/.test(part)) return 'Maus ' + part.slice(5);
+    return labels[part] || part.toUpperCase();
+  }).join(' + ');
 }
 
 function fitFont(ta) {
@@ -801,10 +955,11 @@ function createEmptyProfile(id, name) {
   return {
     id,
     name,
-    fields: { L: {}, R: {} },
-    tags: { L: {}, R: {} },
-    changelog: { L: {}, R: {} },
-    locked: { L: {}, R: {} }
+  fields: { L: {}, R: {} },
+  tags: { L: {}, R: {} },
+  changelog: { L: {}, R: {} },
+  locked: { L: {}, R: {} },
+  meta: { K: {}, M: {} }
   };
 }
 
@@ -837,10 +992,11 @@ function normalizeProfile(profile, id) {
   return {
     id: clean.id || id,
     name: clean.name || 'Standard',
-    fields: { L: {}, R: {}, ...(clean.fields || {}) },
-    tags: { L: {}, R: {}, ...(clean.tags || {}) },
-    changelog: { L: {}, R: {}, ...(clean.changelog || {}) },
-    locked: { L: {}, R: {}, ...(clean.locked || {}) }
+    fields: { L: {}, R: {}, K: {}, M: {}, ...(clean.fields || {}) },
+    tags: { L: {}, R: {}, K: {}, M: {}, ...(clean.tags || {}) },
+    changelog: { L: {}, R: {}, K: {}, M: {}, ...(clean.changelog || {}) },
+    locked: { L: {}, R: {}, K: {}, M: {}, ...(clean.locked || {}) },
+    meta: { K: {}, M: {}, ...(clean.meta || {}) }
   };
 }
 
@@ -903,13 +1059,74 @@ function saveValue(side, name, val) {
   setStore(store);
 }
 
+function saveImportedTableBindings(bindings) {
+  const store = getStore();
+  const profile = getActiveProfile(store);
+  const changedAt = new Date().toISOString();
+  ['K', 'M'].forEach(side => {
+    if (!profile.fields[side]) profile.fields[side] = {};
+    if (!profile.changelog[side]) profile.changelog[side] = {};
+    if (!profile.meta) profile.meta = { K: {}, M: {} };
+    if (!profile.meta[side]) profile.meta[side] = {};
+    Object.keys(bindings[side] || {}).forEach(name => {
+      profile.fields[side][name] = bindings[side][name];
+      profile.changelog[side][name] = { at: changedAt, value: bindings[side][name] };
+      profile.meta[side][name] = (bindings.meta && bindings.meta[side] && bindings.meta[side][name]) || {
+        label: name,
+        category: DEVICE_LABELS[side]
+      };
+    });
+  });
+  setStore(store);
+}
+
+function getTableRows(side) {
+  const profile = getActiveProfile();
+  const fields = profile.fields[side] || {};
+  const meta = (profile.meta && profile.meta[side]) || {};
+  return Object.keys(fields).map(name => ({
+    side,
+    name,
+    value: fields[name],
+    label: meta[name] && meta[name].label ? meta[name].label : getFieldLabel(name),
+    category: meta[name] && meta[name].category ? meta[name].category : DEVICE_LABELS[side]
+  })).sort((a, b) =>
+    a.category.localeCompare(b.category, 'de') || a.label.localeCompare(b.label, 'de')
+  );
+}
+
+function renderMappingTable(side, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  const rows = getTableRows(side);
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td colspan="3">Noch keine ${DEVICE_LABELS[side]}belegung importiert.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(row => `
+    <tr>
+      <td>${escapeHTML(row.category)}</td>
+      <td>${escapeHTML(row.label)}</td>
+      <td><textarea class="field" rows="2" data-side="${escapeHTML(row.side)}" data-name="${escapeHTML(row.name)}" data-original="${escapeHTML(row.value)}">${escapeHTML(row.value)}</textarea></td>
+    </tr>
+  `).join('');
+  tbody.querySelectorAll('textarea.field').forEach(ta => {
+    attachFieldEvents(ta, ta.dataset.side, ta.dataset.name);
+  });
+}
+
+function renderMappingTables() {
+  renderMappingTable('K', 'keyboardRows');
+  renderMappingTable('M', 'mouseRows');
+}
+
 function renderChangelog() {
   const tbody = document.getElementById('changelogRows');
   if (!tbody) return;
   const store = getStore();
   const profile = getActiveProfile(store);
   const rows = [];
-  ['L', 'R'].forEach(side => {
+  ['L', 'R', 'K', 'M'].forEach(side => {
     const logs = profile.changelog[side] || {};
     Object.keys(logs).forEach(name => {
       const entry = logs[name];
@@ -927,10 +1144,15 @@ function renderChangelog() {
       <td>${escapeHTML(formatDateTime(row.at))}</td>
       <td>${escapeHTML(profile.name)}</td>
       <td>${escapeHTML(getSideLabel(row.side))}</td>
-      <td>${escapeHTML(getFieldLabel(row.name))}</td>
+      <td>${escapeHTML(getChangelogFieldLabel(profile, row.side, row.name))}</td>
       <td>${escapeHTML(row.value)}</td>
     </tr>
   `).join('');
+}
+
+function getChangelogFieldLabel(profile, side, name) {
+  const meta = profile.meta && profile.meta[side] && profile.meta[side][name];
+  return meta && meta.label ? meta.label : getFieldLabel(name);
 }
 
 function pushUndo(entry) {
@@ -997,16 +1219,30 @@ function applyStick(stickId) {
   const stick = getActiveStick();
   const sel = document.getElementById('stickSelect');
   if (sel) sel.value = stickId;
+  ['L', 'R', 'K', 'M'].forEach(side => {
+    const btn = document.getElementById('tab-btn-' + side);
+    if (btn) {
+      btn.style.display = stick.tabs.includes(side) ? '' : 'none';
+      if (stick.tabLabels[side]) btn.textContent = stick.tabLabels[side];
+    }
+  });
   ['L', 'R'].forEach(side => {
     const img = document.getElementById('img-' + side);
-    const tpl = stick.templates[side];
+    const tpl = stick.templates && stick.templates[side];
+    if (!tpl) return;
     if (img) { img.src = tpl.src; img.alt = tpl.alt; img.style.width = tpl.width + 'px'; img.style.height = tpl.height + 'px'; }
     const wrap = document.getElementById('wrap-' + side);
     if (wrap) Array.from(wrap.querySelectorAll('textarea.field, .lock-btn')).forEach(t => t.remove());
     buildOverlay('wrap-' + side, stick.fields[side], side);
-    const btn = document.getElementById('tab-btn-' + side);
-    if (btn) btn.textContent = stick.tabLabels[side];
   });
+  renderMappingTables();
+  const activePanel = document.querySelector('.stick-panel.active');
+  const activeSide = activePanel ? activePanel.id.replace('panel-', '') : '';
+  if (!stick.tabs.includes(activeSide)) {
+    const firstSide = stick.tabs[0];
+    const firstBtn = document.getElementById('tab-btn-' + firstSide);
+    if (firstBtn) switchTab(firstSide, firstBtn);
+  }
   requestAnimationFrame(() => {
     document.querySelectorAll('textarea.field').forEach(fitFont);
     updateChangedCount();

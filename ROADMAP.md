@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.3.7`
+Aktuelle Version: `v0.4.0`
 
 ## Zielbild
 
@@ -14,9 +14,9 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | Phase 1 | Abgeschlossen | Datenbasis für Profile, Changelog und Tags |
 | Phase 2 | Abgeschlossen | Changelog pro Feld |
 | Phase 3 | Abgeschlossen | Stick-Auswahl und Vorlagen-System für mehrere Joystick-Modelle |
-| Phase 4 | Geplant | Profil-Umschalter für mehrere Belegungssets |
+| Phase 4 | Abgeschlossen | Tastatur- und Maus-Ansicht |
+| Phase 4b | Geplant | Profil-Umschalter für mehrere Belegungssets |
 | Phase 5 | Geplant | Modus-Tags wie Combat, Mining und Salvage |
-| Phase 6 | Geplant | Tastatur-Tab für Keyboard-Bindings |
 | Phase 7 | Geplant | Quick Reference als kompakte Gesamtübersicht |
 | Phase 8 | Geplant | Drucken / PDF mit Schwarz-Weiß-Ansicht |
 | Phase 9 | Laufend | Testen, dokumentieren und öffentliches Feedback sammeln |
@@ -36,8 +36,8 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.3.0 | Stick-Auswahl und Vorlagen-System ✓ |
 | v0.3.6 | SC-Import korrigiert: interne Buttonnummern, Achsen und Standardbeschriftungen |
 | v0.3.7 | Nutzerhinweis zu LIVE/HOTFIX-Mappingordnern ergänzt |
-| v0.4.0 | Profil-Umschalter |
-| v0.5.0 | Modus-Tags |
-| v0.6.0 | Tastatur-Tab |
+| v0.4.0 | Tastatur- und Maus-Ansicht |
+| v0.5.0 | Profil-Umschalter |
+| v0.6.0 | Modus-Tags |
 | v0.7.0 | Quick Reference Tab |
 | v0.8.0 | Drucken / PDF |

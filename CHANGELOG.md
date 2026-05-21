@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.0 - 2026-05-21
+
+### Hinzugefügt
+
+- Geräte-Auswahl um `Tastatur & Maus` erweitert.
+- Neue Tabs `Tastatur` und `Maus` als Tabellenansicht.
+- Star-Citizen-Import erkennt jetzt auch Tastatur- und Mausbelegungen aus `kb...` und `mouse...` Eingaben.
+- Importierte Tastatur-/Mausbelegungen werden im Browser gespeichert und im Changelog erfasst.
+
 ## v0.3.7 - 2026-05-21
 
 ### Geändert

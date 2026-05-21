@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.3.7`
+Aktuelle Version: `v0.4.0`
 
 ## Download & Start
 
@@ -42,14 +42,16 @@ Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
 ## Aktueller Stand
 
 - Stick-Auswahl im Header, Auswahl wird gespeichert
+- Geräte-Auswahl im Header: Virpil-Sticks oder Tastatur & Maus
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
+- Tastatur- und Maus-Tab als Tabellenansicht
 - Textfelder direkt auf der Vorlage bearbeitbar
 - Button-Nummern zeigen die Star-Citizen-internen Eingaben und sind nicht editierbar
 - automatische Speicherung im Browser
 - Rueckgaengig-Knopf fuer letzte Aenderungen
 - Reset-Knopf leert alle Textfelder (gesperrte Felder werden uebersprungen)
 - Felder sperren: beim Hover erscheint ein Schloss-Symbol
-- Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Button- und Achsenbelegung
+- Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Stick-, Tastatur- und Mausbelegung
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
 
@@ -58,7 +60,8 @@ Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
 - Phase 1: abgeschlossen
 - Phase 2: abgeschlossen
 - Phase 3: abgeschlossen (Stick-Auswahl und Vorlagen-System)
-- Phase 4: geplant (Profil-Umschalter)
+- Phase 4: abgeschlossen (Tastatur & Maus)
+- Profil-Umschalter: geplant
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
 
