@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.3`
+Aktuelle Version: `v0.4.5`
 
 ## Download & Start
 
@@ -41,12 +41,22 @@ E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\
 
 In `controls\mappings` liegen die exportierten Layout-Dateien fuer Joystick/HOTAS. Der alte Profilordner-Hinweis gilt nicht fuer diesen Joystick-Import.
 
+Die aktuelle Standardbelegung von Tastatur und Maus kann Star Citizen auch in der Profil-Datei speichern:
+
+```text
+E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\Profiles\default\actionmaps.xml
+E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\Profiles\default\actionmaps.xml
+```
+
+Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du gerade spielst.
+
 ## Aktueller Stand
 
 - Stick-Auswahl im Header, Auswahl wird gespeichert
 - Geräte-Auswahl im Header: Virpil-Sticks oder Tastatur & Maus
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
 - Tastatur- und Maus-Tab als Tabellenansicht
+- Standardbelegung fuer Tastatur und Maus ist hinterlegt und ohne Import sichtbar
 - Textfelder direkt auf der Vorlage bearbeitbar
 - Button-Nummern zeigen die Star-Citizen-internen Eingaben und sind nicht editierbar
 - automatische Speicherung im Browser

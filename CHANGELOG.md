@@ -4,6 +4,20 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.5 - 2026-05-21
+
+### Hinzugefügt
+
+- Standardbelegung fuer Tastatur und Maus aus Xharigs HOTFIX `Profiles\default\actionmaps.xml` hinterlegt.
+- Die Tabellenansicht fuer Tastatur und Maus ist jetzt ohne Import vorbefuellt.
+- Eigene Star-Citizen-Importe ueberschreiben diese Standardwerte pro Profil.
+
+## v0.4.4 - 2026-05-21
+
+### Geändert
+
+- Hilfe ergänzt: Der Button `⬇ SC Import` steht jetzt auch im Abschnitt `Buttons im Header`.
+
 ## v0.4.3 - 2026-05-21
 
 ### Hinzugefügt
