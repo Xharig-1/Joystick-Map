@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.10 - 2026-05-22
+
+### Geändert
+
+- Standard-Tastatur breiter dargestellt und Schrift eine Stufe groesser gemacht.
+- Tastaturreihen naeher an ein echtes deutsches Tastaturlayout angepasst.
+- Sondertasten wie Backspace, Enter, Shift und Space breiter dargestellt.
+
 ## v0.4.9 - 2026-05-21
 
 ### Hinzugefügt

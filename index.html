@@ -272,7 +272,7 @@
     background: var(--bg); color: var(--text); border-color: var(--accent);
   }
   .keyboard-layout-panel {
-    max-width: 1200px;
+    max-width: 1460px;
     padding: 18px;
     color: var(--text);
   }
@@ -286,25 +286,25 @@
   .keyboard-shell {
     display: inline-flex;
     flex-direction: column;
-    gap: 6px;
-    padding: 12px;
+    gap: 8px;
+    padding: 14px;
     background: var(--bg2);
     border: 1px solid var(--border);
   }
   .keyboard-row {
     display: flex;
-    gap: 6px;
+    gap: 8px;
   }
   .keycap {
-    width: 58px;
-    min-height: 58px;
-    padding: 5px;
+    width: 68px;
+    min-height: 66px;
+    padding: 7px;
     background: #111820;
     border: 1px solid #253529;
     color: var(--text-dim);
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
     justify-content: flex-start;
   }
   .keycap.bound {
@@ -312,18 +312,21 @@
     border-color: var(--accent2);
     color: var(--text);
   }
-  .keycap.wide { width: 92px; }
-  .keycap.xwide { width: 126px; }
-  .keycap.space { width: 330px; }
+  .keycap.wide { width: 104px; }
+  .keycap.xwide { width: 146px; }
+  .keycap.backspace { width: 130px; }
+  .keycap.enter { width: 138px; }
+  .keycap.space { width: 410px; }
+  .keycap.gap-after { margin-right: 20px; }
   .key-name {
     color: var(--accent-light);
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1;
   }
   .key-label {
-    font-size: 9px;
-    line-height: 1.15;
+    font-size: 10px;
+    line-height: 1.2;
     overflow-wrap: anywhere;
   }
   .layout-legend {
@@ -381,7 +384,7 @@
 <div id="header">
   <div class="brand">
     <h1>⬡ Joystick-Map</h1>
-    <span class="version-badge" id="header-version">v0.4.9</span>
+    <span class="version-badge" id="header-version">v0.4.10</span>
   </div>
   <div class="hdr-actions">
     <div class="stick-picker" id="stickPicker">
@@ -571,10 +574,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.4.9</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.4.10</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.4.9';
+const APP_VERSION = 'v0.4.10';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const FIELDS_L = [{"name":"Titel","value":"Constellation Alpha L","left":109.7,"top":22.62,"width":169.4,"height":33.6},{"name":"Untertitel","value":"Star Citizen               v4.8.0-live","left":109.7,"top":56.48,"width":169.4,"height":19.2},{"name":"13","value":"Frachtanfrage\nAutomatische Landung\nVTOL (Toggle)\nAndocken","left":294.7,"top":56.03,"width":141.15,"height":24.95},{"name":"14","value":"Docking Modus","left":294.7,"top":81.23,"width":141.15,"height":24.95},{"name":"15","value":"Konfiguration wechseln\nFlügel ausklappen","left":295.45,"top":106.18,"width":141.15,"height":24.95},{"name":"16","value":"Landeerlaubnis / ATC\nLandegestell (Toggle)","left":294.7,"top":131.13,"width":141.15,"height":24.75},{"name":"17","value":"Türen (Toggle)","left":294.7,"top":155.63,"width":141.15,"height":24.95},{"name":"18","value":"Energie Gesamt (Toggle)","left":151.9,"top":197.38,"width":141.1,"height":24.95},{"name":"19","value":"Antriebe Energie (Toggle)","left":151.9,"top":222.33,"width":141.1,"height":24.95},{"name":"20","value":"Energie → Antriebe\nEnergie → Schilde\nEnergie → Waffen","left":151.9,"top":246.53,"width":141.1,"height":25},{"name":"6","value":"Ferngeschütz 1\nFerngeschütz 2\nFerngeschütz 3","left":176.35,"top":288.33,"width":141.15,"height":24.95},{"name":"1","value":"Waffenmodus","left":185.95,"top":328.88,"width":141.15,"height":24.95},{"name":"2","value":"Raketenmodus","left":185.95,"top":353.83,"width":141.15,"height":24.95},{"name":"3","value":"Nachbrenner\nBoost","left":220.75,"top":389.13,"width":141.15,"height":24.95},{"name":"4","value":"Spacebrake\nBremse","left":220.75,"top":414.28,"width":141.15,"height":24.7},{"name":"31 S0","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":220.55,"top":458.48,"width":141.1,"height":24.95},{"name":"X","value":"Strafe links/rechts\nYaw links/rechts","left":262.3,"top":499.48,"width":141.1,"height":25},{"name":"Y","value":"Strafe hoch/runter\nPitch hoch/runter","left":262.3,"top":524.73,"width":141.1,"height":24.7},{"name":"Z","value":"Rollen","left":262.3,"top":549.43,"width":141.1,"height":24.95},{"name":"12","value":"Decoupled (Toggle)","left":510.7,"top":45.68,"width":141.15,"height":24.95},{"name":"5","value":"3rd Person Kamera","left":544.3,"top":88.38,"width":141.4,"height":24.95},{"name":"rX","value":"Umsehen: Nach links/rechts","left":544.3,"top":113.33,"width":141.4,"height":25},{"name":"rY","value":"Umsehen: Nach oben/unten","left":544.3,"top":138.33,"width":141.4,"height":24.95},{"name":"7","value":"Ziel im Sichtbereich\nZiel Sichtbereich (Reset)","left":597.1,"top":175.73,"width":141.4,"height":25},{"name":"8","value":"Feind durchschalten\nFeind (Reset)","left":597.1,"top":200.73,"width":141.4,"height":24.95},{"name":"9","value":"Freund durchschalten\nFreund (Reset)","left":597.1,"top":225.68,"width":141.4,"height":24.95},{"name":"10","value":"Ziel freigeben","left":597.1,"top":250.63,"width":141.4,"height":24.95},{"name":"11","value":"Angreifer zurück\nAngreifer vor","left":597.1,"top":275.58,"width":141.4,"height":24.95},{"name":"25","value":"IR Flare abfeuern","left":635.3,"top":315.18,"width":141.1,"height":24.95},{"name":"26","value":"IR Flare +","left":635.3,"top":340.13,"width":141.1,"height":25},{"name":"27","value":"Ping","left":635.3,"top":365.13,"width":141.1,"height":24.95},{"name":"28","value":"IR Flare -","left":635.3,"top":390.08,"width":141.1,"height":24.95},{"name":"29","value":"Erweitertes HUD (Toggle)","left":635.3,"top":415.78,"width":141.1,"height":24.95},{"name":"21","value":"Bergbau Modus\nBetankung Modus\nBergung Modus","left":598.8,"top":455.13,"width":141.1,"height":24.95},{"name":"22","value":"Nachtsicht LAMP","left":598.8,"top":480.08,"width":141.1,"height":24.95},{"name":"23","value":"Speed Limit -\nTraktorstrahl -","left":598.8,"top":505.03,"width":141.1,"height":24.25},{"name":"24","value":"Speed Limit +\nTraktorstrahl +","left":598.8,"top":529.28,"width":141.1,"height":24.95},{"name":"30","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":475.78,"top":565.29,"width":141.1,"height":24.95},{"name":"Anmerkung 1","value":"FEHLT NOCH:\nEnergie Verteilung\nSchilde Energie (Toggle)\nPraezisions Modus (Halten / Tippen)\nSchub Forward / Backward","left":15.55,"top":335.13,"width":140.65,"height":74.6},{"name":"Anmerkung 2","value":"3,0       5,7\n2,1       3,6\n900m","left":16.05,"top":417.68,"width":140.9,"height":74.4},{"name":"Anmerkung 3","value":"","left":16.3,"top":499.98,"width":140.85,"height":74.4}];
 const FIELDS_R = [{"name":"Titel","value":"Constellation Alpha R","left":109.7,"top":22.13,"width":169.4,"height":33.6},{"name":"Untertitel","value":"Star Citizen               v4.8.0-live","left":109.7,"top":55.73,"width":169.4,"height":19.2},{"name":"12","value":"Lead/Lag PIPs","left":356.9,"top":37.98,"width":141.1,"height":24.95},{"name":"5","value":"Bombenabwurf (halten)","left":233.3,"top":88.38,"width":141.35,"height":24.95},{"name":"rX","value":"","left":233.3,"top":113.33,"width":141.35,"height":25},{"name":"rY","value":"","left":233.3,"top":138.33,"width":141.35,"height":24.95},{"name":"7","value":"QID festlegen","left":131.8,"top":175.73,"width":141.1,"height":25},{"name":"8","value":"Q-Snare QIDS","left":131.05,"top":200.73,"width":141.1,"height":24.95},{"name":"9","value":"Bergung: Structural","left":131.05,"top":226.18,"width":141.1,"height":24.95},{"name":"10","value":"Q-Störer QEDS","left":131.05,"top":250.63,"width":141.1,"height":24.95},{"name":"11","value":"EMP","left":131.05,"top":275.58,"width":141.1,"height":24.95},{"name":"25","value":"Bergbau Laser Typ\nNächster Raketentyp\nRaketentyp wechseln","left":93.1,"top":315.18,"width":141.15,"height":24.95},{"name":"26","value":"Raketen erhöhen","left":93.1,"top":340.13,"width":141.15,"height":25},{"name":"27","value":"ADS max. Zoom (halten)\nADS (Toggle)","left":93.1,"top":365.13,"width":141.15,"height":24.95},{"name":"28","value":"Raketen verringern","left":93.85,"top":390.08,"width":141.15,"height":24.95},{"name":"29","value":"Raketen zurücksetzen","left":93.1,"top":415.03,"width":141.15,"height":24.95},{"name":"21","value":"Scan Modus","left":129.6,"top":454.38,"width":141.1,"height":25.7},{"name":"22","value":"Scan Fokus -\nBergung Schmaler\nKonvergenz -\nBombenreichweite -","left":129.6,"top":480.08,"width":141.1,"height":24.95},{"name":"23","value":"Scan Fokus -\nBergung Schmaler\nKonvergenz -\nBombenreichweite -","left":129.6,"top":505.03,"width":141.1,"height":24.25},{"name":"24","value":"Scan Fokus +\nBergung Breiter\nKonvergenz +\nBombenreichweite +","left":131.1,"top":529.28,"width":141.1,"height":24.95},{"name":"30","value":"","left":252.62,"top":564.8,"width":141.1,"height":24.95},{"name":"13","value":"Bergung: Structural","left":528.95,"top":72.58,"width":141.1,"height":24.95},{"name":"14","value":"Bergung: Auflösen","left":529.7,"top":96.78,"width":141.1,"height":24.95},{"name":"15","value":"Bergbau: Abwerfen\nBergung: Rechts","left":530.45,"top":121.48,"width":141.1,"height":25},{"name":"16","value":"Bergung: Zerbrechen","left":529.7,"top":147.48,"width":141.1,"height":24.95},{"name":"17","value":"Bergung: Links","left":529.7,"top":172.43,"width":141.1,"height":24.95},{"name":"18","value":"Radar Flare","left":575.25,"top":205.23,"width":141.15,"height":24.75},{"name":"19","value":"IR Flare Panik","left":575.5,"top":229.98,"width":141.15,"height":24.95},{"name":"20","value":"Bergung: Zerbrechen","left":575.5,"top":254.93,"width":141.15,"height":24.95},{"name":"6","value":"","left":551.05,"top":292.38,"width":141.1,"height":24.95},{"name":"1","value":"SCM Modus","left":542.45,"top":329.63,"width":141.1,"height":24.95},{"name":"2","value":"NAV Modus","left":541.7,"top":354.58,"width":141.1,"height":24.95},{"name":"3","value":"Quantensprung\nQuantenantrieb\nScannen (halten)\nBergbau Laser (halten)\nBergung: Fokus\nSchuss / Primärwaffe\nRakete abfeuern","left":506.15,"top":389.13,"width":141.1,"height":24.95},{"name":"4","value":"Quantensprung\nQuantenantrieb\nScannen (halten)\nBergbau Laser (halten)\nBergung: Fokus\nSchuss / Primärwaffe\nRakete abfeuern","left":506.9,"top":414.08,"width":141.1,"height":24.7},{"name":"31 S0","value":"Schleudersitz\nSelbstzerstörung","left":506.15,"top":459.48,"width":141.1,"height":24.7},{"name":"x","value":"","left":465.1,"top":499.73,"width":141.15,"height":25},{"name":"Y","value":"","left":465.1,"top":524.73,"width":141.15,"height":24.7},{"name":"Z","value":"","left":465.1,"top":549.43,"width":141.15,"height":24.95},{"name":"Anmerkung 1","value":"","left":688.3,"top":26.73,"width":140.9,"height":74.4},{"name":"Anmerkung 2","value":"","left":689.25,"top":108.33,"width":140.65,"height":74.4},{"name":"Anmerkung 3","value":"","left":682.3,"top":422.73,"width":140.65,"height":74.4},{"name":"Anmerkung 4","value":"","left":683.75,"top":503.58,"width":140.9,"height":74.4}];
@@ -1356,9 +1359,9 @@ function renderMappingTables() {
 
 const KEYBOARD_LAYOUT_ROWS = [
   [
-    { code: 'esc', label: 'Esc' }, { code: 'f1', label: 'F1' }, { code: 'f2', label: 'F2' },
-    { code: 'f3', label: 'F3' }, { code: 'f4', label: 'F4' }, { code: 'f5', label: 'F5' },
-    { code: 'f6', label: 'F6' }, { code: 'f7', label: 'F7' }, { code: 'f8', label: 'F8' },
+    { code: 'esc', label: 'Esc', gapAfter: true }, { code: 'f1', label: 'F1' }, { code: 'f2', label: 'F2' },
+    { code: 'f3', label: 'F3' }, { code: 'f4', label: 'F4', gapAfter: true }, { code: 'f5', label: 'F5' },
+    { code: 'f6', label: 'F6' }, { code: 'f7', label: 'F7' }, { code: 'f8', label: 'F8', gapAfter: true },
     { code: 'f9', label: 'F9' }, { code: 'f10', label: 'F10' }, { code: 'f11', label: 'F11' },
     { code: 'f12', label: 'F12' }
   ],
@@ -1366,28 +1369,28 @@ const KEYBOARD_LAYOUT_ROWS = [
     { code: '`', label: '^' }, { code: '1', label: '1' }, { code: '2', label: '2' },
     { code: '3', label: '3' }, { code: '4', label: '4' }, { code: '5', label: '5' },
     { code: '6', label: '6' }, { code: '7', label: '7' }, { code: '8', label: '8' },
-    { code: '9', label: '9' }, { code: '0', label: '0' }, { code: '-', label: '-' },
-    { code: '+', label: '+' }, { code: 'backspace', label: 'Back', wide: true }
+    { code: '9', label: '9' }, { code: '0', label: '0' }, { code: 'ß', label: 'ß' },
+    { code: '´', label: '´' }, { code: 'backspace', label: 'Backspace', backspace: true }
   ],
   [
     { code: 'tab', label: 'Tab', wide: true }, { code: 'q', label: 'Q' }, { code: 'w', label: 'W' },
     { code: 'e', label: 'E' }, { code: 'r', label: 'R' }, { code: 't', label: 'T' },
     { code: 'z', label: 'Z' }, { code: 'u', label: 'U' }, { code: 'i', label: 'I' },
     { code: 'o', label: 'O' }, { code: 'p', label: 'P' }, { code: '[', label: 'Ü' },
-    { code: ']', label: '+' }
+    { code: '+', label: '+' }
   ],
   [
     { code: 'capslock', label: 'Caps', wide: true }, { code: 'a', label: 'A' }, { code: 's', label: 'S' },
     { code: 'd', label: 'D' }, { code: 'f', label: 'F' }, { code: 'g', label: 'G' },
     { code: 'h', label: 'H' }, { code: 'j', label: 'J' }, { code: 'k', label: 'K' },
     { code: 'l', label: 'L' }, { code: ';', label: 'Ö' }, { code: "'", label: 'Ä' },
-    { code: 'enter', label: 'Enter', wide: true }
+    { code: '#', label: '#' }, { code: 'enter', label: 'Enter', enter: true }
   ],
   [
     { code: 'lshift', label: 'Shift', xwide: true }, { code: 'y', label: 'Y' }, { code: 'x', label: 'X' },
     { code: 'c', label: 'C' }, { code: 'v', label: 'V' }, { code: 'b', label: 'B' },
     { code: 'n', label: 'N' }, { code: 'm', label: 'M' }, { code: ',', label: ',' },
-    { code: '.', label: '.' }, { code: '/', label: '/' }, { code: 'rshift', label: 'Shift', xwide: true }
+    { code: '.', label: '.' }, { code: '-', label: '-' }, { code: 'rshift', label: 'Shift', xwide: true }
   ],
   [
     { code: 'lctrl', label: 'Ctrl', wide: true }, { code: 'lalt', label: 'Alt', wide: true },
@@ -1444,7 +1447,10 @@ function renderStandardKeyboardLayout() {
         if (labels.length) classes.push('bound');
         if (key.wide) classes.push('wide');
         if (key.xwide) classes.push('xwide');
+        if (key.backspace) classes.push('backspace');
+        if (key.enter) classes.push('enter');
         if (key.space) classes.push('space');
+        if (key.gapAfter) classes.push('gap-after');
         return `
           <div class="${classes.join(' ')}">
             <div class="key-name">${escapeHTML(key.label)}</div>
