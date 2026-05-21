@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.7`
+Aktuelle Version: `v0.4.8`
 
 ## Download & Start
 
@@ -68,6 +68,7 @@ Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du g
 - Update-Check: zeigt eine neue GitHub-Release-Version mit Download-Link an
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
+- Version wird zusätzlich als Badge im Header angezeigt
 
 ## Projektstatus
 

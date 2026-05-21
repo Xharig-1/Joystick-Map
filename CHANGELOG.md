@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.8 - 2026-05-21
+
+### Hinzugefügt
+
+- Versionsnummer als gut sichtbare Badge im Header ergänzt.
+- Statusleisten-Version bleibt als technische Zusatzinfo erhalten.
+
 ## v0.4.7 - 2026-05-21
 
 ### Geändert
