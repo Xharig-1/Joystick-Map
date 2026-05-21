@@ -4,6 +4,19 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.2.2 - 2026-05-21
+
+### Geändert
+
+- README für öffentliche Tests erweitert.
+- Roadmap auf den aktuellen Stand gebracht.
+- App-Version auf `v0.2.2` erhöht.
+
+### Geprüft
+
+- Keine privaten lokalen Pfade, E-Mail-Adressen, Tokens oder Secrets im Repository gefunden.
+- Box-Ausrichtung wurde von Xharig geprüft und als sauber bestätigt.
+
 ## v0.2.1 - 2026-05-21
 
 ### Hinzugefügt

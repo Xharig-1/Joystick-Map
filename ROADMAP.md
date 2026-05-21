@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.2.1`
+Aktuelle Version: `v0.2.2`
 
 ## Phasen
 
@@ -13,19 +13,19 @@ Aktuelle Version: `v0.2.1`
 | Phase 5 | Geplant | Tastatur-Tab für Keyboard-Bindings |
 | Phase 6 | Geplant | Quick Reference als kompakte Gesamtübersicht |
 | Phase 7 | Geplant | Drucken / PDF mit Schwarz-Weiß-Ansicht |
-| Phase 8 | Laufend | Testen, dokumentieren und veröffentlichen |
+| Phase 8 | Laufend | Testen, dokumentieren und öffentliches Feedback sammeln |
 
 ## Offene Nacharbeit
 
-- Text- und Nummernfelder noch pixelgenau an die neue Vorlage anpassen.
-- Weiße Nummernfelder dürfen die schwarzen Tabellenlinien nicht überdecken.
+- Keine kritischen Punkte vor dem öffentlichen Test bekannt.
+- Nächstes Feedback aus öffentlichen Tests sammeln und einordnen.
 
 ## Geplante Versionen
 
 | Version | Geplanter Inhalt |
 |---|---|
 | v0.2.1 | Version in der Statusleiste |
-| v0.2.2 | Optischer Feinschliff und Box-Ausrichtung |
+| v0.2.2 | Öffentliche Testvorbereitung |
 | v0.3.0 | Profil-Umschalter |
 | v0.4.0 | Modus-Tags |
 | v0.5.0 | Tastatur-Tab |
