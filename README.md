@@ -9,7 +9,7 @@ Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.4.8`
+Aktuelle Version: `v0.4.9`
 
 ## Download & Start
 
@@ -57,6 +57,7 @@ Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du g
 - Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
 - Titelbereich der Stick-Vorlagen ist besser zentriert und lesbarer
 - Tastatur- und Maus-Tab als Tabellenansicht
+- Standard-Tastatur-Tab als visueller Layout-Entwurf
 - Standardbelegung fuer Tastatur und Maus ist hinterlegt und ohne Import sichtbar
 - Textfelder direkt auf der Vorlage bearbeitbar
 - Button-Nummern zeigen die Star-Citizen-internen Eingaben und sind nicht editierbar

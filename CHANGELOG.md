@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.9 - 2026-05-21
+
+### Hinzugefügt
+
+- Neuen Tab `Standard Tastatur` als ersten visuellen Entwurf ergänzt.
+- Tastaturansicht wird aus der hinterlegten Standardbelegung erzeugt und nutzt kein fremdes Bild.
+
 ## v0.4.8 - 2026-05-21
 
 ### Hinzugefügt
