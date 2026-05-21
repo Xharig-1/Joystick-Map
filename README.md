@@ -1,12 +1,15 @@
-# Virpil Sticks
+# Joystick-Map
 
-Ein einfacher Browser-Editor fuer die Virpil Constellation Alpha Button-Map.
+Ein einfacher Browser-Editor fuer Joystick- und HOTAS-Mappings.
+
+Aktuell unterstuetzt die Testversion die Virpil Constellation Alpha Sticks.
+Spaeter soll Joystick-Map mehrere Stick-Vorlagen anbieten, damit auch andere Setups genutzt werden koennen.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
 ## Version
 
-Aktuelle Version: `v0.2.2`
+Aktuelle Version: `v0.2.3`
 
 ## Start
 
@@ -25,6 +28,8 @@ Es wird kein Server und keine Installation benoetigt.
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
 - Version wird in der Statusleiste angezeigt
 - optisch gepruefte Box-Ausrichtung fuer die aktuellen Vorlagen
+- Projektname fuer die oeffentliche Nutzung: Joystick-Map
+- kommende Phase fuer Stick-Auswahl und Vorlagen-System geplant
 
 ## Projektstatus
 

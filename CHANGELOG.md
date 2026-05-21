@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.2.3 - 2026-05-21
+
+### Geändert
+
+- Öffentlicher Projektname auf `Joystick-Map` vorbereitet.
+- README beschreibt das Projekt jetzt allgemeiner für Joystick- und HOTAS-Mappings.
+- Anwendungstitel und Kopfzeile zeigen `Joystick-Map`.
+- Roadmap um eine Phase für Stick-Auswahl und Vorlagen-System erweitert.
+
 ## v0.2.2 - 2026-05-21
 
 ### Geändert
