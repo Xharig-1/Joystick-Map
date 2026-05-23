@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.5.7`
+Aktuelle Version: `v0.5.8`
 
 ## Zielbild
 

@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.8 - 2026-05-23
+
+### Hinzugefügt
+
+- Neuer Tab „📋 Liste": Zeigt alle Button-Belegungen eines Sticks als strukturierte Tabelle — ähnlich dem Tastatur/Maus-Tab. Jede Zeile eines Feldes erscheint als eigene Tabellenzeile mit direkt anklickbaren C/M/S-Modus-Buttons. Multi-line Felder werden mit rowspan zusammengefasst.
+- Seiten-Umschalter im Listen-Tab: Alpha L (Links) / Alpha R (Rechts) direkt im Panel.
+- Änderungen in der Liste werden sofort im Overlay-Feld synchronisiert und umgekehrt.
+- Filter-Bar „Mining/Combat/Salvage" blendet nicht passende Zeilen auch in der Liste aus.
+
 ## v0.5.7 - 2026-05-23
 
 ### Dokumentation

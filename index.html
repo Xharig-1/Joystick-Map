@@ -392,6 +392,12 @@
   .mode-toggle-dot:hover { opacity: 0.6; }
   .mode-toggle-dot.active:hover { opacity: 0.8; }
   .mapping-table th.th-modus, .mapping-table td.td-modus { width: 66px; }
+  .mapping-table th.th-btn, .mapping-table td.td-btn { width: 54px; text-align: center; font-weight: bold; vertical-align: middle; }
+  .list-side-toggle { display: flex; gap: 6px; margin-bottom: 10px; }
+  .list-side-btn { padding: 4px 12px; background: var(--bg2); border: 1px solid var(--accent2); color: var(--fg); cursor: pointer; font-size: 11px; }
+  .list-side-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+  .list-line-input { width: 100%; background: transparent; border: none; color: var(--fg); font-family: 'Courier New', monospace; font-size: 11px; padding: 2px 4px; box-sizing: border-box; }
+  .list-line-input:focus { outline: 1px solid var(--accent2); background: var(--bg2); }
 
   [data-theme="light"] {
     --bg: #f2f6f2;
@@ -418,7 +424,7 @@
 <div id="header">
   <div class="brand">
     <h1>⬡ Joystick-Map</h1>
-    <span class="version-badge" id="header-version">v0.5.7</span>
+    <span class="version-badge" id="header-version">v0.5.8</span>
     <span class="version-badge sc-version-badge" id="sc-version" style="display:none"></span>
   </div>
   <div class="hdr-actions">
@@ -443,6 +449,7 @@
   <button id="tab-btn-R" class="tab-btn" onclick="switchTab('R', this)">Alpha R (Rechts)</button>
   <button id="tab-btn-K" class="tab-btn" onclick="switchTab('K', this)">Tastatur</button>
   <button id="tab-btn-M" class="tab-btn" onclick="switchTab('M', this)">Maus</button>
+  <button class="tab-btn" id="tab-btn-LIST" onclick="switchTab('LIST', this)">&#128203; Liste</button>
   <button class="tab-btn" onclick="switchTab('LOG', this)">Changelog</button>
   <button class="tab-btn" onclick="switchTab('HELP', this)">? Hilfe</button>
 </div>
@@ -500,6 +507,26 @@
         </thead>
         <tbody id="mouseRows">
           <tr><td colspan="3">Noch keine Mausbelegung importiert.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="stick-panel" id="panel-LIST">
+    <div class="mapping-panel">
+      <div class="list-side-toggle">
+        <button id="list-tab-L" class="list-side-btn active" onclick="switchListSide('L', this)">Alpha L (Links)</button>
+        <button id="list-tab-R" class="list-side-btn" onclick="switchListSide('R', this)">Alpha R (Rechts)</button>
+      </div>
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th class="th-btn">Button</th>
+            <th>Belegung</th>
+            <th class="th-modus">Modus</th>
+          </tr>
+        </thead>
+        <tbody id="listRows">
+          <tr><td colspan="3">Wird geladen&#8230;</td></tr>
         </tbody>
       </table>
     </div>
@@ -628,10 +655,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.7</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.8</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.5.7';
+const APP_VERSION = 'v0.5.8';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -641,6 +668,7 @@ const MODES = [
 ];
 let activeModeFilter = new Set();
 let activeTagPopup = null;
+let activeListSide = 'L';
 
 const DEFAULT_TAGS = {
   'virpil-alpha_L': {
@@ -1447,6 +1475,11 @@ function applyModeFilter() {
     const tags = getFieldTags(ta.dataset.side, ta.dataset.name);
     tr.classList.toggle('mode-dimmed', !tags.some(t => activeModeFilter.has(t)));
   });
+  document.querySelectorAll('#listRows tr[data-side][data-name]').forEach(tr => {
+    if (!hasFilter) { tr.classList.remove('mode-dimmed'); return; }
+    const tags = getEffectiveTags(tr.dataset.side, tr.dataset.name);
+    tr.classList.toggle('mode-dimmed', !tags.some(t => activeModeFilter.has(t)));
+  });
 }
 
 function openTagPopup(side, name, anchorEl, refreshFn) {
@@ -1946,6 +1979,88 @@ function renderMappingTables() {
   applyModeFilter();
 }
 
+function switchListSide(side, btn) {
+  activeListSide = side;
+  document.querySelectorAll('.list-side-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderListView();
+}
+
+function toggleListLineTag(btn) {
+  const { side, name, mode } = btn.dataset;
+  const lineIndex = parseInt(btn.dataset.line);
+  const cur = getLineTags(side, name)[lineIndex] || [];
+  const next = cur.includes(mode) ? cur.filter(t => t !== mode) : [...cur, mode];
+  setLineTag(side, name, lineIndex, next);
+  btn.classList.toggle('active', next.includes(mode));
+  updateTagCompanion(side, name);
+  applyModeFilter();
+}
+
+function attachListLineEvents() {
+  document.querySelectorAll('#listRows .list-line-input').forEach(input => {
+    input.addEventListener('input', () => {
+      const { side, name } = input.dataset;
+      const key = sideKey(side);
+      const allInputs = Array.from(document.querySelectorAll(
+        `#listRows .list-line-input[data-side="${side}"][data-name="${name}"]`
+      ));
+      const newVal = allInputs.map(i => i.value).join('\n').replace(/\n+$/, '');
+      saveValue(side, name, newVal);
+      const ta = document.querySelector(`textarea.field[data-side="${side}"][data-name="${name}"]`);
+      if (ta) { ta.value = newVal; fitFont(ta); }
+      updateTagCompanion(side, name);
+      const strip = document.querySelector(`.line-strip[data-side="${side}"][data-name="${name}"]`);
+      if (strip && ta) refreshLineStrip(strip, ta, side, name);
+    });
+  });
+}
+
+function renderListView() {
+  const tbody = document.getElementById('listRows');
+  if (!tbody) return;
+  const side = activeListSide;
+  const stick = getActiveStick();
+  if (!stick || !stick.fields || !stick.fields[side]) {
+    tbody.innerHTML = '<tr><td colspan="3">Kein Stick geladen.</td></tr>';
+    return;
+  }
+  const profile = getActiveProfile();
+  const key = sideKey(side);
+  const fields = stick.fields[side].filter(f => isButtonField(f.name));
+
+  const rows = [];
+  fields.forEach(f => {
+    const stored = (profile.fields && profile.fields[key] && profile.fields[key][f.name] != null)
+      ? profile.fields[key][f.name] : f.value;
+    const lines = stored ? stored.split('\n') : [''];
+    const lt = getLineTags(side, f.name);
+    lines.forEach((line, li) => {
+      const dots = MODES.map(m => {
+        const active = (lt[li] || []).includes(m.id) ? ' active' : '';
+        return `<button class="mode-toggle-dot${active}" data-side="${escapeHTML(side)}" data-name="${escapeHTML(f.name)}" data-mode="${m.id}" data-line="${li}" style="background:${m.color}" title="${m.label}" onclick="toggleListLineTag(this)">${m.label[0]}</button>`;
+      }).join('');
+      const effectiveTags = getEffectiveTags(side, f.name);
+      const dimmed = activeModeFilter.size > 0 && !effectiveTags.some(t => activeModeFilter.has(t)) ? ' class="mode-dimmed"' : '';
+      if (li === 0) {
+        rows.push(`<tr data-side="${escapeHTML(side)}" data-name="${escapeHTML(f.name)}"${dimmed}>
+          <td class="td-btn" rowspan="${lines.length}">${escapeHTML(f.name)}</td>
+          <td><input class="list-line-input" data-side="${escapeHTML(side)}" data-name="${escapeHTML(f.name)}" data-line="0" value="${escapeHTML(line)}"></td>
+          <td class="td-modus"><div class="modus-cell">${dots}</div></td>
+        </tr>`);
+      } else {
+        rows.push(`<tr data-side="${escapeHTML(side)}" data-name="${escapeHTML(f.name)}"${dimmed}>
+          <td><input class="list-line-input" data-side="${escapeHTML(side)}" data-name="${escapeHTML(f.name)}" data-line="${li}" value="${escapeHTML(line)}"></td>
+          <td class="td-modus"><div class="modus-cell">${dots}</div></td>
+        </tr>`);
+      }
+    });
+  });
+
+  tbody.innerHTML = rows.length ? rows.join('') : '<tr><td colspan="3">Keine Button-Felder vorhanden.</td></tr>';
+  attachListLineEvents();
+}
+
 function renderChangelog() {
   const tbody = document.getElementById('changelogRows');
   if (!tbody) return;
@@ -2247,6 +2362,7 @@ function switchTab(side, btn) {
   document.getElementById('panel-' + side).classList.add('active');
   btn.classList.add('active');
   if (side === 'LOG') renderChangelog();
+  if (side === 'LIST') renderListView();
   requestAnimationFrame(() => {
     document.querySelectorAll('#panel-' + side + ' textarea.field').forEach(fitFont);
   });
