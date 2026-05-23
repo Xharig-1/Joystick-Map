@@ -4,6 +4,17 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.6.0 - 2026-05-23
+
+### Hinzugefügt
+
+- Profil-Umschalter: Belegungen können jetzt in mehreren benannten Profilen gespeichert werden.
+- Profil-Leiste unter dem Header zeigt alle Profile als Chips; Klick wechselt sofort das aktive Profil.
+- Neues Profil anlegen per „+ Neu" (Name wird abgefragt).
+- Profil umbenennen per Doppelklick auf den Chip-Namen.
+- Profil löschen per ✕ am Chip (nach Bestätigung); „Standard" ist schreibgeschützt.
+- Versionsanzeige in der Statusleiste unten wird jetzt dynamisch aus APP_VERSION gesetzt (war zuvor hardcodiert auf v0.5.16).
+
 ## v0.5.20 - 2026-05-23
 
 ### Behoben

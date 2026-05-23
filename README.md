@@ -7,19 +7,18 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.5.16
+## Was ist neu — v0.6.0
 
-- **SC-Import VKB-Achsen** — `twist`, `throttle`, `A1(x/y)` und Hat-Inputs werden jetzt korrekt aus der XML geparst
-- **SC-Import VKB-Sticks** — Geraete mit ` L ` / ` R ` im Namen werden erkannt (statt nur `LEFT` / `RIGHT`)
-- **SC-Import Modus-Tags** — Tags werden beim Import automatisch anhand der Aktionskategorie gesetzt
-- **Zeilen-Modus-Tags** — einzelne Zeilen innerhalb eines Feldes koennen unabhaengig mit Combat, Mining oder Salvage getaggt werden
-- **Belegungsliste-Tab** — alle Button-Belegungen als strukturierte Tabelle mit direkt anklickbaren C/M/S-Buttons
+- **Profil-Umschalter** — Belegungen koennen jetzt in mehreren benannten Profilen gespeichert werden
+- **Profil-Leiste** unter dem Header: Klick auf einen Chip wechselt sofort das aktive Profil
+- **+ Neu** legt ein neues leeres Profil an, Doppelklick auf den Namen benennt es um
+- **✕** am Chip loescht ein Profil (nach Bestaetigung); „Standard" ist geschuetzt
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.5.16`
+Aktuelle Version: `v0.6.0`
 
 ## Download & Start
 
@@ -66,8 +65,8 @@ E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\
 
 ## Projektstatus
 
-- Phase 1–4b: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags)
-- Naechstes Ziel: Profil-Umschalter (v0.6.0)
+- Phase 1–5b: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags, Profil-Umschalter)
+- Naechstes Ziel: Quick Reference Tab (v0.7.0)
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
 
