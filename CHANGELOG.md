@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.0 - 2026-05-23
+
+### Hinzugefügt
+
+- Modus-Tags: Jedes Joystick-Feld kann jetzt mit einem oder mehreren Spielmodi getaggt werden — Combat (rot), Mining (amber), Salvage (blau).
+- Auf Stick-Vorlagen: Hover über ein Feld zeigt einen klickbaren Tag-Companion (●-Punkte). Klick öffnet ein Popup mit Checkboxen zum An-/Abschalten der Modi.
+- Auf Tastatur- und Maus-Tabs: Neue Spalte „Modus" mit drei farbigen Kreis-Buttons pro Zeile — direktes Toggling ohne Popup.
+- Modus-Filter-Bar unterhalb der Tabs: Buttons „Alle / Combat / Mining / Salvage" blenden alle nicht zugeordneten Felder aus, wenn ein Modus aktiv ist.
+- Tags werden zusammen mit dem Profil im Browser gespeichert und bleiben nach Neustart erhalten.
+
 ## v0.4.22 - 2026-05-23
 
 ### Verbessert
