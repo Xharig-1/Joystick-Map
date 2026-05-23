@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.20 - 2026-05-23
+
+### Behoben
+
+- Stick-Overlay: Tag-Companion-Dots (●-Punkte) wurden in v0.5.18 versehentlich wieder auf der Vorlage eingeblendet — jetzt wieder entfernt. Modus-Tags werden ausschließlich im Listen-Tab angezeigt.
+
 ## v0.5.19 - 2026-05-23
 
 ### Behoben
