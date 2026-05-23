@@ -426,7 +426,7 @@
 <div id="header">
   <div class="brand">
     <h1>⬡ Joystick-Map</h1>
-    <span class="version-badge" id="header-version">v0.5.9</span>
+    <span class="version-badge" id="header-version">v0.5.10</span>
     <span class="version-badge sc-version-badge" id="sc-version" style="display:none"></span>
   </div>
   <div class="hdr-actions">
@@ -658,10 +658,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.9</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.10</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.5.9';
+const APP_VERSION = 'v0.5.10';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -1673,13 +1673,6 @@ function createLineStrip(ta, side, name) {
   ta.addEventListener('mouseleave', scheduleHide);
   strip.addEventListener('mouseenter', () => { cancelHide(); strip.classList.add('visible'); });
   strip.addEventListener('mouseleave', scheduleHide);
-  strip.addEventListener('click', e => {
-    const lines = ta.value.split('\n');
-    if (lines.length === 0) return;
-    const segH = strip.offsetHeight / lines.length;
-    const lineIndex = Math.min(Math.floor(e.offsetY / segH), lines.length - 1);
-    openLineTagPopup(side, name, lineIndex, e, () => refreshLineStrip(strip, ta, side, name));
-  });
   return strip;
 }
 
@@ -1764,7 +1757,6 @@ function buildOverlay(containerId, fields, side) {
     wrap.appendChild(ta);
     wrap.appendChild(createLockCompanion(ta, side, f.name));
     if (isButtonField(f.name)) {
-      wrap.appendChild(createTagCompanion(ta, side, f.name));
       wrap.appendChild(createLineStrip(ta, side, f.name));
     }
 

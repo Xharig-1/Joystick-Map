@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.10 - 2026-05-23
+
+### Geändert
+
+- Stick-Overlay: Farbige Punkte (Tag-Companion-Dots) entfernt — Modus-Tags werden jetzt ausschließlich über den Listen-Tab gesetzt.
+- Farb-Streifen links vom Feld bleibt als rein visuelle Anzeige erhalten, ist aber nicht mehr anklickbar.
+
 ## v0.5.9 - 2026-05-23
 
 ### Hinzugefügt
