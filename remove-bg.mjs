@@ -87,7 +87,7 @@ async function fixVirpilTitleBox(filePath) {
 
 await removeBg('assets/alpha-l-template.png', 50000);
 await fixVirpilTitleBox('assets/alpha-l-template.png');
-await removeBg('assets/alpha-r-template.png', 50000);
+await removeBg('assets/alpha-r-template.png', 1);
 await fixVirpilTitleBox('assets/alpha-r-template.png');
 await removeBg('assets/vkb-gladiator-scg-l.png', 1);
 await removeBg('assets/vkb-gladiator-scg-r.png', 1);

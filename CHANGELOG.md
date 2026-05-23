@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.1 - 2026-05-23
+
+### Behoben
+
+- Virpil Alpha R: Weißer Hintergrund in eingeschlossenen Bereichen (umrahmt von roten Linien) entfernt — `largeArea`-Schwellwert in `remove-bg.mjs` von 50000 auf 1 gesenkt, analog zur VKB-SCG-Korrektur.
+
 ## v0.5.0 - 2026-05-23
 
 ### Hinzugefügt
