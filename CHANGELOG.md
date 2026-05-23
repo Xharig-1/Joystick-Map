@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.2 - 2026-05-23
+
+### Dokumentation
+
+- Hilfe-Tab: Neuer Abschnitt „Modus-Tags" erklärt Farben, Tagging per Hover-Popup (Stick-Vorlagen), Toggle-Buttons (Tastatur/Maus-Tab) und die Filter-Bar.
+
 ## v0.5.1 - 2026-05-23
 
 ### Behoben
