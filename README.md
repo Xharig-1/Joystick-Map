@@ -7,18 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.0
+## Was ist neu — v0.7.1
 
-- **Drucken** — neuer Button im Header druckt die aktuelle Belegung direkt aus dem Browser
-- Jede Stick-Seite erscheint als eigene Seite mit der Vorlage und allen eingetragenen Labels
-- Tastatur und Maus gemeinsam auf einer Seite als sortierte Tabelle
-- Format (A4/A3/Querformat) wird im Browser-Druckdialog gewaehlt
+- **Druck-Fix** — Stick-Overlay wird jetzt nicht mehr abgeschnitten; skaliert korrekt auf A4 Querformat
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.0`
+Aktuelle Version: `v0.7.1`
 
 ## Download & Start
 

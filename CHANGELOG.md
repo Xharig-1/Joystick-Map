@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.1 - 2026-05-23
+
+### Behoben
+
+- Druck: Stick-Overlay wurde in A4 Querformat abgeschnitten. `100vh` im Chrome-Druckmodus entspricht der Bildschirm-Höhe, nicht der Seiten-Höhe — deshalb griff die alte `max-height`-Berechnung nicht. Behoben mit festem Wert `180mm` (passend für A4 Querformat, 210 mm – 16 mm Rand – 14 mm Titel).
+
 ## v0.7.0 - 2026-05-23
 
 ### Hinzugefügt
