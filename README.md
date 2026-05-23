@@ -7,18 +7,16 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.13
+## Was ist neu — v0.4.14
 
-- **VKB Gladiator SCG** (LH + RH) als neue Vorlage — ersetzt den NXT EVO Platzhalter
-- Korrekte Template-Bilder aus den offiziellen VKB-PDF-Vorlagen
-- Alle 40 Eingabefelder exakt auf das PDF-Layout ausgerichtet
-- Fehlende Feldnamen nach VKB-SCG-Schema ergaenzt (B1, A1–A4, C1, D1, F1–F3, RF, MT, Sw1, En1)
+- **Hell/Dunkel-Umschalter** im Header (☀ / ☾) — Wahl wird gespeichert
+- Hell-Modus mit gruen getoentem Hintergrund, dunkler Text, Xharig-Gruen als Akzentfarbe
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.13`
+Aktuelle Version: `v0.4.14`
 
 ## Download & Start
 

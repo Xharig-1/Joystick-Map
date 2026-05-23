@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.4.13`
+Aktuelle Version: `v0.4.14`
 
 ## Zielbild
 
@@ -50,6 +50,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.4.11 | Standard-Tastatur-Tab wieder entfernt |
 | v0.4.12 | VKB Gladiator NXT EVO als zweite Vorlage |
 | v0.4.13 | VKB Gladiator SCG (LH/RH) korrekte Vorlage + Feldpositionen |
+| v0.4.14 | Hell/Dunkel-Umschalter im Header |
 | v0.5.0 | Profil-Umschalter |
 | v0.6.0 | Modus-Tags |
 | v0.7.0 | Quick Reference Tab |

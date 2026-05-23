@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.14 - 2026-05-23
+
+### Hinzugefügt
+
+- Hell/Dunkel-Umschalter im Header (☀ / ☾).
+- Hell-Modus mit grün getöntem Hintergrund, dunkler Text, Xharig-Grün als Akzentfarbe.
+- Gewählter Modus wird im Browser gespeichert und beim nächsten Start wiederhergestellt.
+
 ## v0.4.13 - 2026-05-23
 
 ### Geändert
