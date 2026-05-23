@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.12 - 2026-05-24
+
+### Hinzugefügt
+
+- Author-Footer: Avatar + GitHub-Link (Xharig-1) am unteren Rand der App; dezent gedimmt, beim Hover voll sichtbar; wird beim Drucken ausgeblendet; Avatar wird vom Build-Script automatisch als Base64 eingebettet.
+
 ## v0.7.11 - 2026-05-23
 
 ### Behoben

@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.11
+## Was ist neu — v0.7.12
 
-- **VKB Gladiator NXT PREM RH** — 27 fehlende Felder ergänzt: Hat/Mode Switch (8 Richtungen), Achsen X/Y/Z, Button 3, drei 5-Wege-Ministicks (Buttons 6–20)
+- **Author-Footer** — dezenter Footer mit Avatar und GitHub-Link; sichtbar für alle die die App nutzen oder forken
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.11`
+Aktuelle Version: `v0.7.12`
 
 ## Download & Start
 
@@ -66,6 +66,13 @@ E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\
 - Naechstes Ziel: offen — Feedback aus Tests abwarten
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
+
+## Author
+
+[![Xharig](https://github.com/Xharig-1.png?size=40)](https://github.com/Xharig-1)  
+**Xharig** — [github.com/Xharig-1](https://github.com/Xharig-1)
+
+If you fork this project, please keep the credit in the footer or mention the original source.
 
 ## Lizenz
 

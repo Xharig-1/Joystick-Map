@@ -505,6 +505,27 @@
     background: var(--bg); color: var(--text); border: none; outline: none;
     min-width: 60px;
   }
+
+  /* ── Footer ───────────────────────────────────────────────────────────── */
+  #app-footer {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 8px 18px; background: var(--bg2); border-top: 1px solid var(--border);
+    opacity: 0.55; transition: opacity .2s;
+  }
+  #app-footer:hover { opacity: 1; }
+  #app-footer img {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 1px solid var(--accent2); object-fit: cover;
+  }
+  #app-footer span {
+    font-family: 'Courier New', monospace; font-size: 11px;
+    letter-spacing: 1px; color: var(--text-dim); text-transform: uppercase;
+  }
+  #app-footer a {
+    color: var(--accent); text-decoration: none; transition: color .2s;
+  }
+  #app-footer a:hover { color: var(--accent-light); text-shadow: var(--accent-glow); }
+  @media print { #app-footer { display: none !important; } }
 </style>
 </head>
 <body>
@@ -772,7 +793,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.11';
+const APP_VERSION = 'v0.7.12';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -2872,5 +2893,10 @@ function buildPrintKMPage() {
 </script>
 
 <div id="print-container"></div>
+
+<footer id="app-footer">
+  <img src="assets/avatar.png" alt="Xharig" />
+  <span>Created by <a href="https://github.com/Xharig-1" target="_blank" rel="noopener">Xharig</a></span>
+</footer>
 </body>
 </html>
