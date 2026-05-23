@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.3 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM Vorlagenbild: grauer Hintergrund und schwarzer Rand jetzt transparent (Flood-Fill wie bei Virpil-Templates).
+
 ## v0.7.2 - 2026-05-23
 
 ### Geändert

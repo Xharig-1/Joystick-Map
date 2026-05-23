@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.2`
+Aktuelle Version: `v0.7.3`
 
 ## Zielbild
 
@@ -76,3 +76,4 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.7.0 | Drucken ✓ |
 | v0.7.1 | Druck-Fix: max-height 180mm ✓ |
 | v0.7.2 | VKB NXT PREM Template (neues Bild, SC-Import-Fix) ✓ |
+| v0.7.3 | VKB NXT PREM Bild: transparenter Hintergrund ✓ |
