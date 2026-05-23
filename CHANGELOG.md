@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.17 - 2026-05-23
+
+### Behoben
+
+- Zeilen-Modus-Streifen: bei VKB-Feldern auf der rechten Template-Seite (left ≈ 1155 px) war der Streifen 7 px links vom Textfeld — mitten in der grauen Label-Fläche. Positionierung von `left − 7` auf `left` korrigiert, sodass der Streifen bündig am linken Rand des Textfeldes liegt.
+
 ## v0.5.16 - 2026-05-23
 
 ### Verbessert

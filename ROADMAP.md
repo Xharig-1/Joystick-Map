@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.5.16`
+Aktuelle Version: `v0.5.17`
 
 ## Zielbild
 
@@ -68,6 +68,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.5.14 | SC-Import setzt Modus-Tags automatisch anhand der Aktionskategorie ✓ |
 | v0.5.15 | SC-Import: VKB-Sticks (` L `/` R ` statt `LEFT`/`RIGHT`) werden jetzt erkannt ✓ |
 | v0.5.16 | SC-Import: VKB-Achsen (twist/throttle/A1) + Hat-Inputs werden jetzt geparst ✓ |
+| v0.5.17 | Zeilen-Streifen: Position für VKB-Felder auf rechter Template-Seite korrigiert ✓ |
 | v0.6.0 | Profil-Umschalter |
 | v0.7.0 | Quick Reference Tab |
 | v0.8.0 | Drucken / PDF |
