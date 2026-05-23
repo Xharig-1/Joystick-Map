@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.8 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM LH: Alle JPEG-Chroma-Artefakte (cyan/türkis/pink) entlang der roten Linien restlos entfernt. Neuer Filter behält nur noch gezielt: Schwarz (max < 120), Rot (R ≥ 2×G und ≥ 2×B) und Weiß (> 225). Alles andere wird transparent.
+
 ## v0.7.7 - 2026-05-23
 
 ### Behoben

@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.7`
+Aktuelle Version: `v0.7.8`
 
 ## Zielbild
 
@@ -81,3 +81,4 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.7.5 | VKB NXT PREM LH: eigenes Template-Bild + korrekte Feldpositionen ✓ |
 | v0.7.6 | VKB NXT PREM LH: Weiße Box-Fills transparent (Dunkel-Modus-Fix) ✓ |
 | v0.7.7 | VKB NXT PREM LH: JPEG-Artefakte entlang roter Linien entfernt; Weiß-Boxen behalten ✓ |
+| v0.7.8 | VKB NXT PREM LH: Alle Chroma-Artefakte restlos entfernt (nur Schwarz/Rot/Weiß behalten) ✓ |
