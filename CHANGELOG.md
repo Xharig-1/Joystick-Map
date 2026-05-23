@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.3 - 2026-05-23
+
+### Hinzugefügt
+
+- Virpil Alpha L und R: Standard-Modus-Tags werden beim ersten Start automatisch gesetzt — Combat, Mining und Salvage werden anhand der vorhandenen Feldbelegung erkannt und einmalig eingetragen. Eigene Tags werden dabei nicht überschrieben.
+
 ## v0.5.2 - 2026-05-23
 
 ### Dokumentation
