@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.6.1`
+Aktuelle Version: `v0.7.0`
 
 ## Zielbild
 
@@ -17,8 +17,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | Phase 4 | Abgeschlossen | Tastatur- und Maus-Ansicht |
 | Phase 4b | Abgeschlossen | Modus-Tags (Combat / Mining / Salvage) inkl. Zeilen-Tags und Listen-Tab |
 | Phase 5b | Abgeschlossen | Profil-Umschalter für mehrere Belegungssets |
-| Phase 7 | Geplant | Quick Reference als kompakte Gesamtübersicht |
-| Phase 8 | Geplant | Drucken / PDF mit Schwarz-Weiß-Ansicht |
+| Phase 8 | Abgeschlossen | Drucken — Stick-Overlays + Tastatur/Maus als Druckseiten |
 | Phase 9 | Laufend | Testen, dokumentieren und öffentliches Feedback sammeln |
 
 ## Offene Nacharbeit
@@ -73,5 +72,5 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.5.19 | Versionsnummer im Header aus APP_VERSION statt statisch — zeigt jetzt immer die richtige Version ✓ |
 | v0.5.20 | Tag-Companion-Dots auf Stick-Overlay entfernt (versehentlich in v0.5.18 wieder eingeblendet) ✓ |
 | v0.6.0 | Profil-Umschalter ✓ |
-| v0.7.0 | Quick Reference Tab |
-| v0.8.0 | Drucken / PDF |
+| v0.6.1 | Datenverlust-Fix (normalizeProfile) ✓ |
+| v0.7.0 | Drucken ✓ |

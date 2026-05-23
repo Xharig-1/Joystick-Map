@@ -420,6 +420,48 @@
   }
   #theme-toggle:hover { background: var(--accent-dim); border-color: var(--accent); }
 
+  /* ── Druck ────────────────────────────────────────────────────────────── */
+  #print-container { display: none; }
+
+  @media print {
+    body > *:not(#print-container) { display: none !important; }
+    #print-container { display: block !important; }
+    @page { margin: 8mm; }
+
+    .print-page { page-break-after: always; width: 100%; }
+    .print-page:last-child { page-break-after: avoid; }
+
+    .print-page-title {
+      font-family: 'Courier New', monospace; font-size: 4mm; font-weight: bold;
+      margin-bottom: 3mm; color: #000; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .print-stick-outer { position: relative; width: 100%; line-height: 0; }
+    .print-stick-outer img { width: 100%; display: block; }
+    .print-field {
+      position: absolute; font-family: 'Courier New', monospace; font-size: 2mm;
+      color: #000; overflow: hidden; white-space: pre-wrap; word-break: break-word;
+      line-height: 1.2; padding: 0.3mm; background: transparent;
+    }
+    .print-section-head {
+      font-family: 'Courier New', monospace; font-size: 3.5mm; font-weight: bold;
+      text-transform: uppercase; margin: 5mm 0 2mm; padding-bottom: 1mm;
+      border-bottom: 0.5pt solid #000; color: #000;
+    }
+    .print-table {
+      width: 100%; border-collapse: collapse;
+      font-family: 'Courier New', monospace; font-size: 2.5mm; color: #000;
+    }
+    .print-table th {
+      border-bottom: 1pt solid #000; text-align: left; padding: 1mm 2mm;
+      font-weight: bold; text-transform: uppercase; font-size: 2mm; letter-spacing: 1px;
+    }
+    .print-table td { border-bottom: 0.3pt solid #ccc; padding: 0.8mm 2mm; vertical-align: top; }
+    .print-table .col-cat   { width: 25%; }
+    .print-table .col-label { width: 40%; }
+    .print-table .col-value { width: 25%; }
+    .print-table .col-mode  { width: 10%; font-size: 1.8mm; color: #444; }
+  }
+
   #profile-bar {
     display: flex; gap: 6px; padding: 7px 18px;
     background: var(--bg2); border-bottom: 1px solid var(--border);
@@ -475,6 +517,7 @@
     <button class="btn" id="undoBtn" onclick="undoLastChange()" disabled>↶ Rückgängig</button>
     <button class="btn btn-danger" onclick="resetAll()">↺ Reset</button>
     <button class="btn" id="calibrateBtn" onclick="toggleCalibrate()" title="Koordinaten-Helfer für Feldpositionierung">✚ Kalibrieren</button>
+    <button class="btn" onclick="triggerPrint()" title="Aktuelle Belegung drucken">🖨 Drucken</button>
     <button id="theme-toggle" onclick="toggleTheme()" title="Hell/Dunkel wechseln">☀</button>
   </div>
 </div>
@@ -644,6 +687,17 @@
       </div>
 
       <div class="help-block">
+        <h3>Drucken</h3>
+        <ul>
+          <li>Klick auf <span class="help-key">🖨 Drucken</span> im Header öffnet den Browser-Druckdialog.</li>
+          <li>Jede Stick-Seite (z. B. Alpha L, Alpha R) erscheint als eigene Druckseite — die Vorlage mit allen eingetragenen Belegungen darauf.</li>
+          <li>Tastatur und Maus kommen gemeinsam auf eine Seite als sortierte Tabelle.</li>
+          <li>Format (A4, A3, Hoch- oder Querformat) wird im Browser-Druckdialog gewählt.</li>
+          <li>Leere Felder werden im Ausdruck ausgeblendet.</li>
+        </ul>
+      </div>
+
+      <div class="help-block">
         <h3>Profile</h3>
         <ul>
           <li>Die <strong>Profil-Leiste</strong> direkt unter dem Header zeigt alle gespeicherten Profile als Chips an.</li>
@@ -707,7 +761,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.6.1';
+const APP_VERSION = 'v0.7.0';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -2671,6 +2725,114 @@ applyStick(activeStickId);
 renderProfileBar();
 checkForUpdates();
 fetchSCLiveVersion();
+// ── Drucken ──────────────────────────────────────────────────────────────────
+
+function triggerPrint() {
+  const container = document.getElementById('print-container');
+  container.innerHTML = '';
+  const stick = getActiveStick();
+
+  const stickSides = stick.tabs.filter(s => stick.templates && stick.templates[s]);
+  stickSides.forEach(side => {
+    const page = buildPrintStickPage(side, stick);
+    if (page) container.appendChild(page);
+  });
+
+  const kmPage = buildPrintKMPage();
+  if (kmPage) container.appendChild(kmPage);
+
+  window.print();
+  setTimeout(() => { container.innerHTML = ''; }, 1000);
+}
+
+function buildPrintStickPage(side, stick) {
+  const tpl = stick.templates[side];
+  if (!tpl) return null;
+
+  const page = document.createElement('div');
+  page.className = 'print-page';
+
+  const title = document.createElement('div');
+  title.className = 'print-page-title';
+  title.textContent = (stick.tabLabels[side] || side) + ' — ' + getActiveProfile().name;
+  page.appendChild(title);
+
+  const outer = document.createElement('div');
+  outer.className = 'print-stick-outer';
+
+  const img = document.createElement('img');
+  img.src = tpl.src;
+  outer.appendChild(img);
+
+  (stick.fields[side] || []).forEach(f => {
+    const val = loadValue(side, f.name);
+    const text = val !== null ? val : (f.value || '');
+    if (!text.trim()) return;
+
+    const label = document.createElement('div');
+    label.className = 'print-field';
+    label.style.left   = (f.left   * stick.scale / tpl.width  * 100) + '%';
+    label.style.top    = (f.top    * stick.scale / tpl.height * 100) + '%';
+    label.style.width  = (f.width  * stick.scale / tpl.width  * 100) + '%';
+    label.style.height = (f.height * stick.scale / tpl.height * 100) + '%';
+    label.textContent  = text;
+    outer.appendChild(label);
+  });
+
+  page.appendChild(outer);
+  return page;
+}
+
+function buildPrintKMPage() {
+  const kRows = getTableRows('K').filter(r => r.value && r.value.trim());
+  const mRows = getTableRows('M').filter(r => r.value && r.value.trim());
+  if (!kRows.length && !mRows.length) return null;
+
+  const page = document.createElement('div');
+  page.className = 'print-page';
+
+  const title = document.createElement('div');
+  title.className = 'print-page-title';
+  title.textContent = 'Tastatur & Maus — ' + getActiveProfile().name;
+  page.appendChild(title);
+
+  const buildSection = (rows, label) => {
+    if (!rows.length) return;
+    const head = document.createElement('div');
+    head.className = 'print-section-head';
+    head.textContent = label;
+    page.appendChild(head);
+
+    const table = document.createElement('table');
+    table.className = 'print-table';
+    table.innerHTML = '<thead><tr>' +
+      '<th class="col-cat">Kategorie</th>' +
+      '<th class="col-label">Aktion</th>' +
+      '<th class="col-value">Belegung</th>' +
+      '<th class="col-mode">Modus</th>' +
+      '</tr></thead>';
+    const tbody = document.createElement('tbody');
+    rows.forEach(row => {
+      const tags = getFieldTags(row.side, row.name);
+      const modeStr = tags.map(t => { const m = MODES.find(m => m.id === t); return m ? m.label[0] : t; }).join(' ');
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td class="col-cat">'   + escapeHTML(row.category) + '</td>' +
+        '<td class="col-label">' + escapeHTML(row.label)    + '</td>' +
+        '<td class="col-value">' + escapeHTML(row.value)    + '</td>' +
+        '<td class="col-mode">'  + escapeHTML(modeStr)      + '</td>';
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    page.appendChild(table);
+  };
+
+  buildSection(kRows, 'Tastatur');
+  buildSection(mRows, 'Maus');
+  return page;
+}
 </script>
+
+<div id="print-container"></div>
 </body>
 </html>

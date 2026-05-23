@@ -7,18 +7,18 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.6.0
+## Was ist neu — v0.7.0
 
-- **Profil-Umschalter** — Belegungen koennen jetzt in mehreren benannten Profilen gespeichert werden
-- **Profil-Leiste** unter dem Header: Klick auf einen Chip wechselt sofort das aktive Profil
-- **+ Neu** legt ein neues leeres Profil an, Doppelklick auf den Namen benennt es um
-- **✕** am Chip loescht ein Profil (nach Bestaetigung); „Standard" ist geschuetzt
+- **Drucken** — neuer Button im Header druckt die aktuelle Belegung direkt aus dem Browser
+- Jede Stick-Seite erscheint als eigene Seite mit der Vorlage und allen eingetragenen Labels
+- Tastatur und Maus gemeinsam auf einer Seite als sortierte Tabelle
+- Format (A4/A3/Querformat) wird im Browser-Druckdialog gewaehlt
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.6.1`
+Aktuelle Version: `v0.7.0`
 
 ## Download & Start
 
@@ -65,8 +65,8 @@ E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\
 
 ## Projektstatus
 
-- Phase 1–5b: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags, Profil-Umschalter)
-- Naechstes Ziel: Quick Reference Tab (v0.7.0)
+- Phase 1–8: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags, Profil-Umschalter, Drucken)
+- Naechstes Ziel: offen — Feedback aus Tests abwarten
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
 

@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.0 - 2026-05-23
+
+### Hinzugefügt
+
+- Drucken: neuer Button „🖨 Drucken" im Header öffnet den Browser-Druckdialog.
+- Jede Stick-Seite (L, R usw.) wird als eigene Druckseite aufgebaut — Vorlage mit allen eingetragenen Labels als Prozent-positionierter Overlay.
+- Tastatur und Maus erscheinen gemeinsam auf einer Druckseite als sortierte Tabelle (Kategorie, Aktion, Belegung, Modus).
+- Funktioniert automatisch für alle aktuellen und zukünftigen Stick-Modelle.
+- Druckansicht wird nach dem Drucken automatisch bereinigt.
+
 ## v0.6.1 - 2026-05-23
 
 ### Behoben
