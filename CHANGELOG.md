@@ -4,6 +4,17 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.5 - 2026-05-23
+
+### Hinzugefügt
+
+- Zeilen-Modus-Tags: Einzelne Zeilen innerhalb eines Textfeldes können jetzt unabhängig mit Combat, Mining oder Salvage getaggt werden.
+- Farb-Streifen links vom Feld: Ein 5 px breiter senkrechter Balken zeigt pro Zeile die zugewiesene Modus-Farbe. Erscheint automatisch bei getaggten Zeilen, sonst erst beim Hover.
+- Klick auf ein Segment öffnet ein Mini-Popup mit den drei Modus-Buttons für genau diese Zeile.
+- Standard-Zeilen-Tags für Virpil Alpha L (Felder 21, 23, 24) und Alpha R (Felder 3, 4, 15, 22, 23, 24, 25) werden beim ersten Start automatisch eingetragen.
+- Der Tag-Companion (Dots unten links) zeigt jetzt die Vereinigung aller Zeilen-Tags und Feld-Tags an.
+- Filter-Bar berücksichtigt Zeilen-Tags bei der Sichtbarkeitsberechnung.
+
 ## v0.5.4 - 2026-05-23
 
 ### Verbessert
