@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.10 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM RH: Feldpositionen per Auto-Erkennung der weißen Boxen korrigiert. Encoder 23–26 waren 32 px zu hoch (nicht sichtbar), Buttons 28/27/29 waren 7 px zu hoch. Throttle-Felder (throttle_fwd / throttle_back) neu hinzugefügt.
+
 ## v0.7.9 - 2026-05-23
 
 ### Behoben
