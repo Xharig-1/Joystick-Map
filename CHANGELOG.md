@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.15 - 2026-05-23
+
+### Geändert
+
+- Weißer Hintergrund aller Template-PNGs entfernt (Flood-Fill von den Bildkanten).
+- Eingabefeld-Bereiche bleiben weiß — nur der äußere Seitenrand wird transparent.
+- Funktioniert in Dark- und Light-Modus ohne sichtbare Ränder.
+
 ## v0.4.14 - 2026-05-23
 
 ### Hinzugefügt

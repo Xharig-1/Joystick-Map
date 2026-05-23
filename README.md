@@ -7,16 +7,16 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.14
+## Was ist neu — v0.4.15
 
-- **Hell/Dunkel-Umschalter** im Header (☀ / ☾) — Wahl wird gespeichert
-- Hell-Modus mit gruen getoentem Hintergrund, dunkler Text, Xharig-Gruen als Akzentfarbe
+- **Transparente Template-Hintergründe** — weißer Seitenrand der Vorlagen entfernt, Eingabefelder bleiben weiß
+- Sieht in Dark- und Light-Modus sauber aus
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.14`
+Aktuelle Version: `v0.4.15`
 
 ## Download & Start
 
