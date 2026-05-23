@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.14 - 2026-05-23
+
+### Hinzugefügt
+
+- SC-Import: Modus-Tags werden nach dem Import automatisch gesetzt, basierend auf der Aktionskategorie in der `actionmaps.xml` (z.B. `ship_weapons` → Combat, `ship_mining` → Mining, `ship_salvage` → Salvage). Der User muss nur noch Ausnahmen manuell anpassen.
+
 ## v0.5.13 - 2026-05-23
 
 ### Behoben

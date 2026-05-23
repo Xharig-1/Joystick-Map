@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.5.13`
+Aktuelle Version: `v0.5.14`
 
 ## Zielbild
 
@@ -65,6 +65,7 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.5.11 | Farb-Streifen live-Update ✓ |
 | v0.5.12 | Dokumentation vollständig aktualisiert; die Projekt-Doku mit Release-Checkliste ✓ |
 | v0.5.13 | Alpha R Eingabe-Boxen wieder weiß (PNG-Fix) ✓ |
+| v0.5.14 | SC-Import setzt Modus-Tags automatisch anhand der Aktionskategorie ✓ |
 | v0.6.0 | Profil-Umschalter |
 | v0.7.0 | Quick Reference Tab |
 | v0.8.0 | Drucken / PDF |
