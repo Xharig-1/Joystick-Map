@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.6.1 - 2026-05-23
+
+### Behoben
+
+- Kritischer Datenverlust-Bug: `normalizeProfile` hat bei jedem `getStore()`-Aufruf alle Felder unter stick-präfixierten Keys (`virpil-alpha_L` usw.) verworfen — nur `L`, `R`, `K`, `M` wurden erhalten. Alle eingetippten Werte gingen nach Seitenneulade oder Profilwechsel verloren. Fix: `...fields`-Spread erhält alle vorhandenen Keys, K/M-Defaults werden danach korrekt überschrieben.
+
 ## v0.6.0 - 2026-05-23
 
 ### Hinzugefügt

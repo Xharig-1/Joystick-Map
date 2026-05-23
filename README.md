@@ -18,7 +18,7 @@ Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](..
 
 ## Version
 
-Aktuelle Version: `v0.6.0`
+Aktuelle Version: `v0.6.1`
 
 ## Download & Start
 
