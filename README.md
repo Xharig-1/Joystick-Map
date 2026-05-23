@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.20
+## Was ist neu — v0.4.21
 
-- **Update-Check repariert** — GitHub-Actions-Workflow war seit v0.4.14 defekt (Python-Heredocs in YAML); Skripte ausgelagert, neue Releases werden wieder korrekt erstellt und der Update-Check zeigt die aktuelle Version an
+- **Update-Check verbessert** — "offline" nur noch bei echtem Netzwerkfehler; Rate-Limit und HTTP-Fehler zeigen jetzt eine sprechende Meldung statt generisch "offline"
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.20`
+Aktuelle Version: `v0.4.21`
 
 ## Download & Start
 

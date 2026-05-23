@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.21 - 2026-05-23
+
+### Verbessert
+
+- Update-Check: "offline" erscheint jetzt nur noch bei echtem Netzwerkfehler. GitHub Rate-Limit (HTTP 403/429) zeigt „Rate-Limit (später erneut laden)", andere HTTP-Fehler zeigen den Statuscode — hilft bei der Diagnose wenn der Check nicht funktioniert.
+
 ## v0.4.20 - 2026-05-23
 
 ### Behoben
