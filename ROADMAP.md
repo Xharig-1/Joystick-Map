@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.5.11`
+Aktuelle Version: `v0.5.12`
 
 ## Zielbild
 
@@ -15,9 +15,8 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | Phase 2 | Abgeschlossen | Changelog pro Feld |
 | Phase 3 | Abgeschlossen | Stick-Auswahl und Vorlagen-System für mehrere Joystick-Modelle |
 | Phase 4 | Abgeschlossen | Tastatur- und Maus-Ansicht |
-| Phase 4b | Abgeschlossen | Modus-Tags (Combat / Mining / Salvage) |
+| Phase 4b | Abgeschlossen | Modus-Tags (Combat / Mining / Salvage) inkl. Zeilen-Tags und Listen-Tab |
 | Phase 5b | Geplant | Profil-Umschalter für mehrere Belegungssets |
-| Phase 5 | Geplant | Modus-Tags wie Combat, Mining und Salvage |
 | Phase 7 | Geplant | Quick Reference als kompakte Gesamtübersicht |
 | Phase 8 | Geplant | Drucken / PDF mit Schwarz-Weiß-Ansicht |
 | Phase 9 | Laufend | Testen, dokumentieren und öffentliches Feedback sammeln |
@@ -54,6 +53,16 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.4.14 | Hell/Dunkel-Umschalter im Header |
 | v0.4.15 | Transparente Template-PNGs (weißer Hintergrund entfernt) |
 | v0.5.0 | Modus-Tags ✓ |
+| v0.5.1 | Alpha R weißer Hintergrund behoben ✓ |
+| v0.5.2 | Hilfe-Tab: Modus-Tags erklärt ✓ |
+| v0.5.3 | Standard-Modus-Tags auto-gesetzt ✓ |
+| v0.5.4 | Modus-Tag-Punkte vergrößert ✓ |
+| v0.5.5 | Zeilen-Modus-Tags mit Farb-Streifen ✓ |
+| v0.5.6–0.5.7 | Hover-Fix und Hilfe-Update ✓ |
+| v0.5.8 | Belegungsliste-Tab ✓ |
+| v0.5.9 | Reset-Button im Listen-Tab ✓ |
+| v0.5.10 | Overlay-Tagging bereinigt ✓ |
+| v0.5.11 | Farb-Streifen live-Update ✓ |
 | v0.6.0 | Profil-Umschalter |
 | v0.7.0 | Quick Reference Tab |
 | v0.8.0 | Drucken / PDF |

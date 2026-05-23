@@ -1,21 +1,24 @@
 # Joystick-Map
 
-Ein einfacher Browser-Editor fuer Joystick- und HOTAS-Mappings.
+Ein einfacher Browser-Editor fuer Joystick- und HOTAS-Mappings fuer Star Citizen.
 
 Joystick-Map unterstuetzt mehrere Stick-Modelle ueber ein Vorlagen-System.
 Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.22
+## Was ist neu — v0.5.11
 
-- **Update-Check verbessert** — wenn der Browser den GitHub-Zugriff blockiert (Firefox/Firewall), erscheint jetzt ein direkter Link zu den Releases statt „offline"
+- **Belegungsliste-Tab** — alle Button-Belegungen eines Sticks als strukturierte Tabelle; jede Zeile mit direkt anklickbaren C/M/S-Modus-Buttons
+- **Modus-Tags pro Zeile** — einzelne Zeilen innerhalb eines Feldes koennen unabhaengig mit Combat, Mining oder Salvage getaggt werden
+- **Farb-Streifen** auf dem Stick-Overlay zeigt die Zeilen-Tags als stille visuelle Anzeige (kein Klick noetig)
+- **Filter-Bar** — blendet nicht passende Felder aus wenn ein Modus-Filter aktiv ist
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.22`
+Aktuelle Version: `v0.5.11`
 
 ## Download & Start
 
@@ -45,38 +48,25 @@ E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\ma
 E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
 ```
 
-In `controls\mappings` liegen die exportierten Layout-Dateien fuer Joystick/HOTAS. Der alte Profilordner-Hinweis gilt nicht fuer diesen Joystick-Import.
-
-Die aktuelle Standardbelegung von Tastatur und Maus kann Star Citizen auch in der Profil-Datei speichern:
-
-```text
-E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\Profiles\default\actionmaps.xml
-E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\Profiles\default\actionmaps.xml
-```
-
-Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du gerade spielst.
-
 ## Aktueller Stand
 
 - Unterstuetzte Sticks: Virpil Constellation Alpha (L/R), VKB Gladiator SCG (LH/RH)
-- Stick-Auswahl im Header mit klarer Aktiv-/Hover-Markierung, Auswahl wird gespeichert
-- Geraete-Auswahl im Header: Sticks oder Tastatur & Maus
+- Stick-Auswahl im Header, Auswahl wird gespeichert
+- Belegungsliste-Tab: alle Button-Felder als Tabelle mit Zeilen-Modus-Buttons (C/M/S)
+- Modus-Tags (Combat / Mining / Salvage) pro Feld und pro Zeile; Filter-Bar zum Ausblenden
 - Tastatur- und Maus-Tab als Tabellenansicht, Standardbelegung hinterlegt
 - Textfelder direkt auf der Vorlage bearbeitbar, automatische Speicherung im Browser
 - Felder sperren: beim Hover erscheint ein Schloss-Symbol
 - Rueckgaengig-Knopf und Reset-Knopf
-- Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Stick-, Tastatur- und Mausbelegung
-- Update-Check: zeigt eine neue GitHub-Release-Version mit Download-Link an
+- Star Citizen Import: actionmaps.xml direkt einlesen
+- Update-Check mit Download-Link
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
-- Versionsnummer als Badge im Header und in der Statusleiste
+- Hell/Dunkel-Umschalter im Header
 
 ## Projektstatus
 
-- Phase 1: abgeschlossen
-- Phase 2: abgeschlossen
-- Phase 3: abgeschlossen (Stick-Auswahl und Vorlagen-System)
-- Phase 4: abgeschlossen (Tastatur & Maus)
-- Profil-Umschalter: geplant
+- Phase 1–4b: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags)
+- Naechstes Ziel: Profil-Umschalter (v0.6.0)
 
 Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
 

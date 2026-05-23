@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.12 - 2026-05-23
+
+### Dokumentation
+
+- README.md auf v0.5.x aktualisiert: Belegungsliste, Modus-Tags, Farb-Streifen und Filter-Bar beschrieben.
+- ROADMAP.md: Phase-5-Duplikat entfernt, Versionstabelle um v0.5.1–v0.5.11 ergänzt.
+- Hilfe-Tab: Zeilen-Tags-Eintrag korrigiert — beschreibt jetzt den Listen-Tab statt des veralteten Popup-Systems.
+
 ## v0.5.11 - 2026-05-23
 
 ### Behoben
