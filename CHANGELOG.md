@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.15 - 2026-05-23
+
+### Behoben
+
+- SC-Import: VKB-Sticks wurden nicht erkannt, weil der Produktname ` L ` / ` R ` statt `LEFT` / `RIGHT` enthält. Regex in `parseActionmaps()` um `| L |` und `| R |` erweitert — VKB Gladiator (und ähnliche Sticks) importieren jetzt korrekt.
+
 ## v0.5.14 - 2026-05-23
 
 ### Hinzugefügt

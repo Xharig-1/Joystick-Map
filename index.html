@@ -658,10 +658,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.14</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.15</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.5.14';
+const APP_VERSION = 'v0.5.15';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -1144,8 +1144,8 @@ function parseActionmaps(xmlText) {
   doc.querySelectorAll('options[type="joystick"]').forEach(opt => {
     const instance = opt.getAttribute('instance');
     const product = opt.getAttribute('Product') || '';
-    if (/LEFT/i.test(product)) instanceToSide[`js${instance}`] = 'L';
-    else if (/RIGHT/i.test(product)) instanceToSide[`js${instance}`] = 'R';
+    if (/LEFT| L /i.test(product)) instanceToSide[`js${instance}`] = 'L';
+    else if (/RIGHT| R /i.test(product)) instanceToSide[`js${instance}`] = 'R';
   });
   const raw = { L: {}, R: {} };
   const tagRaw = { L: {}, R: {} };
