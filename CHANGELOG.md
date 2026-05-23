@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.14 - 2026-05-24
+
+### Geändert
+
+- Hilfe-Tab: 🖨 Drucken-Button ergänzt (fehlte im "Buttons im Header"-Abschnitt).
+- Hilfe-Tab: Tabs-Abschnitt aktualisiert — 📋 Liste-Tab ergänzt, Stick-Tab-Beschreibung gilt jetzt für alle Stick-Modelle (nicht nur Virpil).
+- Hilfe-Tab: SC-Import-Hinweis ergänzt — VKB-Sticks werden über ` L `/` R ` (mit Leerzeichen) erkannt.
+- ROADMAP.md: Zielbild aktualisiert — Stick-Auswahl war bereits umgesetzt, Fokus jetzt auf öffentliche Tests.
+
 ## v0.7.13 - 2026-05-24
 
 ### Behoben

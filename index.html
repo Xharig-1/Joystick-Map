@@ -702,7 +702,7 @@
           <li>Auf <span class="help-key">⬇ SC Import</span> klicken und die eigene <span class="help-key">actionmaps.xml</span> aus Star Citizen auswählen.</li>
           <li>Die Datei liegt bei LIVE normalerweise unter:<br><span class="help-key">E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings</span></li>
           <li>Die Datei liegt bei HOTFIX normalerweise unter:<br><span class="help-key">E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings</span></li>
-          <li>Joystick L und R werden automatisch erkannt (LEFT / RIGHT im Gerätenamen).</li>
+          <li>Joystick L und R werden automatisch erkannt — Virpil-Sticks über LEFT / RIGHT im Gerätenamen, VKB-Sticks über ` L ` / ` R ` mit Leerzeichen.</li>
           <li>Schaltflächen und Achsen werden importiert.</li>
           <li>Gesperrte Felder werden beim Import übersprungen.</li>
         </ul>
@@ -746,13 +746,15 @@
           <li><span class="help-key">⬇ SC Import</span> — lädt eine Star-Citizen-XML-Datei und übernimmt erkannte Belegungen.</li>
           <li><span class="help-key">↶ Rückgängig</span> — macht die letzte Änderung rückgängig.</li>
           <li><span class="help-key">↺ Reset</span> — leert alle nicht gesperrten Felder (nach Bestätigung).</li>
+          <li><span class="help-key">🖨 Drucken</span> — öffnet den Browser-Druckdialog mit allen Stick-Vorlagen und der Tastatur/Maus-Tabelle.</li>
         </ul>
       </div>
 
       <div class="help-block">
         <h3>Tabs</h3>
         <ul>
-          <li><span class="help-key">Alpha L / Alpha R</span> — linker und rechter Stick der Virpil-Vorlage.</li>
+          <li><span class="help-key">Linker Stick / Rechter Stick</span> — Vorlage des ausgewählten Sticks (z. B. Alpha L / Alpha R oder VKB LH / VKB RH). Die Tab-Bezeichnungen ändern sich je nach gewähltem Stick-Modell.</li>
+          <li><span class="help-key">📋 Liste</span> — alle belegten Felder als Tabelle; Modus-Tags (C/M/S) können hier direkt pro Zeile gesetzt werden.</li>
           <li><span class="help-key">Tastatur / Maus</span> — Tabellenansicht für importierte Tastatur- und Mausbelegungen.</li>
           <li><span class="help-key">Changelog</span> — zeigt wann welches Feld zuletzt geändert wurde.</li>
           <li><span class="help-key">? Hilfe</span> — diese Seite.</li>
@@ -793,7 +795,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.13';
+const APP_VERSION = 'v0.7.14';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [

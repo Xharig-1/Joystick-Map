@@ -1,11 +1,12 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.13`
+Aktuelle Version: `v0.7.14`
 
 ## Zielbild
 
-Joystick-Map soll langfristig nicht nur Virpil Constellation Alpha unterstützen.
-Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste auswählen und dann die passende Mapping-Vorlage bearbeiten können.
+Joystick-Map ist ein Browser-Editor für Joystick- und HOTAS-Mappings in Star Citizen.
+Unterstützte Sticks: Virpil Constellation Alpha (L/R) und VKB Gladiator NXT PREM (LH/RH).
+Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen bei Bedarf ergänzen.
 
 ## Phasen
 
@@ -87,3 +88,4 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.7.11 | VKB NXT PREM RH: 27 fehlende Felder ergänzt (Hat, X/Y/Z, Button 3, drei 5-Wege-Switches) ✓ |
 | v0.7.12 | Author-Footer mit Avatar + GitHub-Link (Xharig-1); dezent gedimmt, beim Drucken ausgeblendet ✓ |
 | v0.7.13 | Virpil Alpha L+R: Felder 30/31 S0 waren vertauscht (Koordinaten-Fix); L-Mapping-Duplikat entfernt ✓ |
+| v0.7.14 | Hilfe-Tab: Drucken-Button ergänzt, Liste-Tab + VKB-Hinweis ergänzt, Tabs-Abschnitt aktualisiert; ROADMAP-Zielbild aktualisiert ✓ |
