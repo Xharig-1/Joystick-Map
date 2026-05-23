@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.7 - 2026-05-23
+
+### Dokumentation
+
+- Hilfe-Tab: Zeilen-Tags erklärt — Farb-Streifen links vom Feld, Klick auf Segment, Mini-Popup mit C/M/S-Buttons pro Zeile.
+
 ## v0.5.6 - 2026-05-23
 
 ### Behoben
