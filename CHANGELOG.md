@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.11 - 2026-05-23
+
+### Behoben
+
+- Listen-Tab: Farb-Streifen auf dem Stick-Overlay aktualisiert sich jetzt sofort nach einem Klick auf C/M/S — kein Reload mehr nötig.
+
 ## v0.5.10 - 2026-05-23
 
 ### Geändert
