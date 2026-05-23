@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.12
+## Was ist neu — v0.7.13
 
-- **Author-Footer** — dezenter Footer mit Avatar und GitHub-Link; sichtbar für alle die die App nutzen oder forken
+- **Virpil Alpha Fix** — Felder 30 und 31 S0 waren auf beiden Sticks in den falschen Positionen; SC-Import-Duplikat auf dem L-Stick behoben
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.12`
+Aktuelle Version: `v0.7.13`
 
 ## Download & Start
 

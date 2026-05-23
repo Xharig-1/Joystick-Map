@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.13 - 2026-05-24
+
+### Behoben
+
+- Virpil Alpha L + R: Felder "30" und "31 S0" waren in den falschen Positionen auf dem Template — Koordinaten getauscht.
+- Virpil Alpha L: SC-Mapping-Duplikat entfernt (`'30': '31'` → beide Felder mappten fälschlich auf SC-Button 31; jetzt mappt "30" korrekt auf sich selbst).
+
 ## v0.7.12 - 2026-05-24
 
 ### Hinzugefügt
