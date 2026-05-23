@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.18 - 2026-05-23
+
+### Hinzugefügt
+
+- SC-Live-Version wird beim Laden automatisch von der Star Citizen Wiki API abgerufen (`api.star-citizen.wiki/api/v2/game-versions`) und ins Untertitelfeld eingetragen.
+- Nur überschrieben wenn das Feld noch „Star Citizen …" enthält — eigene Texte bleiben erhalten.
+- Bei offline oder API-Fehler bleibt der bisherige Wert unverändert.
+
 ## v0.4.17 - 2026-05-23
 
 ### Geändert

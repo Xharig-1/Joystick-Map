@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.17
+## Was ist neu — v0.4.18
 
-- **Virpil-Titelbox-Fix** — Titel- und Untertitelfeld bleiben im Dark-Mode weiß
+- **SC-Version automatisch** — die aktuelle Star Citizen Live-Version wird beim Start von der Community-API abgerufen und ins Untertitelfeld eingetragen
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.17`
+Aktuelle Version: `v0.4.18`
 
 ## Download & Start
 
