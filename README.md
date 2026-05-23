@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.8
+## Was ist neu — v0.7.9
 
-- **VKB Gladiator NXT PREM LH** — Alle Chroma-Artefakte (cyan/türkis) entlang der roten Linien restlos entfernt
+- **VKB Gladiator NXT PREM LH** — Chroma-Artefakte entfernt, Joystick-Bild vollständig erhalten (kein Löcher)
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.8`
+Aktuelle Version: `v0.7.9`
 
 ## Download & Start
 

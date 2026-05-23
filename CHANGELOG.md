@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.9 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM LH: Joystick hatte Löcher (v0.7.8-Filter zu aggressiv). Neuer zweistufiger Filter: sehr dunkel (max ≤ 80) immer behalten; dunkles Grau (max < 180, Sättigung < 25%) behalten; Rot und Weiß behalten; alles andere (Chroma-Artefakte, Cyan, Pink) transparent.
+
 ## v0.7.8 - 2026-05-23
 
 ### Behoben
