@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.5 - 2026-05-23
+
+### Geändert
+
+- VKB NXT PREM LH: eigenes Template-Bild für den linken Stick (bisher wurde fälschlich das RH-Bild für beide Tabs verwendet).
+- Neues Bild aus dem offiziellen LH-PDF extrahiert, Hintergrund transparent gemacht.
+- FIELDS_VKB_NXT_L komplett neu auf die korrekten Positionen des LH-Templates ausgerichtet (Hat oben rechts, Buttons links/rechts, Encoder, Drosselachse).
+
 ## v0.7.4 - 2026-05-23
 
 ### Behoben
