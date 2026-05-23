@@ -42,18 +42,47 @@ jobs:
         env:
           TAG: ${{ github.ref_name }}
 
+      - name: Release Notes aus CHANGELOG extrahieren
+        run: |
+          python3 - <<'EOF'
+          import re, os
+
+          tag = os.environ['TAG']
+          with open('CHANGELOG.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Abschnitt fuer diese Version herausschneiden
+          pattern = rf'(## {re.escape(tag)}.*?)(?=\n## v|\Z)'
+          match = re.search(pattern, content, re.DOTALL)
+          changelog_section = match.group(1).strip() if match else '_Keine Details im CHANGELOG gefunden._'
+
+          notes = f"""## Joystick-Map {tag}
+
+**Download:** `joystick-map-{tag}.html` — Einzeldatei, direkt im Browser öffnen.
+Kein Server, keine Installation, keine weiteren Dateien nötig.
+
+---
+
+{changelog_section}
+
+---
+
+Alle Änderungen: [CHANGELOG.md](https://github.com/{os.environ['REPO']}/blob/main/CHANGELOG.md)"""
+
+          with open('release_notes.md', 'w', encoding='utf-8') as f:
+              f.write(notes)
+          print('Release Notes erstellt.')
+          EOF
+        env:
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+
       - name: GitHub Release erstellen
         run: |
           gh release create "$TAG" \
             "joystick-map-${TAG}.html" \
             --title "Joystick-Map ${TAG}" \
-            --notes "## Joystick-Map ${TAG}
-
-          **Download:** \`joystick-map-${TAG}.html\` — Einzeldatei, direkt im Browser öffnen.
-
-          Kein Server, keine Installation, keine weiteren Dateien nötig.
-
-          Details: siehe [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md)"
+            --notes-file release_notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ github.ref_name }}

@@ -7,9 +7,18 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
+## Was ist neu — v0.4.13
+
+- **VKB Gladiator SCG** (LH + RH) als neue Vorlage — ersetzt den NXT EVO Platzhalter
+- Korrekte Template-Bilder aus den offiziellen VKB-PDF-Vorlagen
+- Alle 40 Eingabefelder exakt auf das PDF-Layout ausgerichtet
+- Fehlende Feldnamen nach VKB-SCG-Schema ergaenzt (B1, A1–A4, C1, D1, F1–F3, RF, MT, Sw1, En1)
+
+Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
+
 ## Version
 
-Aktuelle Version: `v0.4.10`
+Aktuelle Version: `v0.4.13`
 
 ## Download & Start
 
@@ -52,24 +61,17 @@ Auch hier gilt: immer auf LIVE oder HOTFIX achten, je nachdem welchen Kanal du g
 
 ## Aktueller Stand
 
+- Unterstuetzte Sticks: Virpil Constellation Alpha (L/R), VKB Gladiator SCG (LH/RH)
 - Stick-Auswahl im Header mit klarer Aktiv-/Hover-Markierung, Auswahl wird gespeichert
-- Geräte-Auswahl im Header: Virpil-Sticks oder Tastatur & Maus
-- Alpha L und Alpha R als Tabs (Beschriftung passt sich dem Stick an)
-- Titelbereich der Stick-Vorlagen ist besser zentriert und lesbarer
-- Tastatur- und Maus-Tab als Tabellenansicht
-- Standard-Tastatur-Tab als breiterer, tastaturähnlicher Layout-Entwurf
-- Standardbelegung fuer Tastatur und Maus ist hinterlegt und ohne Import sichtbar
-- Textfelder direkt auf der Vorlage bearbeitbar
-- Button-Nummern zeigen die Star-Citizen-internen Eingaben und sind nicht editierbar
-- automatische Speicherung im Browser
-- Rueckgaengig-Knopf fuer letzte Aenderungen
-- Reset-Knopf leert alle Textfelder (gesperrte Felder werden uebersprungen)
+- Geraete-Auswahl im Header: Sticks oder Tastatur & Maus
+- Tastatur- und Maus-Tab als Tabellenansicht, Standardbelegung hinterlegt
+- Textfelder direkt auf der Vorlage bearbeitbar, automatische Speicherung im Browser
 - Felder sperren: beim Hover erscheint ein Schloss-Symbol
+- Rueckgaengig-Knopf und Reset-Knopf
 - Star Citizen Import: actionmaps.xml direkt einlesen, inklusive Stick-, Tastatur- und Mausbelegung
 - Update-Check: zeigt eine neue GitHub-Release-Version mit Download-Link an
 - Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
-- Version wird in der Statusleiste angezeigt
-- Version wird zusätzlich als Badge im Header angezeigt
+- Versionsnummer als Badge im Header und in der Statusleiste
 
 ## Projektstatus
 
