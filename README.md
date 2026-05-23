@@ -7,16 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.15
+## Was ist neu — v0.4.16
 
-- **Transparente Template-Hintergründe** — weißer Seitenrand der Vorlagen entfernt, Eingabefelder bleiben weiß
-- Sieht in Dark- und Light-Modus sauber aus
+- **VKB-Template-Fix** — eingeschlossene weiße Boxen innerhalb der Verbindungslinien jetzt ebenfalls transparent
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.15`
+Aktuelle Version: `v0.4.16`
 
 ## Download & Start
 

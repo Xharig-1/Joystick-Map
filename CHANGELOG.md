@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.16 - 2026-05-23
+
+### Geändert
+
+- VKB-Gladiator-SCG-Templates: eingeschlossene weiße Boxen (von Verbindungslinien umrahmte Innenfelder) nun ebenfalls transparent — `largeArea`-Schwellwert in `remove-bg.mjs` von 200 auf 1 gesenkt.
+
 ## v0.4.15 - 2026-05-23
 
 ### Geändert
