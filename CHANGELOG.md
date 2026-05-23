@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.20 - 2026-05-23
+
+### Behoben
+
+- GitHub-Actions-Workflow repariert: Python-Skripte aus dem YAML-Heredoc in separate Dateien (`.github/scripts/`) ausgelagert — alle Workflow-Runs seit v0.4.14 schlugen lautlos fehl (0 Jobs), neue GitHub-Releases wurden nicht erstellt, Update-Check zeigte immer „offline".
+
 ## v0.4.19 - 2026-05-23
 
 ### Geändert
