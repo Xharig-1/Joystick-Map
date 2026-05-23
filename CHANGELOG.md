@@ -4,12 +4,6 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
-## v0.7.5 - 2026-05-23
-
-### Hinzugefügt
-
-- VKB NXT PREM: 4 weiße Markierungsboxen mit 1px schwarzem Rand an spezifischen Template-Positionen (wb_l1 links, wb_r1/wb_r2/wb_r3 rechts).
-
 ## v0.7.4 - 2026-05-23
 
 ### Behoben
