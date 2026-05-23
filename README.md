@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.1
+## Was ist neu — v0.7.2
 
-- **Druck-Fix** — Stick-Overlay wird jetzt nicht mehr abgeschnitten; skaliert korrekt auf A4 Querformat
+- **VKB Gladiator NXT PREM** — neues Vorlagenbild (offizielles Diagramm), Felder direkt aus PDF-Koordinaten abgeleitet, SC-Import funktioniert korrekt (Buttons 1–29, Hat-Eingaben, Achsen)
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.1`
+Aktuelle Version: `v0.7.2`
 
 ## Download & Start
 
@@ -47,7 +47,7 @@ E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\
 
 ## Aktueller Stand
 
-- Unterstuetzte Sticks: Virpil Constellation Alpha (L/R), VKB Gladiator SCG (LH/RH)
+- Unterstuetzte Sticks: Virpil Constellation Alpha (L/R), VKB Gladiator NXT PREM (LH/RH)
 - Stick-Auswahl im Header, Auswahl wird gespeichert
 - Belegungsliste-Tab: alle Button-Felder als Tabelle mit Zeilen-Modus-Buttons (C/M/S)
 - Modus-Tags (Combat / Mining / Salvage) pro Feld und pro Zeile; Filter-Bar zum Ausblenden

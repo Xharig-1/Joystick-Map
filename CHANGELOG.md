@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.2 - 2026-05-23
+
+### Geändert
+
+- VKB Gladiator SCG-Template durch VKB Gladiator NXT PREM ersetzt.
+- Neues Vorlagenbild (offizielles 1600×800-Diagramm, beide Sticks LH/RH nebeneinander).
+- Feldpositionen direkt aus PDF-Koordinaten abgeleitet; Feldnamen entsprechen jetzt den SC-Button-IDs (1–29, hat1_up usw.) — kein manuelles Mapping mehr nötig.
+- `SC_BUTTON_IDS` ist jetzt stick-spezifisch (Virpil-Mapping unter `'virpil-alpha'`), damit VKB NXT Felder beim SC-Import korrekt erkannt werden.
+
 ## v0.7.1 - 2026-05-23
 
 ### Behoben

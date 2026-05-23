@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.1`
+Aktuelle Version: `v0.7.2`
 
 ## Zielbild
 
@@ -74,3 +74,5 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.6.0 | Profil-Umschalter ✓ |
 | v0.6.1 | Datenverlust-Fix (normalizeProfile) ✓ |
 | v0.7.0 | Drucken ✓ |
+| v0.7.1 | Druck-Fix: max-height 180mm ✓ |
+| v0.7.2 | VKB NXT PREM Template (neues Bild, SC-Import-Fix) ✓ |
