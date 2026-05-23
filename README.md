@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.16
+## Was ist neu — v0.4.17
 
-- **VKB-Template-Fix** — eingeschlossene weiße Boxen innerhalb der Verbindungslinien jetzt ebenfalls transparent
+- **Virpil-Titelbox-Fix** — Titel- und Untertitelfeld bleiben im Dark-Mode weiß
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.16`
+Aktuelle Version: `v0.4.17`
 
 ## Download & Start
 

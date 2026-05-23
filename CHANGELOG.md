@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.17 - 2026-05-23
+
+### Geändert
+
+- Virpil-Templates: Titel- und Untertitelfeld haben jetzt immer weißen Hintergrund (`background: #ffffff`) — war nach PNG-Transparenz-Verarbeitung dunkel im Dark-Mode.
+
 ## v0.4.16 - 2026-05-23
 
 ### Geändert
