@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.13 - 2026-05-23
+
+### Geändert
+
+- VKB-Vorlage auf VKB Gladiator SCG (LH/RH) umgestellt.
+- Korrekte Template-PNGs aus den offiziellen PDF-Vorlagen erzeugt (1649×1274 px).
+- Alle 40 Eingabefelder exakt auf die Eingabeboxen des PDF-Layouts ausgerichtet (koordinaten via pdfjs aus dem PDF extrahiert).
+- Gerätekey von `vkb-gladiator-nxt` auf `vkb-gladiator-scg` umbenannt.
+- Feldnamen jetzt nach VKB-SCG-Schema: B1, A1–A4, C1, D1, F1–F3, RF, MT, Sw1, En1.
+
 ## v0.4.12 - 2026-05-22
 
 ### Hinzugefügt
