@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.18 - 2026-05-23
+
+### Behoben
+
+- Modus-Tags nach SC-Import jetzt sofort als farbige Streifen und Hover-Punkte sichtbar.
+- Hover-Popup (●-Punkte) auf der Stick-Vorlage wurde nie erstellt — `createTagCompanion` in `buildOverlay` ergänzt.
+- Feld-Tags werden im Zeilen-Streifen als gleichmäßige Farbe angezeigt, wenn keine Zeilen-Tags gesetzt sind (Fallback).
+- Beim Stick-Wechsel blieben `.line-strip`- und `.tag-companion`-Elemente als Zombie-Elemente im DOM — werden jetzt korrekt entfernt.
+
 ## v0.5.17 - 2026-05-23
 
 ### Behoben

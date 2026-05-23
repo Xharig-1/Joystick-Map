@@ -661,7 +661,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.16</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.5.17';
+const APP_VERSION = 'v0.5.18';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -1250,7 +1250,12 @@ function applyAutoTagsFromImport(suggestedTags) {
     const inputId = getScInputId(side, name);
     if (!inputId) return;
     const modes = suggestedTags[side] && suggestedTags[side][inputId];
-    if (modes && modes.length > 0) setFieldTags(side, name, modes);
+    if (modes && modes.length > 0) {
+      setFieldTags(side, name, modes);
+      updateTagCompanion(side, name);
+      const strip = document.querySelector(`.line-strip[data-side="${side}"][data-name="${name}"]`);
+      if (strip) refreshLineStrip(strip, ta, side, name);
+    }
   });
   applyModeFilter();
   if (document.querySelector('#panel-LIST.active')) renderListView();
@@ -1669,9 +1674,11 @@ function refreshLineStrip(strip, ta, side, name) {
     strip.appendChild(seg);
   }
   const lt = getLineTags(side, name);
+  const ft = getFieldTags(side, name);
+  const hasLineTags = Object.keys(lt).length > 0;
   let hasAny = false;
   Array.from(strip.children).forEach((seg, i) => {
-    const modes = lt[i] || [];
+    const modes = lt[i] || (hasLineTags ? [] : ft);
     if (modes.length === 0) {
       seg.style.background = 'rgba(255,255,255,0.1)';
     } else if (modes.length === 1) {
@@ -1796,6 +1803,7 @@ function buildOverlay(containerId, fields, side) {
     wrap.appendChild(createLockCompanion(ta, side, f.name));
     if (isButtonField(f.name)) {
       wrap.appendChild(createLineStrip(ta, side, f.name));
+      wrap.appendChild(createTagCompanion(ta, side, f.name));
     }
 
     if (isButtonField(f.name) && getActiveStick().showButtonIds !== false) {
@@ -2266,7 +2274,7 @@ function applyStick(stickId) {
     if (!tpl) return;
     if (img) { img.src = tpl.src; img.alt = tpl.alt; img.style.width = tpl.width + 'px'; img.style.height = tpl.height + 'px'; }
     const wrap = document.getElementById('wrap-' + side);
-    if (wrap) Array.from(wrap.querySelectorAll('textarea.field, .lock-btn')).forEach(t => t.remove());
+    if (wrap) Array.from(wrap.querySelectorAll('textarea.field, .lock-btn, .line-strip, .tag-companion')).forEach(t => t.remove());
     buildOverlay('wrap-' + side, stick.fields[side], side);
   });
   renderMappingTables();
