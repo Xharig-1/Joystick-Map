@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.4 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM Bild: Flood-Fill hatte dunkle Joystick-Grafik-Bereiche fälschlich transparent gemacht (im Hell-Modus sichtbar). Fix: zweistufiger Ansatz — globale Grau-Ersetzung (kein Flood-Fill, kein Bleed-Risiko) + enger Rand-Flood-Fill (Toleranz 10) für den ~15px breiten schwarzen Außenrahmen.
+
 ## v0.7.3 - 2026-05-23
 
 ### Behoben
