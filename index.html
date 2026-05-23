@@ -333,14 +333,15 @@
   .mode-filter-btn[data-mode="salvage"]:hover, .mode-filter-btn[data-mode="salvage"].active { border-color:#4db8e8; color:#4db8e8; background:rgba(77,184,232,0.12); }
 
   .tag-companion {
-    position: absolute; display: flex; gap: 2px; align-items: center; z-index: 15;
-    cursor: pointer; opacity: 0; transition: opacity .15s; pointer-events: none; user-select: none; padding: 1px 2px;
+    position: absolute; display: flex; gap: 3px; align-items: center; z-index: 15;
+    cursor: pointer; opacity: 0; transition: opacity .15s; pointer-events: none; user-select: none;
+    padding: 2px 4px; border-radius: 3px; background: rgba(0,0,0,0.45);
   }
   .tag-companion.visible  { opacity: 1; pointer-events: auto; }
   .tag-companion.has-tags { opacity: 1; pointer-events: auto; }
   .tag-companion.mode-dimmed { opacity: 0 !important; pointer-events: none !important; }
-  .tag-dot { width: 5px; height: 5px; border-radius: 50%; display: block; flex: 0 0 auto; }
-  .tag-companion-empty { font-size: 8px; color: var(--text-dim); line-height: 1; }
+  .tag-dot { width: 9px; height: 9px; border-radius: 50%; display: block; flex: 0 0 auto; box-shadow: 0 0 3px rgba(0,0,0,0.6); }
+  .tag-companion-empty { font-size: 10px; color: rgba(255,255,255,0.5); line-height: 1; }
 
   .tag-popup {
     position: fixed; z-index: 2000; background: var(--bg2); border: 1px solid var(--accent2);
@@ -396,7 +397,7 @@
 <div id="header">
   <div class="brand">
     <h1>⬡ Joystick-Map</h1>
-    <span class="version-badge" id="header-version">v0.5.3</span>
+    <span class="version-badge" id="header-version">v0.5.4</span>
     <span class="version-badge sc-version-badge" id="sc-version" style="display:none"></span>
   </div>
   <div class="hdr-actions">
@@ -605,10 +606,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.3</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.5.4</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.5.3';
+const APP_VERSION = 'v0.5.4';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [

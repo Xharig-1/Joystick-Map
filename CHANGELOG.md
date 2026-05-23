@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.4 - 2026-05-23
+
+### Verbessert
+
+- Modus-Tag-Punkte auf den Stick-Vorlagen: Größe von 5 px auf 9 px erhöht, dunkler Hintergrund und leichter Schatten hinzugefügt — deutlich besser erkennbar auf dem Template-Bild.
+
 ## v0.5.3 - 2026-05-23
 
 ### Hinzugefügt
