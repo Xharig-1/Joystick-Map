@@ -7,18 +7,19 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.5.11
+## Was ist neu — v0.5.16
 
-- **Belegungsliste-Tab** — alle Button-Belegungen eines Sticks als strukturierte Tabelle; jede Zeile mit direkt anklickbaren C/M/S-Modus-Buttons
-- **Modus-Tags pro Zeile** — einzelne Zeilen innerhalb eines Feldes koennen unabhaengig mit Combat, Mining oder Salvage getaggt werden
-- **Farb-Streifen** auf dem Stick-Overlay zeigt die Zeilen-Tags als stille visuelle Anzeige (kein Klick noetig)
-- **Filter-Bar** — blendet nicht passende Felder aus wenn ein Modus-Filter aktiv ist
+- **SC-Import VKB-Achsen** — `twist`, `throttle`, `A1(x/y)` und Hat-Inputs werden jetzt korrekt aus der XML geparst
+- **SC-Import VKB-Sticks** — Geraete mit ` L ` / ` R ` im Namen werden erkannt (statt nur `LEFT` / `RIGHT`)
+- **SC-Import Modus-Tags** — Tags werden beim Import automatisch anhand der Aktionskategorie gesetzt
+- **Zeilen-Modus-Tags** — einzelne Zeilen innerhalb eines Feldes koennen unabhaengig mit Combat, Mining oder Salvage getaggt werden
+- **Belegungsliste-Tab** — alle Button-Belegungen als strukturierte Tabelle mit direkt anklickbaren C/M/S-Buttons
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.5.11`
+Aktuelle Version: `v0.5.16`
 
 ## Download & Start
 
