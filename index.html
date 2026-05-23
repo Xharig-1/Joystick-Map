@@ -772,7 +772,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.10';
+const APP_VERSION = 'v0.7.11';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -916,14 +916,47 @@ const FIELDS_VKB_NXT_L = [
   {"name":"18", "value":"","left":1276,"top":621,"width":127,"height":27}
 ];
 const FIELDS_VKB_NXT_R = [
-  // Linke Spalte (Buttons 1, 2, 4, 5, 21, 22)
+  // Hat / Mode Switch (oben links)
+  {"name":"hat1_upleft",   "value":"","left":70,  "top":56, "width":127,"height":27},
+  {"name":"hat1_up",       "value":"","left":226, "top":56, "width":127,"height":27},
+  {"name":"hat1_upright",  "value":"","left":381, "top":56, "width":127,"height":27},
+  {"name":"hat1_left",     "value":"","left":70,  "top":84, "width":127,"height":26},
+  {"name":"hat1_right",    "value":"","left":381, "top":84, "width":127,"height":26},
+  {"name":"hat1_downleft", "value":"","left":70,  "top":111,"width":127,"height":27},
+  {"name":"hat1_down",     "value":"","left":226, "top":111,"width":127,"height":27},
+  {"name":"hat1_downright","value":"","left":381, "top":111,"width":127,"height":27},
+  // Joystick-Achsen (Mitte oben)
+  {"name":"x",  "value":"","left":779,"top":83, "width":127,"height":27},
+  {"name":"y",  "value":"","left":779,"top":111,"width":127,"height":27},
+  {"name":"z",  "value":"","left":779,"top":139,"width":127,"height":27},
+  // Button 3
+  {"name":"3",  "value":"","left":382,"top":225,"width":127,"height":27},
+  // 5-Wege-Ministick 1 (Buttons 11–15)
+  {"name":"15", "value":"","left":226,"top":310,"width":127,"height":27},
+  {"name":"14", "value":"","left":70, "top":338,"width":127,"height":27},
+  {"name":"11", "value":"","left":226,"top":338,"width":126,"height":27},
+  {"name":"12", "value":"","left":381,"top":338,"width":127,"height":27},
+  {"name":"13", "value":"","left":226,"top":366,"width":127,"height":27},
+  // 5-Wege-Ministick 2 (Buttons 6–10)
+  {"name":"6",  "value":"","left":226,"top":437,"width":127,"height":27},
+  {"name":"9",  "value":"","left":70, "top":465,"width":127,"height":27},
+  {"name":"10", "value":"","left":226,"top":465,"width":126,"height":27},
+  {"name":"7",  "value":"","left":381,"top":465,"width":127,"height":27},
+  {"name":"8",  "value":"","left":226,"top":493,"width":127,"height":27},
+  // 5-Wege-Ministick 3 (Buttons 16–20)
+  {"name":"16", "value":"","left":226,"top":565,"width":127,"height":27},
+  {"name":"19", "value":"","left":70, "top":593,"width":127,"height":27},
+  {"name":"20", "value":"","left":226,"top":593,"width":126,"height":27},
+  {"name":"17", "value":"","left":381,"top":593,"width":127,"height":27},
+  {"name":"18", "value":"","left":226,"top":621,"width":127,"height":27},
+  // Rechte Spalte (Buttons 1, 2, 4, 5, 21, 22)
   {"name":"4",  "value":"","left":1261,"top":167,"width":127,"height":27},
   {"name":"21", "value":"","left":1261,"top":210,"width":127,"height":27},
   {"name":"22", "value":"","left":1261,"top":238,"width":127,"height":27},
   {"name":"1",  "value":"","left":1261,"top":281,"width":127,"height":27},
   {"name":"2",  "value":"","left":1261,"top":309,"width":127,"height":27},
   {"name":"5",  "value":"","left":1261,"top":352,"width":127,"height":27},
-  // Zeile (Buttons 28, 27, 29)
+  // Zeile (Buttons 27, 28, 29)
   {"name":"28", "value":"","left":1106,"top":423,"width":127,"height":27},
   {"name":"27", "value":"","left":1262,"top":423,"width":127,"height":27},
   {"name":"29", "value":"","left":1418,"top":423,"width":127,"height":27},

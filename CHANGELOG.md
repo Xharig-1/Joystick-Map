@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.11 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM RH: 27 fehlende Felder ergänzt (linke Hälfte des RH-Templates): Hat/Mode Switch (8 Richtungen), Achsen X/Y/Z, Button 3, drei 5-Wege-Ministicks (Buttons 6–20). Alle Positionen per Auto-Erkennung.
+
 ## v0.7.10 - 2026-05-23
 
 ### Behoben

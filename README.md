@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.10
+## Was ist neu — v0.7.11
 
-- **VKB Gladiator NXT PREM RH** — Feldpositionen korrigiert (Encoder 23–26 waren 32 px zu hoch, Buttons 28/27/29 waren 7 px zu hoch); Throttle-Felder hinzugefügt
+- **VKB Gladiator NXT PREM RH** — 27 fehlende Felder ergänzt: Hat/Mode Switch (8 Richtungen), Achsen X/Y/Z, Button 3, drei 5-Wege-Ministicks (Buttons 6–20)
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.10`
+Aktuelle Version: `v0.7.11`
 
 ## Download & Start
 

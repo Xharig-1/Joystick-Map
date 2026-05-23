@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.10`
+Aktuelle Version: `v0.7.11`
 
 ## Zielbild
 
@@ -84,3 +84,4 @@ Geplant ist ein Vorlagen-System, bei dem Nutzer ihren Stick aus einer Liste ausw
 | v0.7.8 | VKB NXT PREM LH: Alle Chroma-Artefakte restlos entfernt (nur Schwarz/Rot/Weiß behalten) ✓ |
 | v0.7.9  | VKB NXT PREM LH: Joystick-Löcher behoben; zweistufiger Filter (max≤80 + dunkles Grau max<180 Sat<25%) ✓ |
 | v0.7.10 | VKB NXT PREM RH: Feldpositionen korrigiert (Encoder +32px, 28/27/29 +7px), Throttle-Felder neu ✓ |
+| v0.7.11 | VKB NXT PREM RH: 27 fehlende Felder ergänzt (Hat, X/Y/Z, Button 3, drei 5-Wege-Switches) ✓ |
