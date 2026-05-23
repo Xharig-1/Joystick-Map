@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.7.6
+## Was ist neu — v0.7.7
 
-- **VKB Gladiator NXT PREM LH** — eigenes Template-Bild für den linken Stick; weiße Box-Fills transparent gemacht (Dunkel-Modus-Fix)
+- **VKB Gladiator NXT PREM LH** — JPEG-Artefakte (helle Halos entlang der roten Linien) entfernt; weiße Eingabeboxen bleiben erhalten
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.7.6`
+Aktuelle Version: `v0.7.7`
 
 ## Download & Start
 

@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.7 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM LH: Helle JPEG-Artefakte (Halos) entlang der roten Verbindungslinien entfernt. Weiße Eingabeboxen bleiben erhalten (v0.7.6-Transparenz rückgängig gemacht).
+
 ## v0.7.6 - 2026-05-23
 
 ### Behoben
