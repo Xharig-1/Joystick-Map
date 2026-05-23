@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.21
+## Was ist neu — v0.4.22
 
-- **Update-Check verbessert** — "offline" nur noch bei echtem Netzwerkfehler; Rate-Limit und HTTP-Fehler zeigen jetzt eine sprechende Meldung statt generisch "offline"
+- **Update-Check verbessert** — wenn der Browser den GitHub-Zugriff blockiert (Firefox/Firewall), erscheint jetzt ein direkter Link zu den Releases statt „offline"
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.21`
+Aktuelle Version: `v0.4.22`
 
 ## Download & Start
 

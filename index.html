@@ -340,7 +340,7 @@
 <div id="header">
   <div class="brand">
     <h1>⬡ Joystick-Map</h1>
-    <span class="version-badge" id="header-version">v0.4.21</span>
+    <span class="version-badge" id="header-version">v0.4.22</span>
     <span class="version-badge sc-version-badge" id="sc-version" style="display:none"></span>
   </div>
   <div class="hdr-actions">
@@ -520,10 +520,10 @@
   </div>
 </div>
 
-<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.4.21</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
+<div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version">v0.4.22</span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.4.21';
+const APP_VERSION = 'v0.4.22';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const FIELDS_L = [{"name":"Titel","value":"Constellation Alpha L","left":109.7,"top":22.62,"width":169.4,"height":33.6},{"name":"Untertitel","value":"Star Citizen","left":109.7,"top":56.48,"width":169.4,"height":19.2},{"name":"13","value":"Frachtanfrage\nAutomatische Landung\nVTOL (Toggle)\nAndocken","left":294.7,"top":56.03,"width":141.15,"height":24.95},{"name":"14","value":"Docking Modus","left":294.7,"top":81.23,"width":141.15,"height":24.95},{"name":"15","value":"Konfiguration wechseln\nFlügel ausklappen","left":295.45,"top":106.18,"width":141.15,"height":24.95},{"name":"16","value":"Landeerlaubnis / ATC\nLandegestell (Toggle)","left":294.7,"top":131.13,"width":141.15,"height":24.75},{"name":"17","value":"Türen (Toggle)","left":294.7,"top":155.63,"width":141.15,"height":24.95},{"name":"18","value":"Energie Gesamt (Toggle)","left":151.9,"top":197.38,"width":141.1,"height":24.95},{"name":"19","value":"Antriebe Energie (Toggle)","left":151.9,"top":222.33,"width":141.1,"height":24.95},{"name":"20","value":"Energie → Antriebe\nEnergie → Schilde\nEnergie → Waffen","left":151.9,"top":246.53,"width":141.1,"height":25},{"name":"6","value":"Ferngeschütz 1\nFerngeschütz 2\nFerngeschütz 3","left":176.35,"top":288.33,"width":141.15,"height":24.95},{"name":"1","value":"Waffenmodus","left":185.95,"top":328.88,"width":141.15,"height":24.95},{"name":"2","value":"Raketenmodus","left":185.95,"top":353.83,"width":141.15,"height":24.95},{"name":"3","value":"Nachbrenner\nBoost","left":220.75,"top":389.13,"width":141.15,"height":24.95},{"name":"4","value":"Spacebrake\nBremse","left":220.75,"top":414.28,"width":141.15,"height":24.7},{"name":"31 S0","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":220.55,"top":458.48,"width":141.1,"height":24.95},{"name":"X","value":"Strafe links/rechts\nYaw links/rechts","left":262.3,"top":499.48,"width":141.1,"height":25},{"name":"Y","value":"Strafe hoch/runter\nPitch hoch/runter","left":262.3,"top":524.73,"width":141.1,"height":24.7},{"name":"Z","value":"Rollen","left":262.3,"top":549.43,"width":141.1,"height":24.95},{"name":"12","value":"Decoupled (Toggle)","left":510.7,"top":45.68,"width":141.15,"height":24.95},{"name":"5","value":"3rd Person Kamera","left":544.3,"top":88.38,"width":141.4,"height":24.95},{"name":"rX","value":"Umsehen: Nach links/rechts","left":544.3,"top":113.33,"width":141.4,"height":25},{"name":"rY","value":"Umsehen: Nach oben/unten","left":544.3,"top":138.33,"width":141.4,"height":24.95},{"name":"7","value":"Ziel im Sichtbereich\nZiel Sichtbereich (Reset)","left":597.1,"top":175.73,"width":141.4,"height":25},{"name":"8","value":"Feind durchschalten\nFeind (Reset)","left":597.1,"top":200.73,"width":141.4,"height":24.95},{"name":"9","value":"Freund durchschalten\nFreund (Reset)","left":597.1,"top":225.68,"width":141.4,"height":24.95},{"name":"10","value":"Ziel freigeben","left":597.1,"top":250.63,"width":141.4,"height":24.95},{"name":"11","value":"Angreifer zurück\nAngreifer vor","left":597.1,"top":275.58,"width":141.4,"height":24.95},{"name":"25","value":"IR Flare abfeuern","left":635.3,"top":315.18,"width":141.1,"height":24.95},{"name":"26","value":"IR Flare +","left":635.3,"top":340.13,"width":141.1,"height":25},{"name":"27","value":"Ping","left":635.3,"top":365.13,"width":141.1,"height":24.95},{"name":"28","value":"IR Flare -","left":635.3,"top":390.08,"width":141.1,"height":24.95},{"name":"29","value":"Erweitertes HUD (Toggle)","left":635.3,"top":415.78,"width":141.1,"height":24.95},{"name":"21","value":"Bergbau Modus\nBetankung Modus\nBergung Modus","left":598.8,"top":455.13,"width":141.1,"height":24.95},{"name":"22","value":"Nachtsicht LAMP","left":598.8,"top":480.08,"width":141.1,"height":24.95},{"name":"23","value":"Speed Limit -\nTraktorstrahl -","left":598.8,"top":505.03,"width":141.1,"height":24.25},{"name":"24","value":"Speed Limit +\nTraktorstrahl +","left":598.8,"top":529.28,"width":141.1,"height":24.95},{"name":"30","value":"Rakete abfeuern (Kino)\nRakete abfeuern (Kino halten)\nScheinwerfer (Toggle)\nHead Tracking (Toggle)","left":475.78,"top":565.29,"width":141.1,"height":24.95},{"name":"Anmerkung 1","value":"FEHLT NOCH:\nEnergie Verteilung\nSchilde Energie (Toggle)\nPraezisions Modus (Halten / Tippen)\nSchub Forward / Backward","left":15.55,"top":335.13,"width":140.65,"height":74.6},{"name":"Anmerkung 2","value":"3,0       5,7\n2,1       3,6\n900m","left":16.05,"top":417.68,"width":140.9,"height":74.4},{"name":"Anmerkung 3","value":"","left":16.3,"top":499.98,"width":140.85,"height":74.4}];
@@ -1654,7 +1654,11 @@ async function checkForUpdates() {
       cache: 'no-store'
     });
   } catch {
-    el.textContent = 'offline';
+    if (location.protocol === 'file:') {
+      el.innerHTML = 'kein Zugriff &mdash; <a href="https://github.com/Xharig-1/Joystick-Map/releases/latest" target="_blank" rel="noopener">Releases auf GitHub</a>';
+    } else {
+      el.textContent = 'offline';
+    }
     return;
   }
   if (response.status === 403 || response.status === 429) {

@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.22 - 2026-05-23
+
+### Verbessert
+
+- Update-Check: wenn der Browser den Zugriff auf die GitHub-API blockiert (z. B. Firefox bei `file://`-Seiten oder Firewall), erscheint jetzt „kein Zugriff" mit einem direkten Link zu den GitHub-Releases statt dem irreführenden „offline".
+
 ## v0.4.21 - 2026-05-23
 
 ### Verbessert
