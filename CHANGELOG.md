@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.4.19 - 2026-05-23
+
+### Geändert
+
+- SC Live-Version wird jetzt im Header neben der App-Version angezeigt (statt im Virpil-Untertitelfeld), sichtbar bei jedem Stick.
+- Virpil-Untertitelfeld: Standardwert auf „Star Citizen" gekürzt, Versionsauto-Fill entfernt.
+- Neues Badge `.sc-version-badge` mit dezenter Farbe (neutral, nicht grün).
+
 ## v0.4.18 - 2026-05-23
 
 ### Hinzugefügt

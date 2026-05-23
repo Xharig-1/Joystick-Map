@@ -7,15 +7,15 @@ Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
 
 Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
 
-## Was ist neu — v0.4.18
+## Was ist neu — v0.4.19
 
-- **SC-Version automatisch** — die aktuelle Star Citizen Live-Version wird beim Start von der Community-API abgerufen und ins Untertitelfeld eingetragen
+- **SC-Version im Header** — aktuelle Star Citizen Live-Version wird beim Start automatisch abgerufen und neben der App-Version im Header angezeigt, sichtbar bei jedem Stick
 
 Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
 
 ## Version
 
-Aktuelle Version: `v0.4.18`
+Aktuelle Version: `v0.4.19`
 
 ## Download & Start
 
