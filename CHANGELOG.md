@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.6 - 2026-05-23
+
+### Behoben
+
+- Farb-Streifen (Zeilen-Tags): 120 ms Verzögerung beim Ausblenden verhindert, dass der Streifen verschwindet, bevor die Maus von der Textbox dorthin wechseln kann (2 px Lücke).
+
 ## v0.5.5 - 2026-05-23
 
 ### Hinzugefügt
