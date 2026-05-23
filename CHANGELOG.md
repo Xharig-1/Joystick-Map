@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.6 - 2026-05-23
+
+### Behoben
+
+- VKB NXT PREM LH: Weiße Box-Fills im Template-Bild transparent gemacht. Im Dunkel-Modus waren die Eingabefelder als helle weiße Flächen sichtbar, weil das LH-PDF die Felder als weiße Rechtecke ins Bild eingebaut hatte.
+
 ## v0.7.5 - 2026-05-23
 
 ### Geändert
