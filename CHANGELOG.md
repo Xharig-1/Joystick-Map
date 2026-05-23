@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.19 - 2026-05-23
+
+### Behoben
+
+- Versionsnummer im Header wird jetzt aus `APP_VERSION` gesetzt statt statisch im HTML — war seit v0.5.12 nicht mehr aktuell.
+
 ## v0.5.18 - 2026-05-23
 
 ### Behoben
