@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.5 - 2026-05-23
+
+### Behoben
+
+- Eingabefelder im Dunkel-Modus: schwarzer Text auf transparentem dunklen Hintergrund war nicht lesbar. Felder haben jetzt `background: #f2f6f2` (= Hell-Modus-Hintergrundfarbe) — im Dunkel-Modus als weiße Box sichtbar, im Hell-Modus nahtlos mit dem App-Hintergrund.
+
 ## v0.7.4 - 2026-05-23
 
 ### Behoben
