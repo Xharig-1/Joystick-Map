@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.9 - 2026-05-23
+
+### Hinzugefügt
+
+- Listen-Tab: Button „↺ Modus zurücksetzen" oben rechts löscht alle Feld- und Zeilen-Modus-Tags der aktuell angezeigten Seite (L oder R) nach Bestätigung.
+
 ## v0.5.8 - 2026-05-23
 
 ### Hinzugefügt
