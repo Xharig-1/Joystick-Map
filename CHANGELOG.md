@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.16 - 2026-05-23
+
+### Verbessert
+
+- SC-Import: Parser erkennt jetzt auch `rotz`-Achse und Hat-Inputs (`hat1_up/down/left/right`) aus der XML.
+- SC-Import: VKB-Achsen `twist` → `rotz`, `throttle` → `z`, `A1(x)` → `rotx`, `A1(y)` → `roty` werden jetzt korrekt befüllt.
+
 ## v0.5.15 - 2026-05-23
 
 ### Behoben
