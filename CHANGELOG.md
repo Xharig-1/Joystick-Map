@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.5.13 - 2026-05-23
+
+### Behoben
+
+- Virpil Alpha R: Eingabe-Boxen waren durch `largeArea=1` in v0.5.1 fälschlich transparent gemacht worden. Template-PNG auf Stand v0.4.15 (largeArea=50000) zurückgesetzt — Boxen sind wieder weiß.
+
 ## v0.5.12 - 2026-05-23
 
 ### Dokumentation
