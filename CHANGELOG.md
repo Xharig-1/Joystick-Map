@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.34 - 2026-05-24
+
+### Behoben
+
+- Listen-Tab: Modus-Tags aus SC Import (Feld-Tags) wurden nicht angezeigt — der Tab zeigte nur Zeilen-Tags, aber nicht den Fallback auf Feld-Tags wenn keine Zeilen-Tags gesetzt sind (Farb-Streifen hatte diesen Fallback bereits korrekt)
+
 ## v0.7.33 - 2026-05-24
 
 ### Behoben

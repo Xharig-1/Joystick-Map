@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.33`
+Aktuelle Version: `v0.7.34`
 
 ## Zielbild
 
@@ -108,3 +108,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.31 | Reset-Button leert jetzt auch Modus-Tags (Combat/Mining/Salvage) aller Felder beider Sticks ✓ |
 | v0.7.32 | #dev: Store exportieren, Migrations-Flags zurücksetzen, Store leeren ✓ |
 | v0.7.33 | Kritischer Bug: normalizeStore hat Migrations-Flags verworfen → Migrationen liefen bei jedem F5 erneut ✓ |
+| v0.7.34 | Listen-Tab: Modus-Tags aus SC Import wurden nicht angezeigt (Feld-Tag-Fallback fehlte) ✓ |
