@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.24 - 2026-05-24
+
+### Behoben
+
+- Virpil Alpha L + R: Hat-Gruppen 8–12 und 14–18 waren vertauscht — Felder zeigten falsche Button-Nummern
+- Default-Tags und Zeilen-Tags entsprechend korrigiert
+- Datenmigration: gespeicherte Belegungen und Tags werden beim ersten Start automatisch in die korrekten Felder umgetragen
+
 ## v0.7.23 - 2026-05-24
 
 ### Geändert
