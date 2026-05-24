@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.19`
+Aktuelle Version: `v0.7.20`
 
 ## Zielbild
 
@@ -94,3 +94,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.17 | Kalibrieren: Drag-Fläche + Clipboard-Copy; Hilfe-Tab dokumentiert ✓ |
 | v0.7.18 | Virpil Alpha L+R: Template-Bilder ersetzt (clean, 2× Auflösung) ✓ |
 | v0.7.19 | Virpil Alpha L+R: Feldpositionen neu kalibriert (jimp-Auto-Erkennung); SC_BUTTON_IDS 1:1 (kein Remapping) ✓ |
+| v0.7.20 | VKB NXT PREM L+R: Template-Bilder ersetzt (neue cleane 1600×800 Vorlagen); Feldpositionen neu kalibriert ✓ |

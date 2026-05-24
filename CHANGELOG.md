@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.20 - 2026-05-24
+
+### Geändert
+
+- VKB Gladiator NXT PREM L + R: Template-Bilder ersetzt — neue cleane Vorlagen (1600×800).
+- VKB Gladiator NXT PREM L + R: Feldpositionen (FIELDS_VKB_NXT_L / FIELDS_VKB_NXT_R) per jimp-Auto-Erkennung neu kalibriert auf die neuen Template-Bilder.
+
 ## v0.7.19 - 2026-05-24
 
 ### Geändert
