@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.33 - 2026-05-24
+
+### Behoben
+
+- Kritischer Bug: Migrations-Flags (`hatSwapV1Applied`, `fieldNamesV1Applied`, `vkbSwap11_15Applied`, `tagsV1Applied`, `lineTagsV1Applied`) wurden bei jedem Laden durch `normalizeStore` verworfen — dadurch liefen alle Migrationen bei jedem F5 erneut und tauschten Felder hin und her
+
 ## v0.7.32 - 2026-05-24
 
 ### Neu
