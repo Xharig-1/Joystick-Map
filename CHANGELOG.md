@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.27 - 2026-05-24
+
+### Geändert
+
+- Dev-Tools (Kalibrieren + Umbenennen) standardmäßig versteckt — nur sichtbar mit `#dev` in der URL (`index.html#dev`)
+- Normale Nutzer sehen einen sauberen Header ohne Entwickler-Buttons
+
 ## v0.7.26 - 2026-05-24
 
 ### Behoben
