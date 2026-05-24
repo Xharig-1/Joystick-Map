@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.15 - 2026-05-24
+
+### Geändert
+
+- README vollständig überarbeitet: Badges (Version, Lizenz, Star Citizen), Feature-Tabelle mit Emojis, Unterstützte-Sticks-Tabelle, Sicherheits-Callout, Tester-Callout, Umlaute korrigiert, überflüssige Abschnitte entfernt.
+
 ## v0.7.14 - 2026-05-24
 
 ### Geändert

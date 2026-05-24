@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.14`
+Aktuelle Version: `v0.7.15`
 
 ## Zielbild
 
@@ -89,3 +89,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.12 | Author-Footer mit Avatar + GitHub-Link (Xharig-1); dezent gedimmt, beim Drucken ausgeblendet ✓ |
 | v0.7.13 | Virpil Alpha L+R: Felder 30/31 S0 waren vertauscht (Koordinaten-Fix); L-Mapping-Duplikat entfernt ✓ |
 | v0.7.14 | Hilfe-Tab: Drucken-Button ergänzt, Liste-Tab + VKB-Hinweis ergänzt, Tabs-Abschnitt aktualisiert; ROADMAP-Zielbild aktualisiert ✓ |
+| v0.7.15 | README vollständig überarbeitet: Badges, Feature-Tabelle, Stick-Tabelle, Sicherheits- und Tester-Callout, Umlaute korrigiert ✓ |

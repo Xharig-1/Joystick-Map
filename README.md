@@ -1,71 +1,69 @@
-# Joystick-Map
+<div align="center">
 
-Ein einfacher Browser-Editor fuer Joystick- und HOTAS-Mappings fuer Star Citizen.
+# 🎮 Joystick-Map
 
-Joystick-Map unterstuetzt mehrere Stick-Modelle ueber ein Vorlagen-System.
-Der Stick wird im Header ausgewaehlt, die passende Vorlage laedt automatisch.
+**Browser-Editor für Joystick- und HOTAS-Mappings in Star Citizen**
 
-Das Projekt ist eine fruehe Testversion und darf gern ausprobiert werden.
+[![Download](https://img.shields.io/github/v/release/Xharig-1/Joystick-Map?label=Download&color=47aa42&logo=github)](https://github.com/Xharig-1/Joystick-Map/releases/latest)
+[![Lizenz](https://img.shields.io/badge/Lizenz-MIT-47aa42)](LICENSE)
+[![Star Citizen](https://img.shields.io/badge/Star%20Citizen-kompatibel-0a4a7a)](https://robertsspaceindustries.com/)
 
-## Was ist neu — v0.7.14
+</div>
 
-- **Hilfe-Tab** — Drucken-Button, Liste-Tab und VKB-Erkennung beim SC-Import ergänzt; Tabs-Abschnitt aktualisiert
+---
 
-Aeltere Aenderungen stehen im [CHANGELOG](CHANGELOG.md) und in den [Releases](../../releases).
+Belegungen eintragen, Star-Citizen-XML importieren, Modus-Tags setzen — alles direkt im Browser, ohne Installation, ohne Account, ohne Cloud.
 
-## Version
+## Features
 
-Aktuelle Version: `v0.7.14`
+| | |
+|---|---|
+| 🗂️ **SC Import** | `actionmaps.xml` aus Star Citizen direkt einlesen — Belegungen werden automatisch übernommen |
+| 🏷️ **Modus-Tags** | Felder mit Combat / Mining / Salvage markieren; Filter-Bar blendet alles Irrelevante aus |
+| 📋 **Belegungsliste** | Alle Felder als übersichtliche Tabelle, Modus-Tags direkt pro Zeile setzbar |
+| 👤 **Profile** | Mehrere Belegungssets anlegen, benennen und mit einem Klick wechseln |
+| 🖨️ **Drucken** | Alle Stick-Seiten plus Tastatur/Maus als druckfertige Seiten direkt aus dem Browser |
+| ☀️🌙 **Hell/Dunkel** | Umschalter im Header, Einstellung wird gespeichert |
+| 🔒 **Felder sperren** | Gesperrte Felder werden bei Reset und SC Import nicht überschrieben |
+
+## Unterstützte Sticks
+
+| Modell | Seiten |
+|---|---|
+| Virpil Constellation Alpha | Links (L) · Rechts (R) |
+| VKB Gladiator NXT PREM | Links (LH) · Rechts (RH) |
+
+Weitere Stick-Modelle kommen — Wünsche gerne als [Issue](../../issues) posten!
 
 ## Download & Start
 
-1. Unter **Releases** die Datei `joystick-map-vX.Y.Z.html` herunterladen.
-2. Datei direkt im Browser oeffnen — kein Server, keine Installation noetig.
-3. Oben rechts den eigenen Stick aus dem Dropdown auswaehlen.
-4. Auf ein Feld auf der Vorlage klicken und die Belegung eintragen.
-5. Alles wird automatisch gespeichert — auch nach einem Neustart des Browsers.
+1. Unter **[Releases](../../releases)** die Datei `joystick-map-vX.Y.Z.html` herunterladen
+2. Datei direkt im Browser öffnen — kein Server, keine Installation nötig
+3. Stick im Dropdown oben rechts auswählen
+4. Auf ein Feld klicken und Belegung eintragen — alles wird automatisch gespeichert
 
-Eine ausfuehrlichere Anleitung ist in der App selbst unter dem Tab **? Hilfe** zu finden.
+Eine ausführlichere Anleitung ist in der App selbst unter **? Hilfe** zu finden.
 
-## Star Citizen Mappings finden
+## Star Citizen Mappings importieren
 
-Eigene Mappings im Spiel mit diesem Konsolenbefehl exportieren:
+Eigene Mappings im Spiel exportieren:
 
 ```text
 pp_rebindkeys export Mein_Mapping_Name
 ```
 
-Wichtig: Auf den aktuell gespielten Kanal achten.
-Wer HOTFIX spielt, sucht im HOTFIX-Ordner. Wer LIVE spielt, sucht im LIVE-Ordner.
-
-Typische Pfade:
+Typische Pfade (je nach gespieltem Kanal):
 
 ```text
-E:\Programme\Roberts Space Industries\StarCitizen\LIVE\user\client\0\controls\mappings
-E:\Programme\Roberts Space Industries\StarCitizen\HOTFIX\user\client\0\controls\mappings
+...\StarCitizen\LIVE\user\client\0\controls\mappings
+...\StarCitizen\HOTFIX\user\client\0\controls\mappings
 ```
 
-## Aktueller Stand
+Nach dem Export unter **⬇ SC Import** in der App die XML-Datei auswählen.
 
-- Unterstuetzte Sticks: Virpil Constellation Alpha (L/R), VKB Gladiator NXT PREM (LH/RH)
-- Stick-Auswahl im Header, Auswahl wird gespeichert
-- Belegungsliste-Tab: alle Button-Felder als Tabelle mit Zeilen-Modus-Buttons (C/M/S)
-- Modus-Tags (Combat / Mining / Salvage) pro Feld und pro Zeile; Filter-Bar zum Ausblenden
-- Tastatur- und Maus-Tab als Tabellenansicht, Standardbelegung hinterlegt
-- Textfelder direkt auf der Vorlage bearbeitbar, automatische Speicherung im Browser
-- Felder sperren: beim Hover erscheint ein Schloss-Symbol
-- Rueckgaengig-Knopf und Reset-Knopf
-- Star Citizen Import: actionmaps.xml direkt einlesen
-- Update-Check mit Download-Link
-- Changelog-Tab zeigt, wann welches Feld zuletzt geaendert wurde
-- Hell/Dunkel-Umschalter im Header
+> 🔒 **Offline & privat** — die App ist eine einzige HTML-Datei und arbeitet komplett ohne Internetverbindung. Kein Server, keine Cloud, keine Anmeldung. Eure Daten bleiben ausschließlich in eurem eigenen Browser-Speicher und verlassen euren Rechner nicht. Den vollständigen Quellcode könnt ihr jederzeit auf GitHub einsehen — alles offen und nachvollziehbar.
 
-## Projektstatus
-
-- Phase 1–8: abgeschlossen (Profile, Changelog, Stick-Auswahl, Tastatur/Maus, Modus-Tags, Profil-Umschalter, Drucken)
-- Naechstes Ziel: offen — Feedback aus Tests abwarten
-
-Details stehen in `ROADMAP.md` und `CHANGELOG.md`.
+> 🔍 **Tester gesucht!** — Das Projekt ist noch in der Testphase. Bugs, Verbesserungsideen und Stick-Wünsche bitte als [Issue](../../issues) melden — jeder Hinweis hilft!
 
 ## Author
 
@@ -76,4 +74,4 @@ If you fork this project, please keep the credit in the footer or mention the or
 
 ## Lizenz
 
-MIT License. Details stehen in `LICENSE`.
+MIT License. Details stehen in [LICENSE](LICENSE).
