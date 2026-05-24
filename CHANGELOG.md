@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.22 - 2026-05-24
+
+### Geändert
+
+- Virpil Alpha L + R: Button-ID-Zahlen-Boxen ausgeblendet (`showButtonIds: false`) — Nummern sind bereits auf dem Template-Bild gedruckt und sehen dort besser aus.
+
 ## v0.7.21 - 2026-05-24
 
 ### Geändert
