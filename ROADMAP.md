@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.17`
+Aktuelle Version: `v0.7.18`
 
 ## Zielbild
 
@@ -92,3 +92,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.15 | README vollständig überarbeitet: Badges, Feature-Tabelle, Stick-Tabelle, Sicherheits- und Tester-Callout, Umlaute korrigiert ✓ |
 | v0.7.16 | README: Screenshot der App eingebunden (`docs/screenshot.png`) ✓ |
 | v0.7.17 | Kalibrieren: Drag-Fläche + Clipboard-Copy; Hilfe-Tab dokumentiert ✓ |
+| v0.7.18 | Virpil Alpha L+R: Template-Bilder ersetzt (clean, 2× Auflösung) ✓ |

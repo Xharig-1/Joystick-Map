@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.18 - 2026-05-24
+
+### Geändert
+
+- Virpil Alpha L + R: Template-Bilder komplett ersetzt — neue cleane Vorlagen ohne schwarze Beschriftungsboxen, 2× höhere Auflösung für schärfere Darstellung.
+
 ## v0.7.17 - 2026-05-24
 
 ### Hinzugefügt
