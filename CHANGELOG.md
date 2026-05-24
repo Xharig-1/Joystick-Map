@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.30 - 2026-05-24
+
+### Geändert
+
+- Hilfe-Tab: Kalibrieren-Hinweis entfernt — das Tool ist nicht für normale Nutzer sichtbar
+
 ## v0.7.29 - 2026-05-24
 
 ### Behoben
