@@ -829,7 +829,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.28';
+const APP_VERSION = 'v0.7.29';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -955,9 +955,9 @@ const FIELDS_VKB_NXT_L = [
   // Rechte Seite - Button 3
   {"name":"3",  "value":"","left":1119,"top":225,"width":126,"height":26},
   // Rechte Seite - 5-Wege-Ministick 1 (Buttons 11-15)
-  {"name":"15", "value":"","left":1276,"top":310,"width":126,"height":26},
+  {"name":"11", "value":"","left":1276,"top":310,"width":126,"height":26},
   {"name":"14", "value":"","left":1120,"top":338,"width":126,"height":26},
-  {"name":"11", "value":"","left":1276,"top":338,"width":125,"height":26},
+  {"name":"15", "value":"","left":1276,"top":338,"width":125,"height":26},
   {"name":"12", "value":"","left":1431,"top":338,"width":126,"height":26},
   {"name":"13", "value":"","left":1276,"top":366,"width":126,"height":26},
   // Rechte Seite - 5-Wege-Ministick 2 (Buttons 6-10)
@@ -990,9 +990,9 @@ const FIELDS_VKB_NXT_R = [
   // Button 3
   {"name":"3",  "value":"","left":382,"top":225,"width":126,"height":26},
   // 5-Wege-Ministick 1 (Buttons 11–15)
-  {"name":"15", "value":"","left":226,"top":310,"width":126,"height":26},
+  {"name":"11", "value":"","left":226,"top":310,"width":126,"height":26},
   {"name":"14", "value":"","left":70, "top":338,"width":126,"height":26},
-  {"name":"11", "value":"","left":226,"top":338,"width":125,"height":26},
+  {"name":"15", "value":"","left":226,"top":338,"width":125,"height":26},
   {"name":"12", "value":"","left":381,"top":338,"width":126,"height":26},
   {"name":"13", "value":"","left":226,"top":366,"width":126,"height":26},
   // 5-Wege-Ministick 2 (Buttons 6–10)
@@ -1948,6 +1948,29 @@ function migrateFieldNamesV1() {
     });
   });
   store.fieldNamesV1Applied = true;
+  setStore(store);
+}
+
+function migrateVkbNxtSwap11_15() {
+  const store = getStore();
+  if (store.vkbSwap11_15Applied) return;
+  const SIDE_KEYS = ['vkb-gladiator-nxt_L', 'vkb-gladiator-nxt_R'];
+  const DATA_KEYS = ['fields', 'tags', 'lineTags', 'locked', 'changelog'];
+  Object.values(store.profiles || {}).forEach(profile => {
+    DATA_KEYS.forEach(dk => {
+      if (!profile[dk]) return;
+      SIDE_KEYS.forEach(sk => {
+        const obj = profile[dk][sk];
+        if (!obj) return;
+        const tmp = obj['11'];
+        obj['11'] = obj['15'];
+        obj['15'] = tmp;
+        if (obj['11'] === undefined) delete obj['11'];
+        if (obj['15'] === undefined) delete obj['15'];
+      });
+    });
+  });
+  store.vkbSwap11_15Applied = true;
   setStore(store);
 }
 
@@ -2936,6 +2959,7 @@ document.getElementById('app-version').textContent = APP_VERSION;
 if (window.location.hash === '#dev') document.body.classList.add('dev-mode');
 migrateHatSwapOnce();
 migrateFieldNamesV1();
+migrateVkbNxtSwap11_15();
 applyDefaultTagsOnce();
 populateStickSelect();
 applyStick(activeStickId);

@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.29 - 2026-05-24
+
+### Behoben
+
+- VKB NXT PREM LH + RH: Button 11 und 15 am 5-Wege-Ministick 1 waren vertauscht
+- Datenmigration: gespeicherte Belegungen werden automatisch korrigiert (Flag: vkbSwap11_15Applied)
+
 ## v0.7.28 - 2026-05-24
 
 ### Geändert
