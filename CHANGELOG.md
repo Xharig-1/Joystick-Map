@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.19 - 2026-05-24
+
+### Geändert
+
+- Virpil Alpha L + R: Feldpositionen (FIELDS_L / FIELDS_R) per jimp-Auto-Erkennung neu kalibriert — alle 36 Textboxen liegen jetzt exakt auf den Formular-Boxen der neuen Templates.
+- SC_BUTTON_IDS virpil-alpha geleert — VPC Software hat 1:1-Mapping (physischer Button N = SC Button N), kein Remapping mehr nötig.
+
 ## v0.7.18 - 2026-05-24
 
 ### Geändert
