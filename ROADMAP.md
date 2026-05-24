@@ -101,4 +101,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.24 | Virpil Alpha L+R: Hat-Gruppen 8–12 und 14–18 vertauscht behoben; Datenmigration (hatSwapV1Applied) ✓ |
 | v0.7.25 | Umbenennen-Modus: „🔤 Umbenennen"-Button im Header; editierbare Feld-Labels + „📋 Mapping exportieren" ✓ |
 | v0.7.26 | Virpil Alpha L+R: Alle Feldnamen korrekt (vollständige Umbenennung + Datenmigration fieldNamesV1Applied) ✓ |
-| v0.7.27 | Dev-Tools hinter URL-Hash #dev versteckt — normaler Header ohne Entwickler-Buttons ✓ |
+| v0.7.27 | Header bereinigt: Entwickler-Werkzeuge aus dem normalen Interface entfernt ✓ |
