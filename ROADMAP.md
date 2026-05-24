@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.30`
+Aktuelle Version: `v0.7.31`
 
 ## Zielbild
 
@@ -105,3 +105,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.28 | Umbenennen-Modus für alle Sticks verfügbar (nicht mehr nur Virpil Alpha) ✓ |
 | v0.7.29 | VKB NXT PREM LH+RH: Button 11↔15 am 5-Wege-Switch 1 korrigiert + Datenmigration ✓ |
 | v0.7.30 | Hilfe-Tab: Kalibrieren-Hinweis entfernt (Dev-Tool, nicht für Nutzer sichtbar) ✓ |
+| v0.7.31 | Reset-Button leert jetzt auch Modus-Tags (Combat/Mining/Salvage) aller Felder beider Sticks ✓ |

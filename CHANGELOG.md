@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.31 - 2026-05-24
+
+### Behoben
+
+- Reset-Button leert jetzt auch die Modus-Tags (Combat/Mining/Salvage) aller Felder beider Sticks — nicht nur die Texte
+
 ## v0.7.30 - 2026-05-24
 
 ### Geändert
