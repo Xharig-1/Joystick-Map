@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.16 - 2026-05-24
+
+### Hinzugefügt
+
+- README: Screenshot der App eingebunden (`docs/screenshot.png`) — gibt GitHub-Besuchern sofort einen visuellen Eindruck der Oberfläche.
+
 ## v0.7.15 - 2026-05-24
 
 ### Geändert

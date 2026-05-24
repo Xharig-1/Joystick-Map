@@ -12,6 +12,12 @@
 
 ---
 
+<div align="center">
+<img src="docs/screenshot.png" alt="Joystick-Map Screenshot" width="900">
+</div>
+
+---
+
 Belegungen eintragen, Star-Citizen-XML importieren, Modus-Tags setzen — alles direkt im Browser, ohne Installation, ohne Account, ohne Cloud.
 
 ## Features
