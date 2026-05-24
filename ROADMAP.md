@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.27`
+Aktuelle Version: `v0.7.28`
 
 ## Zielbild
 
@@ -102,3 +102,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.25 | Umbenennen-Modus: „🔤 Umbenennen"-Button im Header; editierbare Feld-Labels + „📋 Mapping exportieren" ✓ |
 | v0.7.26 | Virpil Alpha L+R: Alle Feldnamen korrekt (vollständige Umbenennung + Datenmigration fieldNamesV1Applied) ✓ |
 | v0.7.27 | Header bereinigt: Entwickler-Werkzeuge aus dem normalen Interface entfernt ✓ |
+| v0.7.28 | Umbenennen-Modus für alle Sticks verfügbar (nicht mehr nur Virpil Alpha) ✓ |

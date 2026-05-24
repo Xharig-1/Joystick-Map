@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.28 - 2026-05-24
+
+### Geändert
+
+- Umbenennen-Modus funktioniert jetzt für alle Sticks (nicht mehr auf Virpil Alpha beschränkt)
+
 ## v0.7.27 - 2026-05-24
 
 ### Geändert
