@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.34`
+Aktuelle Version: `v0.7.35`
 
 ## Zielbild
 
@@ -109,3 +109,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.32 | #dev: Store exportieren, Migrations-Flags zurücksetzen, Store leeren ✓ |
 | v0.7.33 | Kritischer Bug: normalizeStore hat Migrations-Flags verworfen → Migrationen liefen bei jedem F5 erneut ✓ |
 | v0.7.34 | Listen-Tab: Modus-Tags aus SC Import wurden nicht angezeigt (Feld-Tag-Fallback fehlte) ✓ |
+| v0.7.35 | Listen-Tab: Modus-Tags nach Import sofort sichtbar ohne F5 (Liste wurde nur bei aktivem Tab aktualisiert) ✓ |

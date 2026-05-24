@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.35 - 2026-05-24
+
+### Behoben
+
+- Listen-Tab: Modus-Tags aus SC Import werden jetzt sofort angezeigt, ohne F5 — die Liste wurde nach Import nur aktualisiert wenn der Listen-Tab bereits offen war
+
 ## v0.7.34 - 2026-05-24
 
 ### Behoben
