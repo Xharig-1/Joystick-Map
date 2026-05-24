@@ -506,6 +506,16 @@
     min-width: 60px;
   }
 
+  /* ── Kalibrieren Rechteck-Overlay ────────────────────────────────────── */
+  #calib-rect {
+    position: absolute;
+    border: 2px dashed #47aa42;
+    background: rgba(71,170,66,0.12);
+    pointer-events: none;
+    display: none;
+    z-index: 50;
+  }
+
   /* ── Footer ───────────────────────────────────────────────────────────── */
   #app-footer {
     display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -747,6 +757,7 @@
           <li><span class="help-key">↶ Rückgängig</span> — macht die letzte Änderung rückgängig.</li>
           <li><span class="help-key">↺ Reset</span> — leert alle nicht gesperrten Felder (nach Bestätigung).</li>
           <li><span class="help-key">🖨 Drucken</span> — öffnet den Browser-Druckdialog mit allen Stick-Vorlagen und der Tastatur/Maus-Tabelle.</li>
+          <li><span class="help-key">✚ Kalibrieren</span> — Kalibriermodus zur Feldpositionierung und für Bug-Meldungen. Im Kalibriermodus: <strong>Klick</strong> auf die Vorlage zeigt <code>left/top</code>-Koordinaten in der Statusleiste und kopiert sie in die Zwischenablage. <strong>Klick + Ziehen</strong> markiert eine Fläche und gibt zusätzlich <code>width/height</code> aus — praktisch um eine falsche Feldposition zu beschreiben und die Koordinaten direkt weiterzuschicken.</li>
         </ul>
       </div>
 
@@ -795,7 +806,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.16';
+const APP_VERSION = 'v0.7.17';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -2470,6 +2481,7 @@ function toggleCalibrate() {
 }
 document.addEventListener('click', function(e) {
   if (!calibrating) return;
+  if (calibDragMoved) return; // war ein Drag, kein Klick
   const wrap = e.target.closest('.stick-wrap');
   if (!wrap) return;
   const scale = getActiveStick().scale;
@@ -2479,7 +2491,67 @@ document.addEventListener('click', function(e) {
   const msg = `left:${left}, top:${top}  (px: ${Math.round(e.clientX - rect.left)} / ${Math.round(e.clientY - rect.top)})`;
   clearTimeout(window._statTimer);
   document.getElementById('statmsg').textContent = msg;
+  navigator.clipboard?.writeText(`left:${left}, top:${top}`);
   console.log(`{"left":${left},"top":${top}}`);
+});
+
+let calibDragStart = null;
+let calibRectEl = null;
+let calibDragMoved = false;
+
+document.addEventListener('mousedown', function(e) {
+  if (!calibrating) return;
+  const wrap = e.target.closest('.stick-wrap');
+  if (!wrap) return;
+  const img = wrap.querySelector('img');
+  const rect = img.getBoundingClientRect();
+  calibDragStart = { x: e.clientX, y: e.clientY, rect, wrap };
+  calibDragMoved = false;
+  if (!wrap.querySelector('#calib-rect')) {
+    calibRectEl = document.createElement('div');
+    calibRectEl.id = 'calib-rect';
+    wrap.style.position = 'relative';
+    wrap.appendChild(calibRectEl);
+  } else {
+    calibRectEl = wrap.querySelector('#calib-rect');
+  }
+  calibRectEl.style.display = 'none';
+  e.preventDefault();
+});
+
+document.addEventListener('mousemove', function(e) {
+  if (!calibrating || !calibDragStart || !calibRectEl) return;
+  const dx = e.clientX - calibDragStart.x;
+  const dy = e.clientY - calibDragStart.y;
+  if (Math.abs(dx) < 4 && Math.abs(dy) < 4) return;
+  calibDragMoved = true;
+  calibRectEl.style.display = 'block';
+  const r = calibDragStart.rect;
+  calibRectEl.style.left   = Math.min(e.clientX, calibDragStart.x) - r.left + 'px';
+  calibRectEl.style.top    = Math.min(e.clientY, calibDragStart.y) - r.top  + 'px';
+  calibRectEl.style.width  = Math.abs(dx) + 'px';
+  calibRectEl.style.height = Math.abs(dy) + 'px';
+});
+
+document.addEventListener('mouseup', function(e) {
+  if (!calibrating || !calibDragStart) return;
+  if (calibDragMoved) {
+    const scale = getActiveStick().scale;
+    const r = calibDragStart.rect;
+    const dx = e.clientX - calibDragStart.x;
+    const dy = e.clientY - calibDragStart.y;
+    const left   = ((Math.min(e.clientX, calibDragStart.x) - r.left) / scale).toFixed(1);
+    const top    = ((Math.min(e.clientY, calibDragStart.y) - r.top)  / scale).toFixed(1);
+    const width  = (Math.abs(dx) / scale).toFixed(1);
+    const height = (Math.abs(dy) / scale).toFixed(1);
+    const msg = `left:${left}, top:${top}, width:${width}, height:${height}`;
+    clearTimeout(window._statTimer);
+    document.getElementById('statmsg').textContent = msg;
+    navigator.clipboard?.writeText(msg);
+    console.log(`{"left":${left},"top":${top},"width":${width},"height":${height}}`);
+  }
+  if (calibRectEl) calibRectEl.style.display = 'none';
+  calibDragStart = null;
 });
 
 function setStatus(msg) {

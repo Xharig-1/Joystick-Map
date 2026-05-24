@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.17 - 2026-05-24
+
+### Hinzugefügt
+
+- Kalibrieren: Flächen-Auswahl per Drag — Klick+Ziehen auf der Vorlage zeichnet ein grünes Rechteck und gibt `left/top/width/height` aus.
+- Kalibrieren: Koordinaten werden nach Klick oder Drag automatisch in die Zwischenablage kopiert — einfach direkt als Bug-Meldung weiterschicken.
+- Hilfe-Tab: Kalibrieren-Button jetzt dokumentiert (Klick-Modus, Drag-Modus, Bug-Melde-Workflow).
+
 ## v0.7.16 - 2026-05-24
 
 ### Hinzugefügt

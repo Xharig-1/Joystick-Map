@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.16`
+Aktuelle Version: `v0.7.17`
 
 ## Zielbild
 
@@ -91,3 +91,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.14 | Hilfe-Tab: Drucken-Button ergänzt, Liste-Tab + VKB-Hinweis ergänzt, Tabs-Abschnitt aktualisiert; ROADMAP-Zielbild aktualisiert ✓ |
 | v0.7.15 | README vollständig überarbeitet: Badges, Feature-Tabelle, Stick-Tabelle, Sicherheits- und Tester-Callout, Umlaute korrigiert ✓ |
 | v0.7.16 | README: Screenshot der App eingebunden (`docs/screenshot.png`) ✓ |
+| v0.7.17 | Kalibrieren: Drag-Fläche + Clipboard-Copy; Hilfe-Tab dokumentiert ✓ |
