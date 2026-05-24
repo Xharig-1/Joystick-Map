@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.31`
+Aktuelle Version: `v0.7.32`
 
 ## Zielbild
 
@@ -106,3 +106,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.29 | VKB NXT PREM LH+RH: Button 11↔15 am 5-Wege-Switch 1 korrigiert + Datenmigration ✓ |
 | v0.7.30 | Hilfe-Tab: Kalibrieren-Hinweis entfernt (Dev-Tool, nicht für Nutzer sichtbar) ✓ |
 | v0.7.31 | Reset-Button leert jetzt auch Modus-Tags (Combat/Mining/Salvage) aller Felder beider Sticks ✓ |
+| v0.7.32 | #dev: Store exportieren, Migrations-Flags zurücksetzen, Store leeren ✓ |

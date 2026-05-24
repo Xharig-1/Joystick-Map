@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.32 - 2026-05-24
+
+### Neu
+
+- #dev-Modus: drei neue Debugging-Tools — „💾 Store" (localStorage als JSON in Zwischenablage), „🔄 Migrationen" (Migrations-Flags zurücksetzen), „🗑 Store leeren" (alle Daten löschen + Reload)
+
 ## v0.7.31 - 2026-05-24
 
 ### Behoben

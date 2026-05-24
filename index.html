@@ -140,8 +140,9 @@
   body.renaming .field-rename-label { pointer-events: auto; display: block; cursor: text; }
   body.renaming .field-rename-label:focus { border-color: #e05252; outline: none; background: #fff8f8; }
 
-  #calibrateBtn, #renameBtn, #exportRenameBtn { display: none; }
-  body.dev-mode #calibrateBtn, body.dev-mode #renameBtn { display: inline-block; }
+  #calibrateBtn, #renameBtn, #exportRenameBtn, #storeExportBtn, #migrationResetBtn, #storeClearBtn { display: none; }
+  body.dev-mode #calibrateBtn, body.dev-mode #renameBtn,
+  body.dev-mode #storeExportBtn, body.dev-mode #migrationResetBtn, body.dev-mode #storeClearBtn { display: inline-block; }
 
   .btn {
     padding: 6px 14px; background: transparent; border: 1px solid var(--accent2);
@@ -582,6 +583,9 @@
     <button class="btn" id="calibrateBtn" onclick="toggleCalibrate()" title="Koordinaten-Helfer für Feldpositionierung">✚ Kalibrieren</button>
     <button class="btn" id="renameBtn" onclick="toggleRename()" title="Button-Nummern korrigieren">🔤 Umbenennen</button>
     <button class="btn" id="exportRenameBtn" onclick="exportRenamedFields()" title="Korrigiertes FIELDS-JSON in Zwischenablage kopieren" style="display:none">📋 Mapping exportieren</button>
+    <button class="btn" id="storeExportBtn" onclick="exportStore()" title="Kompletten Store als JSON in Zwischenablage kopieren">💾 Store</button>
+    <button class="btn" id="migrationResetBtn" onclick="resetMigrationFlags()" title="Migrations-Flags zurücksetzen (dann Seite neu laden)">🔄 Migrationen</button>
+    <button class="btn btn-danger" id="storeClearBtn" onclick="clearStore()" title="Alle Daten löschen und neu starten">🗑 Store leeren</button>
     <button class="btn" onclick="triggerPrint()" title="Aktuelle Belegung drucken">🖨 Drucken</button>
     <button id="theme-toggle" onclick="toggleTheme()" title="Hell/Dunkel wechseln">☀</button>
   </div>
@@ -828,7 +832,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.31';
+const APP_VERSION = 'v0.7.32';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -1111,6 +1115,31 @@ function exportRenamedFields() {
   }).catch(() => {
     showStatus('Fehler: Clipboard-Zugriff verweigert');
   });
+}
+
+function exportStore() {
+  const json = JSON.stringify(getStore(), null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    setStatus('Store in Zwischenablage kopiert');
+  }).catch(() => {
+    setStatus('Fehler: Clipboard-Zugriff verweigert');
+  });
+}
+
+function resetMigrationFlags() {
+  if (!confirm('Alle Migrations-Flags zurücksetzen?\nBeim nächsten Laden werden alle Migrationen erneut ausgeführt.')) return;
+  const store = getStore();
+  delete store.hatSwapV1Applied;
+  delete store.fieldNamesV1Applied;
+  delete store.vkbSwap11_15Applied;
+  setStore(store);
+  setStatus('Migrations-Flags zurückgesetzt — Seite neu laden');
+}
+
+function clearStore() {
+  if (!confirm('Alle gespeicherten Daten löschen?\nDieser Schritt kann nicht rückgängig gemacht werden!')) return;
+  localStorage.removeItem('virpil_buttonmap_v2');
+  location.reload();
 }
 
 const SC_AXIS_IDS = {
