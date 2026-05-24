@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.26 - 2026-05-24
+
+### Behoben
+
+- Virpil Alpha L + R: Alle falschen Button-Nummern systematisch korrigiert (basierend auf verifizierten Exporten)
+- Vollständige Umbenennung: 18→7, 13→8, 8→9, 5→6, 9→12, 10↔11, 7→14, 12→28, 14→15, 19→29, 15→18, 20→30, 16↔17, 6→13, 25→23, 26→24, 3→4, 28→26, 4→5, 29→25, 21→19, 30→32, 22→20, 23→22, 24→21, „31 S0"→„31"
+- Datenmigration: gespeicherte Belegungen, Tags, Zeilen-Tags, Changelog und gesperrte Felder werden automatisch auf die neuen Feldnamen übertragen (Flag: fieldNamesV1Applied)
+- DEFAULT_TAGS und DEFAULT_LINE_TAGS auf neue Feldnamen aktualisiert
+
 ## v0.7.25 - 2026-05-24
 
 ### Neu

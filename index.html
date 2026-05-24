@@ -826,7 +826,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.25';
+const APP_VERSION = 'v0.7.26';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -840,71 +840,72 @@ let activeListSide = 'L';
 
 const DEFAULT_TAGS = {
   'virpil-alpha_L': {
-    '1':     ['combat'],
-    '2':     ['combat'],
-    '3':     ['combat'],
-    '4':     ['combat'],
-    '6':     ['combat'],
-    '7':     ['combat'],
-    '14':    ['combat'],
-    '15':    ['combat'],
-    '16':    ['combat'],
-    '17':    ['combat'],
-    '18':    ['combat'],
-    '21':    ['mining','salvage'],
-    '23':    ['mining','salvage'],
-    '24':    ['mining','salvage'],
-    '25':    ['combat'],
-    '26':    ['combat'],
-    '27':    ['combat'],
-    '28':    ['combat'],
-    '30':    ['combat'],
-    '31 S0': ['combat']
+    '1':  ['combat'],
+    '2':  ['combat'],
+    '4':  ['combat'],
+    '5':  ['combat'],
+    '7':  ['combat'],
+    '13': ['combat'],
+    '14': ['combat'],
+    '15': ['combat'],
+    '16': ['combat'],
+    '17': ['combat'],
+    '18': ['combat'],
+    '19': ['mining','salvage'],
+    '21': ['mining','salvage'],
+    '22': ['mining','salvage'],
+    '23': ['combat'],
+    '24': ['combat'],
+    '26': ['combat'],
+    '27': ['combat'],
+    '31': ['combat'],
+    '32': ['combat']
   },
   'virpil-alpha_R': {
-    '1':     ['combat'],
-    '3':     ['combat','mining','salvage'],
-    '4':     ['combat','mining','salvage'],
-    '5':     ['combat'],
-    '8':     ['salvage'],
-    '9':     ['mining','salvage'],
-    '10':    ['salvage'],
-    '11':    ['salvage'],
-    '12':    ['combat'],
-    '13':    ['salvage'],
-    '14':    ['combat'],
-    '15':    ['salvage'],
-    '16':    ['combat'],
-    '17':    ['combat'],
-    '18':    ['combat'],
-    '19':    ['combat'],
-    '20':    ['salvage'],
-    '22':    ['combat','mining','salvage'],
-    '23':    ['combat','mining','salvage'],
-    '24':    ['combat','mining','salvage'],
-    '25':    ['combat','mining'],
-    '26':    ['combat'],
-    '27':    ['combat'],
-    '28':    ['combat'],
-    '29':    ['combat'],
-    '31 S0': ['combat']
+    '1':  ['combat'],
+    '4':  ['combat','mining','salvage'],
+    '5':  ['combat','mining','salvage'],
+    '6':  ['combat'],
+    '7':  ['combat'],
+    '8':  ['salvage'],
+    '9':  ['salvage'],
+    '10': ['salvage'],
+    '11': ['salvage'],
+    '12': ['mining','salvage'],
+    '13': ['salvage'],
+    '15': ['combat'],
+    '16': ['combat'],
+    '17': ['combat'],
+    '18': ['salvage'],
+    '20': ['combat','mining','salvage'],
+    '21': ['combat','mining','salvage'],
+    '22': ['combat','mining','salvage'],
+    '23': ['combat','mining'],
+    '24': ['combat'],
+    '25': ['combat'],
+    '26': ['combat'],
+    '27': ['combat'],
+    '28': ['combat'],
+    '29': ['combat'],
+    '30': ['salvage'],
+    '31': ['combat']
   }
 };
 
 const DEFAULT_LINE_TAGS = {
   'virpil-alpha_L': {
-    '21': { 0: ['mining'], 2: ['salvage'] },
-    '23': { 1: ['mining','salvage'] },
-    '24': { 1: ['mining','salvage'] }
+    '19': { 0: ['mining'], 2: ['salvage'] },
+    '21': { 1: ['mining','salvage'] },
+    '22': { 1: ['mining','salvage'] }
   },
   'virpil-alpha_R': {
-    '3':  { 3: ['mining'], 4: ['salvage'], 5: ['combat'], 6: ['combat'] },
     '4':  { 3: ['mining'], 4: ['salvage'], 5: ['combat'], 6: ['combat'] },
-    '9':  { 0: ['mining'], 1: ['salvage'] },
+    '5':  { 3: ['mining'], 4: ['salvage'], 5: ['combat'], 6: ['combat'] },
+    '12': { 0: ['mining'], 1: ['salvage'] },
+    '20': { 0: ['mining'], 1: ['salvage'], 2: ['mining'], 3: ['combat'] },
+    '21': { 0: ['mining'], 1: ['salvage'], 2: ['mining'], 3: ['combat'] },
     '22': { 0: ['mining'], 1: ['salvage'], 2: ['mining'], 3: ['combat'] },
-    '23': { 0: ['mining'], 1: ['salvage'], 2: ['mining'], 3: ['combat'] },
-    '24': { 0: ['mining'], 1: ['salvage'], 2: ['mining'], 3: ['combat'] },
-    '25': { 0: ['mining'], 1: ['combat'], 2: ['combat'] }
+    '23': { 0: ['mining'], 1: ['combat'], 2: ['combat'] }
   }
 };
 
@@ -914,8 +915,8 @@ const CATEGORY_MODES = [
   { pattern: /weapon|missile|turret|countermeasure|targeting/i,       mode: 'combat'  },
 ];
 
-const FIELDS_L = [{"name":"Titel","value":"","left":109.7,"top":22.62,"width":169.4,"height":33.6},{"name":"Untertitel","value":"","left":109.7,"top":56.48,"width":169.4,"height":19.2},{"name":"18","value":"","left":516.3,"top":46.5,"width":141.6,"height":24.2},{"name":"13","value":"","left":298,"top":56.2,"width":141.6,"height":24.2},{"name":"8","value":"","left":298,"top":81.3,"width":141.6,"height":24.2},{"name":"5","value":"","left":550.2,"top":89.6,"width":141.6,"height":24},{"name":"9","value":"","left":298,"top":106.5,"width":141.6,"height":24.2},{"name":"rX","value":"","left":550.2,"top":114.7,"width":141.6,"height":24},{"name":"10","value":"","left":298,"top":131.7,"width":141.6,"height":24.2},{"name":"rY","value":"","left":550.2,"top":139.7,"width":141.6,"height":24.2},{"name":"11","value":"","left":298,"top":156.8,"width":141.6,"height":24.2},{"name":"7","value":"","left":603.6,"top":177.7,"width":141.6,"height":24.2},{"name":"12","value":"","left":154.5,"top":198.7,"width":141.6,"height":24},{"name":"14","value":"","left":603.6,"top":202.8,"width":141.6,"height":24.2},{"name":"19","value":"","left":154.5,"top":223.7,"width":141.6,"height":24.2},{"name":"15","value":"","left":603.6,"top":228,"width":141.6,"height":24.2},{"name":"20","value":"","left":154.5,"top":248.8,"width":141.6,"height":24.2},{"name":"16","value":"","left":603.6,"top":253.2,"width":141.6,"height":24.2},{"name":"17","value":"","left":603.6,"top":278.4,"width":141.6,"height":24.2},{"name":"6","value":"","left":179.2,"top":290.9,"width":141.6,"height":24.2},{"name":"25","value":"","left":641.9,"top":318.3,"width":141.6,"height":24.2},{"name":"1","value":"","left":188.9,"top":332.1,"width":141.6,"height":24.2},{"name":"26","value":"","left":641.9,"top":343.5,"width":141.6,"height":24},{"name":"2","value":"","left":188.9,"top":357.3,"width":141.6,"height":24.2},{"name":"27","value":"","left":641.9,"top":368.6,"width":141.6,"height":24},{"name":"3","value":"","left":224.1,"top":392.6,"width":141.6,"height":24.2},{"name":"28","value":"","left":641.9,"top":393.6,"width":141.6,"height":24.2},{"name":"4","value":"","left":224.1,"top":417.8,"width":141.6,"height":24.2},{"name":"29","value":"","left":641.9,"top":418.7,"width":141.6,"height":24.2},{"name":"21","value":"","left":605,"top":459.4,"width":141.6,"height":24},{"name":"30","value":"","left":223.8,"top":462.6,"width":141.6,"height":24.2},{"name":"22","value":"","left":605,"top":484.6,"width":141.6,"height":24},{"name":"X","value":"","left":266,"top":504.2,"width":141.6,"height":24.2},{"name":"23","value":"","left":605,"top":509.5,"width":141.6,"height":23.7},{"name":"Y","value":"","left":266,"top":529.4,"width":141.6,"height":24},{"name":"24","value":"","left":605,"top":534,"width":141.6,"height":24.2},{"name":"Z","value":"","left":266,"top":554.3,"width":141.6,"height":24.2},{"name":"31 S0","value":"","left":480.4,"top":569.5,"width":141.6,"height":24.2},{"name":"Anmerkung 1","value":"","left":15.55,"top":335.13,"width":140.65,"height":74.6},{"name":"Anmerkung 2","value":"","left":16.05,"top":417.68,"width":140.9,"height":74.4},{"name":"Anmerkung 3","value":"","left":16.3,"top":499.98,"width":140.85,"height":74.4}];
-const FIELDS_R = [{"name":"Titel","value":"","left":109.7,"top":22.13,"width":169.4,"height":33.6},{"name":"Untertitel","value":"","left":109.7,"top":55.73,"width":169.4,"height":19.2},{"name":"18","value":"","left":361.8,"top":38.5,"width":142,"height":24.2},{"name":"13","value":"","left":536.8,"top":72.9,"width":142,"height":24.2},{"name":"5","value":"","left":236.8,"top":89.6,"width":142,"height":24},{"name":"8","value":"","left":536.8,"top":98,"width":142,"height":24.2},{"name":"rX","value":"","left":236.8,"top":114.7,"width":142,"height":24},{"name":"9","value":"","left":536.8,"top":123.2,"width":142,"height":24.2},{"name":"rY","value":"","left":236.8,"top":139.7,"width":142,"height":24.2},{"name":"10","value":"","left":536.8,"top":148.4,"width":142,"height":24.2},{"name":"11","value":"","left":536.8,"top":173.5,"width":142,"height":24.2},{"name":"7","value":"","left":133,"top":177.7,"width":142,"height":24.2},{"name":"14","value":"","left":133,"top":202.8,"width":142,"height":24.2},{"name":"12","value":"","left":583.2,"top":207.7,"width":142,"height":24.2},{"name":"15","value":"","left":133,"top":228,"width":142,"height":24.2},{"name":"19","value":"","left":583.2,"top":232.9,"width":142,"height":24.2},{"name":"16","value":"","left":133,"top":253.2,"width":142,"height":24.2},{"name":"20","value":"","left":583.2,"top":258,"width":142,"height":24.2},{"name":"17","value":"","left":133,"top":278.4,"width":142,"height":24.2},{"name":"6","value":"","left":558.4,"top":295.5,"width":142,"height":24.2},{"name":"25","value":"","left":94.6,"top":318.3,"width":142,"height":24.2},{"name":"1","value":"","left":549,"top":332.1,"width":142,"height":24.2},{"name":"26","value":"","left":94.6,"top":343.5,"width":142,"height":24},{"name":"2","value":"","left":549,"top":357.3,"width":142,"height":24.2},{"name":"27","value":"","left":94.6,"top":368.6,"width":142,"height":24},{"name":"3","value":"","left":513.7,"top":392.6,"width":142,"height":24.2},{"name":"28","value":"","left":94.6,"top":393.6,"width":142,"height":24.2},{"name":"4","value":"","left":513.7,"top":417.8,"width":142,"height":24.2},{"name":"29","value":"","left":94.6,"top":418.7,"width":142,"height":24.2},{"name":"21","value":"","left":131.5,"top":459.4,"width":142,"height":24},{"name":"30","value":"","left":513.7,"top":462.6,"width":142,"height":24.2},{"name":"22","value":"","left":131.5,"top":484.6,"width":142,"height":24},{"name":"x","value":"","left":471.4,"top":504.2,"width":142,"height":24.2},{"name":"23","value":"","left":131.5,"top":509.5,"width":142,"height":23.7},{"name":"Y","value":"","left":471.4,"top":529.4,"width":142,"height":24},{"name":"24","value":"","left":131.5,"top":534,"width":142,"height":24.2},{"name":"Z","value":"","left":471.4,"top":554.3,"width":142,"height":24.2},{"name":"31 S0","value":"","left":256.7,"top":569.5,"width":142,"height":24.2},{"name":"Anmerkung 1","value":"","left":688.3,"top":26.73,"width":140.9,"height":74.4},{"name":"Anmerkung 2","value":"","left":689.25,"top":108.33,"width":140.65,"height":74.4},{"name":"Anmerkung 3","value":"","left":682.3,"top":422.73,"width":140.65,"height":74.4},{"name":"Anmerkung 4","value":"","left":683.75,"top":503.58,"width":140.9,"height":74.4}];
+const FIELDS_L = [{"name":"Titel","value":"","left":109.7,"top":22.62,"width":169.4,"height":33.6},{"name":"Untertitel","value":"","left":109.7,"top":56.48,"width":169.4,"height":19.2},{"name":"7","value":"","left":516.3,"top":46.5,"width":141.6,"height":24.2},{"name":"8","value":"","left":298,"top":56.2,"width":141.6,"height":24.2},{"name":"9","value":"","left":298,"top":81.3,"width":141.6,"height":24.2},{"name":"6","value":"","left":550.2,"top":89.6,"width":141.6,"height":24},{"name":"12","value":"","left":298,"top":106.5,"width":141.6,"height":24.2},{"name":"rX","value":"","left":550.2,"top":114.7,"width":141.6,"height":24},{"name":"11","value":"","left":298,"top":131.7,"width":141.6,"height":24.2},{"name":"rY","value":"","left":550.2,"top":139.7,"width":141.6,"height":24.2},{"name":"10","value":"","left":298,"top":156.8,"width":141.6,"height":24.2},{"name":"14","value":"","left":603.6,"top":177.7,"width":141.6,"height":24.2},{"name":"28","value":"","left":154.5,"top":198.7,"width":141.6,"height":24},{"name":"15","value":"","left":603.6,"top":202.8,"width":141.6,"height":24.2},{"name":"29","value":"","left":154.5,"top":223.7,"width":141.6,"height":24.2},{"name":"18","value":"","left":603.6,"top":228,"width":141.6,"height":24.2},{"name":"30","value":"","left":154.5,"top":248.8,"width":141.6,"height":24.2},{"name":"17","value":"","left":603.6,"top":253.2,"width":141.6,"height":24.2},{"name":"16","value":"","left":603.6,"top":278.4,"width":141.6,"height":24.2},{"name":"13","value":"","left":179.2,"top":290.9,"width":141.6,"height":24.2},{"name":"23","value":"","left":641.9,"top":318.3,"width":141.6,"height":24.2},{"name":"1","value":"","left":188.9,"top":332.1,"width":141.6,"height":24.2},{"name":"24","value":"","left":641.9,"top":343.5,"width":141.6,"height":24},{"name":"2","value":"","left":188.9,"top":357.3,"width":141.6,"height":24.2},{"name":"27","value":"","left":641.9,"top":368.6,"width":141.6,"height":24},{"name":"4","value":"","left":224.1,"top":392.6,"width":141.6,"height":24.2},{"name":"26","value":"","left":641.9,"top":393.6,"width":141.6,"height":24.2},{"name":"5","value":"","left":224.1,"top":417.8,"width":141.6,"height":24.2},{"name":"25","value":"","left":641.9,"top":418.7,"width":141.6,"height":24.2},{"name":"19","value":"","left":605,"top":459.4,"width":141.6,"height":24},{"name":"32","value":"","left":223.8,"top":462.6,"width":141.6,"height":24.2},{"name":"20","value":"","left":605,"top":484.6,"width":141.6,"height":24},{"name":"X","value":"","left":266,"top":504.2,"width":141.6,"height":24.2},{"name":"22","value":"","left":605,"top":509.5,"width":141.6,"height":23.7},{"name":"Y","value":"","left":266,"top":529.4,"width":141.6,"height":24},{"name":"21","value":"","left":605,"top":534,"width":141.6,"height":24.2},{"name":"Z","value":"","left":266,"top":554.3,"width":141.6,"height":24.2},{"name":"31","value":"","left":480.4,"top":569.5,"width":141.6,"height":24.2},{"name":"Anmerkung 1","value":"","left":15.55,"top":335.13,"width":140.65,"height":74.6},{"name":"Anmerkung 2","value":"","left":16.05,"top":417.68,"width":140.9,"height":74.4},{"name":"Anmerkung 3","value":"","left":16.3,"top":499.98,"width":140.85,"height":74.4}];
+const FIELDS_R = [{"name":"Titel","value":"","left":109.7,"top":22.13,"width":169.4,"height":33.6},{"name":"Untertitel","value":"","left":109.7,"top":55.73,"width":169.4,"height":19.2},{"name":"7","value":"","left":361.8,"top":38.5,"width":142,"height":24.2},{"name":"8","value":"","left":536.8,"top":72.9,"width":142,"height":24.2},{"name":"6","value":"","left":236.8,"top":89.6,"width":142,"height":24},{"name":"9","value":"","left":536.8,"top":98,"width":142,"height":24.2},{"name":"rX","value":"","left":236.8,"top":114.7,"width":142,"height":24},{"name":"12","value":"","left":536.8,"top":123.2,"width":142,"height":24.2},{"name":"rY","value":"","left":236.8,"top":139.7,"width":142,"height":24.2},{"name":"11","value":"","left":536.8,"top":148.4,"width":142,"height":24.2},{"name":"10","value":"","left":536.8,"top":173.5,"width":142,"height":24.2},{"name":"14","value":"","left":133,"top":177.7,"width":142,"height":24.2},{"name":"15","value":"","left":133,"top":202.8,"width":142,"height":24.2},{"name":"28","value":"","left":583.2,"top":207.7,"width":142,"height":24.2},{"name":"18","value":"","left":133,"top":228,"width":142,"height":24.2},{"name":"29","value":"","left":583.2,"top":232.9,"width":142,"height":24.2},{"name":"17","value":"","left":133,"top":253.2,"width":142,"height":24.2},{"name":"30","value":"","left":583.2,"top":258,"width":142,"height":24.2},{"name":"16","value":"","left":133,"top":278.4,"width":142,"height":24.2},{"name":"13","value":"","left":558.4,"top":295.5,"width":142,"height":24.2},{"name":"23","value":"","left":94.6,"top":318.3,"width":142,"height":24.2},{"name":"1","value":"","left":549,"top":332.1,"width":142,"height":24.2},{"name":"24","value":"","left":94.6,"top":343.5,"width":142,"height":24},{"name":"2","value":"","left":549,"top":357.3,"width":142,"height":24.2},{"name":"27","value":"","left":94.6,"top":368.6,"width":142,"height":24},{"name":"4","value":"","left":513.7,"top":392.6,"width":142,"height":24.2},{"name":"26","value":"","left":94.6,"top":393.6,"width":142,"height":24.2},{"name":"5","value":"","left":513.7,"top":417.8,"width":142,"height":24.2},{"name":"25","value":"","left":94.6,"top":418.7,"width":142,"height":24.2},{"name":"19","value":"","left":131.5,"top":459.4,"width":142,"height":24},{"name":"32","value":"","left":513.7,"top":462.6,"width":142,"height":24.2},{"name":"20","value":"","left":131.5,"top":484.6,"width":142,"height":24},{"name":"x","value":"","left":471.4,"top":504.2,"width":142,"height":24.2},{"name":"22","value":"","left":131.5,"top":509.5,"width":142,"height":23.7},{"name":"Y","value":"","left":471.4,"top":529.4,"width":142,"height":24},{"name":"21","value":"","left":131.5,"top":534,"width":142,"height":24.2},{"name":"Z","value":"","left":471.4,"top":554.3,"width":142,"height":24.2},{"name":"31","value":"","left":256.7,"top":569.5,"width":142,"height":24.2},{"name":"Anmerkung 1","value":"","left":688.3,"top":26.73,"width":140.9,"height":74.4},{"name":"Anmerkung 2","value":"","left":689.25,"top":108.33,"width":140.65,"height":74.4},{"name":"Anmerkung 3","value":"","left":682.3,"top":422.73,"width":140.65,"height":74.4},{"name":"Anmerkung 4","value":"","left":683.75,"top":503.58,"width":140.9,"height":74.4}];
 const FIELDS_VKB_NXT_L = [
   // 8-Wege Hat / Mode Switch (oben rechts im Bild)
   {"name":"hat1_upleft",   "value":"","left":1120,"top":56, "width":126,"height":26},
@@ -1917,6 +1918,37 @@ function migrateHatSwapOnce() {
   setStore(store);
 }
 
+function migrateFieldNamesV1() {
+  const store = getStore();
+  if (store.fieldNamesV1Applied) return;
+  const RENAME = {
+    '18':'7',  '13':'8',  '8':'9',   '5':'6',   '9':'12',
+    '10':'11', '11':'10',
+    '7':'14',  '12':'28', '14':'15', '19':'29', '15':'18',
+    '20':'30', '16':'17', '17':'16', '6':'13',
+    '25':'23', '26':'24', '3':'4',   '28':'26', '4':'5',
+    '29':'25', '21':'19', '30':'32', '22':'20', '23':'22',
+    '24':'21', '31 S0':'31'
+  };
+  const SIDE_KEYS = ['virpil-alpha_L','virpil-alpha_R'];
+  const DATA_KEYS = ['fields','tags','lineTags','locked','changelog'];
+  function renameKeys(obj) {
+    const result = {};
+    Object.keys(obj).forEach(k => { result[RENAME[k] || k] = obj[k]; });
+    return result;
+  }
+  Object.values(store.profiles || {}).forEach(profile => {
+    DATA_KEYS.forEach(dk => {
+      if (!profile[dk]) return;
+      SIDE_KEYS.forEach(sk => {
+        if (profile[dk][sk]) profile[dk][sk] = renameKeys(profile[dk][sk]);
+      });
+    });
+  });
+  store.fieldNamesV1Applied = true;
+  setStore(store);
+}
+
 function applyDefaultTagsOnce() {
   const store = getStore();
   const profile = store && store.profiles && store.profiles[store.activeProfileId];
@@ -2900,6 +2932,7 @@ function startRenameProfile(id, labelEl) {
 document.getElementById('header-version').textContent = APP_VERSION;
 document.getElementById('app-version').textContent = APP_VERSION;
 migrateHatSwapOnce();
+migrateFieldNamesV1();
 applyDefaultTagsOnce();
 populateStickSelect();
 applyStick(activeStickId);
