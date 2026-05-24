@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.21 - 2026-05-24
+
+### Geändert
+
+- Virpil Alpha L + R: Alle Felder starten jetzt leer — keine vorausgefüllten Beispielbelegungen mehr.
+
 ## v0.7.20 - 2026-05-24
 
 ### Geändert
