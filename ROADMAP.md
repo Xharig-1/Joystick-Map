@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.24`
+Aktuelle Version: `v0.7.25`
 
 ## Zielbild
 
@@ -97,3 +97,6 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.20 | VKB NXT PREM L+R: Template-Bilder ersetzt (neue cleane 1600×800 Vorlagen); Feldpositionen neu kalibriert ✓ |
 | v0.7.21 | Virpil Alpha L+R: Alle Felder starten leer (keine vorausgefüllten Beispielbelegungen) ✓ |
 | v0.7.22 | Virpil Alpha L+R: Button-ID-Zahlen-Boxen ausgeblendet (showButtonIds: false) — Nummern auf Bild ✓ |
+| v0.7.23 | Virpil Alpha L+R: Template-Bilder ersetzt (verifizierte Button-Nummern laut SC + Virpil-Software) ✓ |
+| v0.7.24 | Virpil Alpha L+R: Hat-Gruppen 8–12 und 14–18 vertauscht behoben; Datenmigration (hatSwapV1Applied) ✓ |
+| v0.7.25 | Umbenennen-Modus: „🔤 Umbenennen"-Button im Header; editierbare Feld-Labels + „📋 Mapping exportieren" ✓ |

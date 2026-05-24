@@ -4,6 +4,15 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.25 - 2026-05-24
+
+### Neu
+
+- Umbenennen-Modus: Neuer Button „🔤 Umbenennen" im Header (nur Virpil Alpha)
+- Im Umbenennen-Modus werden alle Felder mit ihrer aktuellen Button-Nummer als editierbares Label überlagert
+- „📋 Mapping exportieren"-Button erscheint im Modus und kopiert das korrigierte FIELDS_L/FIELDS_R-JSON in die Zwischenablage
+- Ermöglicht systematische Korrektur aller falschen Feldnummern ohne Programmierkenntnisse
+
 ## v0.7.24 - 2026-05-24
 
 ### Behoben

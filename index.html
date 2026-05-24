@@ -80,6 +80,8 @@
   .stick-wrap img { display: block; }
   body.calibrating .stick-wrap { cursor: crosshair; }
   body.calibrating .field, body.calibrating .lock-btn { pointer-events: none; }
+  body.renaming .stick-wrap { cursor: default; }
+  body.renaming .field, body.renaming .lock-btn { pointer-events: none; }
 
   textarea.field {
     position: absolute;
@@ -121,6 +123,22 @@
     cursor: default;
     pointer-events: none;
   }
+  .field-rename-label {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 10px; font-weight: bold;
+    text-align: center;
+    background: #fff; color: #000;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 0 2px;
+    pointer-events: none;
+    display: none;
+    z-index: 20;
+    box-sizing: border-box;
+  }
+  body.renaming .field-rename-label { pointer-events: auto; display: block; cursor: text; }
+  body.renaming .field-rename-label:focus { border-color: #e05252; outline: none; background: #fff8f8; }
 
   .btn {
     padding: 6px 14px; background: transparent; border: 1px solid var(--accent2);
@@ -559,6 +577,8 @@
     <button class="btn" id="undoBtn" onclick="undoLastChange()" disabled>↶ Rückgängig</button>
     <button class="btn btn-danger" onclick="resetAll()">↺ Reset</button>
     <button class="btn" id="calibrateBtn" onclick="toggleCalibrate()" title="Koordinaten-Helfer für Feldpositionierung">✚ Kalibrieren</button>
+    <button class="btn" id="renameBtn" onclick="toggleRename()" title="Button-Nummern korrigieren">🔤 Umbenennen</button>
+    <button class="btn" id="exportRenameBtn" onclick="exportRenamedFields()" title="Korrigiertes FIELDS-JSON in Zwischenablage kopieren" style="display:none">📋 Mapping exportieren</button>
     <button class="btn" onclick="triggerPrint()" title="Aktuelle Belegung drucken">🖨 Drucken</button>
     <button id="theme-toggle" onclick="toggleTheme()" title="Hell/Dunkel wechseln">☀</button>
   </div>
@@ -806,7 +826,7 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.24';
+const APP_VERSION = 'v0.7.25';
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -1052,9 +1072,43 @@ const SC_BUTTON_IDS = {
   'virpil-alpha': { L: {}, R: {} }
 };
 
+let renaming = false;
+const pendingRenames = { L: {}, R: {} };
+
 function getScButtonId(side, name) {
   const stickMap = SC_BUTTON_IDS[activeStickId];
   return (stickMap && stickMap[side] && stickMap[side][name]) || name;
+}
+
+function toggleRename() {
+  if (activeStickId !== 'virpil-alpha') { showStatus('Umbenennen nur für Virpil Alpha verfügbar.'); return; }
+  renaming = !renaming;
+  document.body.classList.toggle('renaming', renaming);
+  const btn = document.getElementById('renameBtn');
+  if (btn) btn.textContent = renaming ? '✖ Umbenennen beenden' : '🔤 Umbenennen';
+  const expBtn = document.getElementById('exportRenameBtn');
+  if (expBtn) expBtn.style.display = renaming ? 'inline-block' : 'none';
+  if (!renaming) { pendingRenames.L = {}; pendingRenames.R = {}; }
+  buildOverlay(currentSide);
+}
+
+function exportRenamedFields() {
+  const stick = STICKS['virpil-alpha'];
+  const applyRenames = (fields, side) =>
+    fields.map(f => {
+      const newName = pendingRenames[side][f.name];
+      return newName ? Object.assign({}, f, { name: newName }) : f;
+    });
+  const result = {
+    FIELDS_L: applyRenames(stick.fields.L, 'L'),
+    FIELDS_R: applyRenames(stick.fields.R, 'R')
+  };
+  const json = JSON.stringify(result, null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    showStatus('✔ FIELDS_L und FIELDS_R in Zwischenablage kopiert');
+  }).catch(() => {
+    showStatus('Fehler: Clipboard-Zugriff verweigert');
+  });
 }
 
 const SC_AXIS_IDS = {
@@ -1960,6 +2014,29 @@ function buildOverlay(containerId, fields, side) {
       idField.style.height = ptToPx(rect.height, side) + 'px';
       idField.value = getScButtonId(side, f.name);
       wrap.appendChild(idField);
+    }
+
+    if (isButtonField(f.name)) {
+      const label = document.createElement('input');
+      label.type = 'text';
+      label.className = 'field-rename-label';
+      label.value = f.name;
+      label.dataset.originalName = f.name;
+      label.dataset.side = side;
+      const lw = f.name.length > 3 ? 44 : 28;
+      const lh = 18;
+      label.style.width  = lw + 'px';
+      label.style.height = lh + 'px';
+      label.style.left   = (ptToPx(f.left, side) + ptToPx(f.width, side) - lw - 2) + 'px';
+      label.style.top    = (ptToPx(f.top,  side) + 2) + 'px';
+      label.addEventListener('change', () => {
+        const orig = label.dataset.originalName;
+        const newName = label.value.trim();
+        if (newName && newName !== orig) pendingRenames[side][orig] = newName;
+        else delete pendingRenames[side][orig];
+      });
+      label.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); label.blur(); } });
+      wrap.appendChild(label);
     }
   });
 }
