@@ -4,6 +4,14 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.37 - 2026-06-08
+
+### Neu
+
+- „Was ist neu"-Popup erscheint einmal automatisch beim ersten Öffnen einer neuen Version
+- „🆕 Neuigkeiten"-Button im Header öffnet das Popup jederzeit wieder
+- Versionshistorie im Hilfe-Tab zeigt die letzten Releases mit Beschreibung
+
 ## v0.7.36 - 2026-06-08
 
 ### Behoben

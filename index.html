@@ -326,6 +326,47 @@
     color: var(--text-dim); word-break: break-word;
   }
 
+  #whats-new-overlay {
+    position: fixed; inset: 0; z-index: 4000;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #whats-new-backdrop {
+    position: absolute; inset: 0; background: rgba(0,0,0,0.55);
+  }
+  #whats-new-box {
+    position: relative; background: var(--bg2); border: 1px solid var(--accent);
+    border-radius: 8px; padding: 24px 28px; max-width: 500px; width: 92%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  #whats-new-box h2 {
+    margin: 0 0 4px; font-size: 15px; color: var(--accent-light);
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  #whats-new-box .wn-version {
+    font-size: 13px; color: var(--text-dim); margin-bottom: 16px;
+  }
+  #whats-new-box ul {
+    margin: 0 0 20px; padding-left: 20px;
+  }
+  #whats-new-box li {
+    margin-bottom: 8px; line-height: 1.5; font-size: 13px;
+  }
+  #whats-new-box .wn-footer {
+    display: flex; justify-content: flex-end;
+  }
+  .version-history-list { list-style: none; padding: 0; margin: 0; }
+  .version-history-list li { margin-bottom: 12px; }
+  .version-history-list .vh-version {
+    font-size: 12px; font-weight: bold; color: var(--accent-light);
+    letter-spacing: 1px; margin-bottom: 3px;
+  }
+  .version-history-list .vh-entries {
+    list-style: disc; padding-left: 18px; margin: 0;
+  }
+  .version-history-list .vh-entries li {
+    font-size: 12px; color: var(--text-dim); margin-bottom: 2px; line-height: 1.4;
+  }
+
   #statusbar {
     padding: 5px 18px; font-size: 10px; color: var(--text-dim);
     background: var(--bg2); border-top: 1px solid var(--border); letter-spacing: 1px;
@@ -587,11 +628,24 @@
     <button class="btn" id="migrationResetBtn" onclick="resetMigrationFlags()" title="Migrations-Flags zurücksetzen (dann Seite neu laden)">🔄 Migrationen</button>
     <button class="btn btn-danger" id="storeClearBtn" onclick="clearStore()" title="Alle Daten löschen und neu starten">🗑 Store leeren</button>
     <button class="btn" onclick="triggerPrint()" title="Aktuelle Belegung drucken">🖨 Drucken</button>
+    <button class="btn" onclick="openWhatsNew()" title="Was ist neu in dieser Version?">🆕 Neuigkeiten</button>
     <button id="theme-toggle" onclick="toggleTheme()" title="Hell/Dunkel wechseln">☀</button>
   </div>
 </div>
 
 <div id="profile-bar"></div>
+
+<div id="whats-new-overlay" style="display:none">
+  <div id="whats-new-backdrop" onclick="closeWhatsNew()"></div>
+  <div id="whats-new-box">
+    <h2>Was ist neu</h2>
+    <div class="wn-version" id="whats-new-version"></div>
+    <ul id="whats-new-list"></ul>
+    <div class="wn-footer">
+      <button class="btn" onclick="closeWhatsNew()">Verstanden ✓</button>
+    </div>
+  </div>
+</div>
 
 <div id="tabs">
   <button id="tab-btn-L" class="tab-btn active" onclick="switchTab('L', this)">Alpha L (Links)</button>
@@ -799,6 +853,11 @@
       </div>
 
       <div class="help-block">
+        <h3>Versionshistorie</h3>
+        <ul class="version-history-list" id="version-history-list"></ul>
+      </div>
+
+      <div class="help-block">
         <h3>Hinweise</h3>
         <ul>
           <li>Die Daten werden im Browser-Speicher (localStorage) abgelegt — sie bleiben solange erhalten, bis der Browser-Cache geleert wird.</li>
@@ -832,7 +891,71 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.36';
+const APP_VERSION = 'v0.7.37';
+
+const CHANGELOG_DATA = [
+  { version: 'v0.7.36', date: '2026-06-08', entries: [
+    'SC Import: Stick-Seite (L/R) kann jetzt manuell zugewiesen werden, wenn der Gerätename kein "LEFT"/"RIGHT" enthält (z. B. bei vJoy-Geräten)'
+  ]},
+  { version: 'v0.7.35', date: '2026-05-24', entries: [
+    'Listen-Tab: Modus-Tags aus SC Import sofort sichtbar — kein F5 mehr nötig'
+  ]},
+  { version: 'v0.7.34', date: '2026-05-24', entries: [
+    'Listen-Tab: Modus-Tags aus SC Import (Feld-Tags) wurden nicht angezeigt — Farb-Streifen hatte den Fallback bereits, Liste nicht'
+  ]},
+  { version: 'v0.7.33', date: '2026-05-24', entries: [
+    'Kritischer Fix: Migrations-Flags wurden bei jedem Seitenaufruf zurückgesetzt — Felder wurden ständig hin- und hergetauscht'
+  ]},
+  { version: 'v0.7.31', date: '2026-05-24', entries: [
+    'Reset-Button leert jetzt auch Modus-Tags (Combat / Mining / Salvage) aller Felder'
+  ]},
+  { version: 'v0.7.29', date: '2026-05-19', entries: [
+    'VKB NXT PREM LH+RH: Button 11 und 15 am 5-Wege-Switch 1 waren vertauscht — korrigiert'
+  ]},
+  { version: 'v0.7.26', date: '2026-05-15', entries: [
+    'Virpil Alpha L+R: Alle Feldnamen vollständig korrigiert (verifizierte Exporten)',
+    'Datenmigration sorgt dafür, dass alte Einträge automatisch auf die neuen Namen umziehen'
+  ]},
+  { version: 'v0.7.25', date: '2026-05-15', entries: [
+    'Umbenennen-Modus: Feld-Beschriftungen direkt in der App anpassen (hinter #dev-URL)'
+  ]},
+  { version: 'v0.7.24', date: '2026-05-14', entries: [
+    'Virpil Alpha L+R: Hat-Gruppen 8–12 und 14–18 waren vertauscht — korrigiert'
+  ]},
+  { version: 'v0.7.0', date: '2026-04-20', entries: [
+    'Drucken: Stick-Overlays und Tastatur/Maus als druckfertige Seiten (🖨-Button im Header)'
+  ]},
+];
+
+function openWhatsNew() {
+  const entry = CHANGELOG_DATA[0];
+  if (!entry) return;
+  document.getElementById('whats-new-version').textContent = entry.version + ' — ' + entry.date;
+  document.getElementById('whats-new-list').innerHTML =
+    entry.entries.map(e => '<li>' + escapeHTML(e) + '</li>').join('');
+  document.getElementById('whats-new-overlay').style.display = 'flex';
+}
+
+function closeWhatsNew() {
+  localStorage.setItem('jm_seen_version', APP_VERSION);
+  document.getElementById('whats-new-overlay').style.display = 'none';
+}
+
+function showWhatsNewOnce() {
+  if (localStorage.getItem('jm_seen_version') === APP_VERSION) return;
+  openWhatsNew();
+}
+
+function renderVersionHistory() {
+  const el = document.getElementById('version-history-list');
+  if (!el) return;
+  el.innerHTML = CHANGELOG_DATA.map(({ version, date, entries }) =>
+    '<li>' +
+      '<div class="vh-version">' + escapeHTML(version) + ' <span style="font-weight:normal;color:var(--text-dim)">— ' + escapeHTML(date) + '</span></div>' +
+      '<ul class="vh-entries">' + entries.map(e => '<li>' + escapeHTML(e) + '</li>').join('') + '</ul>' +
+    '</li>'
+  ).join('');
+}
 const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
@@ -3026,6 +3149,8 @@ applyStick(activeStickId);
 renderProfileBar();
 checkForUpdates();
 fetchSCLiveVersion();
+renderVersionHistory();
+showWhatsNewOnce();
 // ── Drucken ──────────────────────────────────────────────────────────────────
 
 function triggerPrint() {

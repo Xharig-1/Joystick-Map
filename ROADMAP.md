@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.36`
+Aktuelle Version: `v0.7.37`
 
 ## Zielbild
 
@@ -111,3 +111,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.34 | Listen-Tab: Modus-Tags aus SC Import wurden nicht angezeigt (Feld-Tag-Fallback fehlte) ✓ |
 | v0.7.35 | Listen-Tab: Modus-Tags nach Import sofort sichtbar ohne F5 (Liste wurde nur bei aktivem Tab aktualisiert) ✓ |
 | v0.7.36 | SC Import: manuelle Seiten-Zuweisung bei unbekannten Stick-Namen (z. B. vJoy) per Dialog ✓ |
+| v0.7.37 | „Was ist neu"-Popup + „🆕 Neuigkeiten"-Button + Versionshistorie im Hilfe-Tab ✓ |
