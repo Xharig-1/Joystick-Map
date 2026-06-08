@@ -4,11 +4,17 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.40 - 2026-06-08
+
+### Behoben
+
+- VKB-Bilder: Rote Linien jetzt scharf — weiße JPEG-Artefaktpixel direkt neben roten Pixeln werden kontextbewusst entfernt (nur Pixel neben echten roten Linienpixeln, keine Label-Boxen betroffen)
+
 ## v0.7.39 - 2026-06-08
 
 ### Behoben
 
-- VKB-Bilder: Weiße JPEG-Halos entlang der roten Linien entfernt — schärferer Rot-Filter (G < 100 & B < 100) und 2-Pass-Halo-Dilation (Radius 2px)
+- VKB-Bilder: Pinkliche JPEG-Halos entlang der roten Linien entfernt (schärferer Rot-Filter: G < 100 & B < 100)
 
 ## v0.7.38 - 2026-06-08
 

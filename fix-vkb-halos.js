@@ -1,10 +1,8 @@
-// fix-vkb-halos.js — Weiße JPEG-Halos entlang roter Linien entfernen
-// Verbesserter Filter: G < 100 AND B < 100 als zusätzliche Bedingung für Rot,
-// damit aufgehellte Halo-Pixel (z.B. R=255, G=120, B=120) nicht mehr als "Rot" gelten.
-// Anschließend: 2-Pass-Halo-Dilation — helle Pixel neben roten werden ebenfalls entfernt.
+// fix-vkb-halos.js — Entfernt JPEG-Artefakte neben roten Linien in VKB-Bildern
+// Pass 1: pinkliche Halos (r>=2g, r>=2b, g>100 oder b>100)
+// Pass 2: weiße/hellgraue Artefaktpixel direkt neben echten roten Pixeln
 
 const { Jimp } = require('jimp');
-const path = require('path');
 
 const IMAGES = [
   'assets/vkb-gladiator-nxt.png',
@@ -13,30 +11,8 @@ const IMAGES = [
   'assets/vkb-gladiator-scg-r.png',
 ];
 
-function getSat(r, g, b) {
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  return max === 0 ? 0 : (max - min) / max;
-}
-
-function shouldKeep(r, g, b) {
-  const max = Math.max(r, g, b);
-
-  // Dunkel: Joystick-Gehäuse, schwarze Linien
-  if (max <= 80) return true;
-
-  // Dunkelgrau: Joystick-Körper, Schatten
-  const sat = getSat(r, g, b);
-  if (max < 175 && sat < 0.18) return true;
-
-  // Rot: echte rote Linien/Punkte
-  // Strenger als vorher: G < 100 UND B < 100 verhindert rosa Halo-Pixel
-  if (r >= 2 * g && r >= 2 * b && g < 100 && b < 100) return true;
-
-  // Reinweiß: z.B. weiße Label-Kästen auf dem Template
-  if (r >= 242 && g >= 242 && b >= 242) return true;
-
-  return false;
+function isHalo(r, g, b) {
+  return r >= 2 * g && r >= 2 * b && (g > 100 || b > 100);
 }
 
 async function processImage(filePath) {
@@ -44,61 +20,47 @@ async function processImage(filePath) {
   const image = await Jimp.read(filePath);
   const { width, height, data } = image.bitmap;
 
-  // Pass 1: Pixel-Filter
-  const keepMask = new Uint8Array(width * height); // 1 = behalten, 0 = transparent
-  const isRedPixel = new Uint8Array(width * height);
-
+  // Pass 1: pinkliche Halos
+  let pass1 = 0;
   image.scan(0, 0, width, height, (x, y, idx) => {
-    const r = data[idx];
-    const g = data[idx + 1];
-    const b = data[idx + 2];
-
-    if (shouldKeep(r, g, b)) {
-      keepMask[y * width + x] = 1;
-      // Rot-Pixel für Pass 2 markieren
-      if (r >= 2 * g && r >= 2 * b && g < 100 && b < 100 && Math.max(r,g,b) > 80) {
-        isRedPixel[y * width + x] = 1;
-      }
+    if (data[idx + 3] === 0) return;
+    const r = data[idx], g = data[idx + 1], b = data[idx + 2];
+    if (isHalo(r, g, b)) {
+      data[idx + 3] = 0;
+      pass1++;
     }
   });
 
-  // Pass 2: Halo-Dilation — helle Pixel in Radius 2 um rote Pixel entfernen
-  const haloMask = new Uint8Array(width * height);
-  const RADIUS = 2;
+  // Pass 2: weiße Artefakte neben echten roten Pixeln
+  // Erst rote Pixel markieren (nach Pass 1)
+  const isRed = new Uint8Array(width * height);
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+    if (a > 0 && r >= 2 * g && r >= 2 * b && g < 100 && b < 100 && Math.max(r, g, b) > 80)
+      isRed[i / 4] = 1;
+  }
+
+  let pass2 = 0;
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      if (!isRedPixel[y * width + x]) continue;
-      for (let dy = -RADIUS; dy <= RADIUS; dy++) {
-        for (let dx = -RADIUS; dx <= RADIUS; dx++) {
-          const nx = x + dx, ny = y + dy;
-          if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
-          const ni = ny * width + nx;
-          if (!isRedPixel[ni]) haloMask[ni] = 1;
-        }
+      const idx = (y * width + x) * 4;
+      if (data[idx + 3] === 0) continue;
+      const r = data[idx], g = data[idx + 1], b = data[idx + 2];
+      if (!(r > 200 && g > 200 && b > 200)) continue; // kein heller Pixel
+      // Hat dieser Pixel einen roten 4-Nachbarn?
+      const neighbors = [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]];
+      const adjRed = neighbors.some(([nx, ny]) =>
+        nx >= 0 && nx < width && ny >= 0 && ny < height && isRed[ny * width + nx]
+      );
+      if (adjRed) {
+        data[idx + 3] = 0;
+        pass2++;
       }
     }
   }
 
-  // Pass 2 anwenden: helle Pixel (Luminanz > 160) in der Halo-Zone transparent machen
-  image.scan(0, 0, width, height, (x, y, idx) => {
-    const i = y * width + x;
-    if (!keepMask[i]) {
-      data[idx + 3] = 0;
-      return;
-    }
-    if (haloMask[i]) {
-      const r = data[idx], g = data[idx + 1], b = data[idx + 2];
-      const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-      if (luminance > 160) {
-        data[idx + 3] = 0;
-        return;
-      }
-    }
-    data[idx + 3] = 255;
-  });
-
   await image.write(filePath);
-  console.log(`  ✓ gespeichert`);
+  console.log(`  ✓ Pass 1: ${pass1} pinklich, Pass 2: ${pass2} weiß — gespeichert`);
 }
 
 (async () => {
