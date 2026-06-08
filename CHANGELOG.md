@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.38 - 2026-06-08
+
+### Geändert
+
+- Versionshistorie aus dem Hilfe-Tab in einen eigenen Tab „📄 Versionen" verschoben
+
 ## v0.7.37 - 2026-06-08
 
 ### Neu

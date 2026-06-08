@@ -654,6 +654,7 @@
   <button id="tab-btn-M" class="tab-btn" onclick="switchTab('M', this)">Maus</button>
   <button class="tab-btn" id="tab-btn-LIST" onclick="switchTab('LIST', this)">&#128203; Liste</button>
   <button class="tab-btn" onclick="switchTab('LOG', this)">Changelog</button>
+  <button class="tab-btn" onclick="switchTab('VER', this)">&#128196; Versionen</button>
   <button class="tab-btn" onclick="switchTab('HELP', this)">? Hilfe</button>
 </div>
 
@@ -848,13 +849,9 @@
           <li><span class="help-key">📋 Liste</span> — alle belegten Felder als Tabelle; Modus-Tags (C/M/S) können hier direkt pro Zeile gesetzt werden.</li>
           <li><span class="help-key">Tastatur / Maus</span> — Tabellenansicht für importierte Tastatur- und Mausbelegungen.</li>
           <li><span class="help-key">Changelog</span> — zeigt wann welches Feld zuletzt geändert wurde.</li>
+          <li><span class="help-key">📄 Versionen</span> — Versionshistorie der App mit allen Änderungen.</li>
           <li><span class="help-key">? Hilfe</span> — diese Seite.</li>
         </ul>
-      </div>
-
-      <div class="help-block">
-        <h3>Versionshistorie</h3>
-        <ul class="version-history-list" id="version-history-list"></ul>
       </div>
 
       <div class="help-block">
@@ -864,6 +861,13 @@
           <li>Jeder Browser speichert seine eigenen Daten — beim Wechsel des Browsers gehen die Einträge nicht automatisch über.</li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  <div class="stick-panel" id="panel-VER">
+    <div class="help-panel">
+      <h2>Versionshistorie</h2>
+      <ul class="version-history-list" id="version-history-list"></ul>
     </div>
   </div>
 
@@ -891,9 +895,16 @@
 <div id="statusbar">STATUS: <span id="statmsg">Bereit</span> &nbsp;|&nbsp; Geändert: <span id="changed-count">0</span> &nbsp;|&nbsp; Version: <span id="app-version"></span> &nbsp;|&nbsp; Update: <span id="update-status">prüfen...</span></div>
 
 <script>
-const APP_VERSION = 'v0.7.37';
+const APP_VERSION = 'v0.7.38';
 
 const CHANGELOG_DATA = [
+  { version: 'v0.7.38', date: '2026-06-08', entries: [
+    'Versionshistorie jetzt als eigener Tab „📄 Versionen" — übersichtlicher als im Hilfe-Tab'
+  ]},
+  { version: 'v0.7.37', date: '2026-06-08', entries: [
+    '„Was ist neu"-Popup erscheint einmal automatisch beim ersten Öffnen einer neuen Version',
+    '„🆕 Neuigkeiten"-Button im Header öffnet das Popup jederzeit wieder'
+  ]},
   { version: 'v0.7.36', date: '2026-06-08', entries: [
     'SC Import: Stick-Seite (L/R) kann jetzt manuell zugewiesen werden, wenn der Gerätename kein "LEFT"/"RIGHT" enthält (z. B. bei vJoy-Geräten)'
   ]},
