@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.36 - 2026-06-08
+
+### Behoben
+
+- SC Import: Stick-Seite (Links/Rechts) konnte nicht automatisch erkannt werden, wenn der Produkt-Name kein "LEFT"/"RIGHT" enthält (z. B. vJoy-Geräte) — jetzt erscheint ein Dialog zur manuellen Zuweisung
+
 ## v0.7.35 - 2026-05-24
 
 ### Behoben
