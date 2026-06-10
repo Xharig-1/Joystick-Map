@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.41 - 2026-06-10
+
+### Geändert
+
+- VKB NXT PREM L+R: Korrigierte Stick-Bilder eingespielt — überarbeitete Vorlagen (`vkb-gladiator-nxt-l.png`, `vkb-gladiator-nxt.png`) mit sauberer Beschriftung
+
 ## v0.7.40 - 2026-06-08
 
 ### Behoben
