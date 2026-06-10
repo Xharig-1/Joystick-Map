@@ -4,6 +4,12 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.42 - 2026-06-10
+
+### Geändert
+
+- VKB NXT PREM L+R: Feld-Nummern auf den Stick-Bildern in Weiß statt Schwarz — auf dem dunklen Stick-Foto deutlich besser lesbar (`vkb-gladiator-nxt-l.png`, `vkb-gladiator-nxt.png`)
+
 ## v0.7.41 - 2026-06-10
 
 ### Geändert

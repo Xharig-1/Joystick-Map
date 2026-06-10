@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.41`
+Aktuelle Version: `v0.7.42`
 
 ## Zielbild
 
@@ -115,3 +115,5 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.38 | Versionshistorie als eigener Tab „📄 Versionen" statt im Hilfe-Tab ✓ |
 | v0.7.39 | VKB-Bilder: Pinkliche JPEG-Halos entlang roter Linien entfernt (schärferer Rot-Filter G < 100 & B < 100) ✓ |
 | v0.7.40 | VKB-Bilder: Rote Linien scharf — weiße Artefaktpixel neben roten Linienpixeln kontextbewusst entfernt ✓ |
+| v0.7.41 | VKB NXT PREM L+R: Korrigierte Stick-Bilder mit sauberer Beschriftung eingespielt ✓ |
+| v0.7.42 | VKB NXT PREM L+R: Feld-Nummern in Weiß statt Schwarz (bessere Lesbarkeit auf dunklem Bild) ✓ |
