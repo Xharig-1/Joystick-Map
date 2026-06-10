@@ -25,12 +25,20 @@ jobs:
           TAG: ${{ github.ref_name }}
           REPO: ${{ github.repository }}
 
-      - name: GitHub Release erstellen
+      - name: GitHub Release erstellen oder aktualisieren
         run: |
-          gh release create "$TAG" \
-            "joystick-map-${TAG}.html" \
-            --title "Joystick-Map ${TAG}" \
-            --notes-file release_notes.md
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            # Release existiert bereits (z. B. nach Tag-Verschiebung) → Asset + Notizen aktualisieren
+            gh release upload "$TAG" "joystick-map-${TAG}.html" --clobber
+            gh release edit "$TAG" \
+              --title "Joystick-Map ${TAG}" \
+              --notes-file release_notes.md
+          else
+            gh release create "$TAG" \
+              "joystick-map-${TAG}.html" \
+              --title "Joystick-Map ${TAG}" \
+              --notes-file release_notes.md
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ github.ref_name }}
