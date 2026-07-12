@@ -1,6 +1,6 @@
 # Roadmap
 
-Aktuelle Version: `v0.7.42`
+Aktuelle Version: `v0.7.43`
 
 ## Zielbild
 
@@ -117,3 +117,4 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.40 | VKB-Bilder: Rote Linien scharf — weiße Artefaktpixel neben roten Linienpixeln kontextbewusst entfernt ✓ |
 | v0.7.41 | VKB NXT PREM L+R: Korrigierte Stick-Bilder mit sauberer Beschriftung eingespielt ✓ |
 | v0.7.42 | VKB NXT PREM L+R: Feld-Nummern in Weiß statt Schwarz (bessere Lesbarkeit auf dunklem Bild) ✓ |
+| v0.7.43 | Xharig-Design: neutrale dunkle Flächen, Grün nur als Akzent, Kreisringe im Header, Light-Modus neutral ✓ |

@@ -4,6 +4,16 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
 Das Projekt nutzt SemVer: `MAJOR.MINOR.PATCH`.
 
+## v0.7.43 - 2026-07-11
+
+### Geändert
+
+- Neues Xharig-Design (Branding-Update): neutrale dunkle Flächen (`#0a0a0a`/`#111111`/`#1c1c1c`) statt grünstichiger Hintergründe, Text neutral statt grün getönt, Grün (`#47aa42`) nur noch als Akzent
+- Signature-Element: dezente grüne Kreisringe im Header (CSS `::before`/`::after`, nur Umriss, opacity 0.09–0.12)
+- Light-Modus auf neutrale Grautöne umgestellt (`#f4f4f4`, Text `#1a1a1a`)
+- Neon-Glow reduziert — ruhigeres, professionelleres Erscheinungsbild
+- Nur CSS-Variablen + Header-Deko: keine Funktions- oder Layout-Änderung an Feldern/Sticks
+
 ## v0.7.42 - 2026-06-10
 
 ### Geändert
