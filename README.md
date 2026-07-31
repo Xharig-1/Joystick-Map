@@ -4,8 +4,8 @@
 
 **Browser-Editor für Joystick- und HOTAS-Mappings in Star Citizen**
 
-[![Download](https://img.shields.io/github/v/release/Xharig-1/Joystick-Map?label=Download&color=47aa42&logo=github)](https://github.com/Xharig-1/Joystick-Map/releases/latest)
-[![Lizenz](https://img.shields.io/badge/Lizenz-MIT-47aa42)](LICENSE)
+[![Download](https://img.shields.io/github/v/release/Xharig-1/Joystick-Map?label=Download&color=5fa522&logo=github)](https://github.com/Xharig-1/Joystick-Map/releases/latest)
+[![Lizenz](https://img.shields.io/badge/Lizenz-MIT-5fa522)](LICENSE)
 [![Star Citizen](https://img.shields.io/badge/Star%20Citizen-kompatibel-0a4a7a)](https://robertsspaceindustries.com/)
 
 </div>
