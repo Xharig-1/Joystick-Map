@@ -9,3 +9,7 @@ detect_fields.js
 pdf_to_png.js
 detected_*.json
 
+# Editor- und Werkzeug-Ordner
+.vscode/
+.idea/
+.claude/

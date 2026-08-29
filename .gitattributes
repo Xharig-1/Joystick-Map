@@ -1,0 +1,7 @@
+# Zeilenenden festnageln.
+# Ohne diese Datei speichert Windows mit CRLF, Linux mit LF - Git meldet dann
+# jede Zeile als geaendert, obwohl sich inhaltlich nichts getan hat.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
