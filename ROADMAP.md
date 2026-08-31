@@ -86,7 +86,7 @@ Aktueller Fokus: öffentliche Tests, Feedback sammeln und weitere Stick-Vorlagen
 | v0.7.9  | VKB NXT PREM LH: Joystick-Löcher behoben; zweistufiger Filter (max≤80 + dunkles Grau max<180 Sat<25%) ✓ |
 | v0.7.10 | VKB NXT PREM RH: Feldpositionen korrigiert (Encoder +32px, 28/27/29 +7px), Throttle-Felder neu ✓ |
 | v0.7.11 | VKB NXT PREM RH: 27 fehlende Felder ergänzt (Hat, X/Y/Z, Button 3, drei 5-Wege-Switches) ✓ |
-| v0.7.12 | Author-Footer mit Avatar + GitHub-Link (Xharig-1); dezent gedimmt, beim Drucken ausgeblendet ✓ |
+| v0.7.12 | Author-Footer mit Avatar + GitHub-Link (Xharig); dezent gedimmt, beim Drucken ausgeblendet ✓ |
 | v0.7.13 | Virpil Alpha L+R: Felder 30/31 S0 waren vertauscht (Koordinaten-Fix); L-Mapping-Duplikat entfernt ✓ |
 | v0.7.14 | Hilfe-Tab: Drucken-Button ergänzt, Liste-Tab + VKB-Hinweis ergänzt, Tabs-Abschnitt aktualisiert; ROADMAP-Zielbild aktualisiert ✓ |
 | v0.7.15 | README vollständig überarbeitet: Badges, Feature-Tabelle, Stick-Tabelle, Sicherheits- und Tester-Callout, Umlaute korrigiert ✓ |

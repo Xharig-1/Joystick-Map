@@ -4,7 +4,7 @@
 
 **Browser-Editor für Joystick- und HOTAS-Mappings in Star Citizen**
 
-[![Download](https://img.shields.io/github/v/release/Xharig-1/Joystick-Map?label=Download&color=5fa522&logo=github)](https://github.com/Xharig-1/Joystick-Map/releases/latest)
+[![Download](https://img.shields.io/github/v/release/Xharig/Joystick-Map?label=Download&color=5fa522&logo=github)](https://github.com/Xharig/Joystick-Map/releases/latest)
 [![Lizenz](https://img.shields.io/badge/Lizenz-MIT-5fa522)](LICENSE)
 [![Star Citizen](https://img.shields.io/badge/Star%20Citizen-kompatibel-0a4a7a)](https://robertsspaceindustries.com/)
 
@@ -73,8 +73,8 @@ Nach dem Export unter **⬇ SC Import** in der App die XML-Datei auswählen.
 
 ## Author
 
-[![Xharig](https://github.com/Xharig-1.png?size=40)](https://github.com/Xharig-1)  
-**Xharig** — [github.com/Xharig-1](https://github.com/Xharig-1)
+[![Xharig](https://github.com/Xharig.png?size=40)](https://github.com/Xharig)  
+**Xharig** — [github.com/Xharig](https://github.com/Xharig)
 
 If you fork this project, please keep the credit in the footer or mention the original source.
 

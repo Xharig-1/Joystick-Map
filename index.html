@@ -993,7 +993,7 @@ function renderVersionHistory() {
     '</li>'
   ).join('');
 }
-const UPDATE_API_URL = 'https://api.github.com/repos/Xharig-1/Joystick-Map/releases/latest';
+const UPDATE_API_URL = 'https://api.github.com/repos/Xharig/Joystick-Map/releases/latest';
 const SC_VERSION_API_URL = 'https://api.star-citizen.wiki/api/v2/game-versions';
 const MODES = [
   { id: 'combat',  label: 'Combat',  color: '#e05252' },
@@ -2912,7 +2912,7 @@ async function checkForUpdates() {
     });
   } catch {
     if (location.protocol === 'file:') {
-      el.innerHTML = 'kein Zugriff &mdash; <a href="https://github.com/Xharig-1/Joystick-Map/releases/latest" target="_blank" rel="noopener">Releases auf GitHub</a>';
+      el.innerHTML = 'kein Zugriff &mdash; <a href="https://github.com/Xharig/Joystick-Map/releases/latest" target="_blank" rel="noopener">Releases auf GitHub</a>';
     } else {
       el.textContent = 'offline';
     }
@@ -3301,7 +3301,7 @@ function buildPrintKMPage() {
 
 <footer id="app-footer">
   <img src="assets/avatar.png" alt="Xharig" />
-  <span>Created by <a href="https://github.com/Xharig-1" target="_blank" rel="noopener">Xharig</a></span>
+  <span>Created by <a href="https://github.com/Xharig" target="_blank" rel="noopener">Xharig</a></span>
 </footer>
 </body>
 </html>
